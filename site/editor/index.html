@@ -14,7 +14,7 @@
         document.documentElement.dataset.theme = "dark";
       }
     </script>
-    <link rel="stylesheet" href="editor.css?v=2">
+    <link rel="stylesheet" href="editor.css?v=4">
   </head>
   <body>
     <header class="topbar">
@@ -32,8 +32,10 @@
 
     <div class="layout">
       <main class="form" id="form">
-        <nav class="jump" id="jump" aria-label="Sections"></nav>
-        <div id="sections"></div>
+        <div class="workspace">
+          <nav class="group-nav" id="groupNav" aria-label="Sections"></nav>
+          <div id="sections"></div>
+        </div>
       </main>
 
       <aside class="panel" id="panel">

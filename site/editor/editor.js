@@ -251,11 +251,11 @@
 
   const KEY_SECTION = {
     style_name: "sec-basics", style_slug: "sec-basics", style_version: "sec-basics", style_summary: "sec-basics", category: "sec-basics",
-    environment_variables: "sec-env", style_fidelity_anchors: "sec-anchors", source_content_to_avoid: "sec-anchors",
+    environment_variables: "sec-env", style_fidelity_anchors: "sec-anchors", source_content_to_avoid: "sec-source",
     visual_deconstruction: "sec-visual_deconstruction", image_treatment: "sec-treatment", photographic_direction: "sec-treatment",
     composition: "sec-composition", typography: "sec-typography", color_palette: "sec-color_palette",
     design_rules: "sec-rules", do: "sec-rules", avoid: "sec-rules",
-    prompt_template: "sec-prompt", negative_prompt: "sec-prompt", examples: "sec-examples",
+    prompt_template: "sec-prompt", negative_prompt: "sec-negative", examples: "sec-examples",
   };
 
   function keyOf(msg) {
@@ -356,6 +356,8 @@
     "sec-typography": '<path d="M4 7V4h16v3"/><path d="M9 20h6"/><path d="M12 4v16"/>',
     "sec-color_palette": '<circle cx="13.5" cy="6.5" r=".6"/><circle cx="17.5" cy="10.5" r=".6"/><circle cx="8.5" cy="7.5" r=".6"/><circle cx="6.5" cy="12.5" r=".6"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.93 0 1.5-.67 1.5-1.5 0-.4-.15-.75-.4-1-.23-.27-.38-.63-.38-1 0-.83.67-1.5 1.5-1.5H16c3.31 0 6-2.69 6-6 0-4.96-4.49-9-10-9Z"/>',
     "sec-rules": '<path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>',
+    "sec-source": '<circle cx="12" cy="12" r="10"/><path d="m4.9 4.9 14.2 14.2"/>',
+    "sec-negative": '<path d="M18 6 6 18"/><path d="m6 6 12 12"/>',
     "sec-prompt": '<path d="m4 17 6-6-6-6"/><path d="M12 19h8"/>',
     "sec-examples": '<rect x="8" y="8" width="14" height="14" rx="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/>',
   };
@@ -383,6 +385,8 @@
   function goTo(id) {
     const el = document.getElementById(id);
     if (!el) return;
+    const group = el.closest(".group");
+    if (group && group.hidden) setGroup(group.id.replace("group-", ""), false);
     el.classList.remove("collapsed");
     $("h2", el).setAttribute("aria-expanded", "true");
     el.scrollIntoView({ behavior: "smooth", block: "start" });
@@ -625,8 +629,11 @@
     requestAnimationFrame(() => { autosize(promptArea); paintPromptBack(); });
     renderPromptChips();
     return card("sec-prompt", "Prompt template", "Type { to autocomplete a variable, or click a chip. Green = defined, red wavy = undefined. Do not mention an aspect ratio here: it is set in the generator.",
-      promptChipsEl, h("div", { class: "hl-wrap" }, promptBack, promptArea), suggestEl,
-      h("div", { style: "height:12px" }),
+      promptChipsEl, h("div", { class: "hl-wrap" }, promptBack, promptArea), suggestEl);
+  }
+
+  function negativeCard() {
+    return card("sec-negative", "Negative prompt", "Comma-separated things the image must not contain.",
       areaField("Negative prompt", state.negative_prompt, (v) => { state.negative_prompt = v; update(); }, { rows: 2 }));
   }
 
@@ -691,9 +698,10 @@
         })()),
       areaField("Summary", state.style_summary, (v) => { state.style_summary = v; update(); }, { rows: 3, placeholder: "One or two sentences describing the visual system" }));
 
-    const anchors = card("sec-anchors", "Anchors and source content", null,
-      listField("style_fidelity_anchors", "Style fidelity anchors", "What must stay visible. Start each with [CORE] or [FLEX] if you like."),
-      h("div", { style: "height:14px" }),
+    const anchors = card("sec-anchors", "Style anchors", null,
+      listField("style_fidelity_anchors", "Style fidelity anchors", "What must stay visible. Start each with [CORE] or [FLEX] if you like."));
+
+    const source = card("sec-source", "Source content to avoid", null,
       listField("source_content_to_avoid", "Source content to avoid", "Logos, slogans, people or layouts from the reference that must not be copied."));
 
     const rules = card("sec-rules", "Rules", null,
@@ -703,21 +711,53 @@
       h("div", { style: "height:14px" }),
       listField("avoid", "Avoid"));
 
-    const sectionCards = SECTION_DEFS.map(sectionEditor);
-    sectionsEl.append(basics, envSection(), anchors, ...sectionCards, rules, promptSection(), examplesSection());
+    const [visual, treatment, composition, typography, palette] = SECTION_DEFS.map(sectionEditor);
+    const byId = {};
+    for (const el of [basics, anchors, visual, treatment, composition, typography, palette, source, rules, negativeCard(), envSection(), promptSection(), examplesSection()]) byId[el.id] = el;
 
-    const jump = $("#jump");
-    jump.replaceChildren(...[["sec-basics", "Basics"], ["sec-env", "Variables"], ["sec-anchors", "Anchors"], ["sec-visual_deconstruction", "Visual"], ["sec-composition", "Composition"], ["sec-typography", "Typography"], ["sec-color_palette", "Color"], ["sec-rules", "Rules"], ["sec-prompt", "Prompt"], ["sec-examples", "Examples"]].map(([id, label]) => h("a", { href: "#" + id, onclick: (e) => { e.preventDefault(); goTo(id); } }, label)),
-      h("span", { class: "spacer" }),
-      h("button", { type: "button", onclick: () => setAllCollapsed(true) }, "Collapse all"),
-      h("button", { type: "button", onclick: () => setAllCollapsed(false) }, "Expand all"));
+    const nav = $("#groupNav");
+    nav.replaceChildren();
+    GROUPS.forEach((group, index) => {
+      const cards = group.cards.map((id) => byId[id]);
+      const chips = h("div", { class: "group-tools" },
+        h("span", { class: "chips" }, cards.map((el) => h("button", { type: "button", class: "chip plain", onclick: () => goTo(el.id) }, $("h2", el).textContent))),
+        h("span", { class: "spacer" }),
+        h("button", { type: "button", class: "chip plain", onclick: () => setAllCollapsed(true) }, "Collapse all"),
+        h("button", { type: "button", class: "chip plain", onclick: () => setAllCollapsed(false) }, "Expand all"));
+      const prev = GROUPS[index - 1];
+      const next = GROUPS[index + 1];
+      const footer = h("div", { class: "group-footer" },
+        prev ? h("button", { type: "button", onclick: () => setGroup(prev.id, true) }, "← " + prev.label) : h("span"),
+        next ? h("button", { type: "button", class: "primary", onclick: () => setGroup(next.id, true) }, "Next: " + next.label + " →") : h("span"));
+      const wrap = h("div", { class: "group", id: "group-" + group.id, hidden: group.id !== activeGroup }, h("h2", { class: "group-title" }, group.label, h("small", {}, group.hint)), chips, ...cards, footer);
+      sectionsEl.append(wrap);
+      nav.append(h("button", { type: "button", class: "gn" + (group.id === activeGroup ? " is-active" : ""), "data-group": group.id, onclick: () => setGroup(group.id, true) },
+        h("span", { class: "gn-num" }, String(index + 1)), h("span", { class: "gn-text" }, h("b", {}, group.label), h("small", {}, group.hint)), h("span", { class: "gn-dot" })));
+    });
     update();
+  }
+
+  const GROUPS = [
+    { id: "identity", label: "Identity", hint: "Name and category", cards: ["sec-basics"] },
+    { id: "look", label: "Look", hint: "The visual system", cards: ["sec-anchors", "sec-visual_deconstruction", "sec-treatment", "sec-composition", "sec-typography", "sec-color_palette"] },
+    { id: "guardrails", label: "Guardrails", hint: "What to avoid", cards: ["sec-source", "sec-rules", "sec-negative"] },
+    { id: "prompt", label: "Prompt", hint: "Template and examples", cards: ["sec-env", "sec-prompt", "sec-examples"] },
+  ];
+  let activeGroup = "identity";
+
+  function setGroup(id, scroll) {
+    activeGroup = id;
+    for (const g of document.querySelectorAll(".group")) g.hidden = g.id !== "group-" + id;
+    for (const b of document.querySelectorAll("#groupNav .gn")) b.classList.toggle("is-active", b.dataset.group === id);
+    focusedSection = "";
+    markFocused();
+    if (scroll) window.scrollTo({ top: Math.max(0, $(".workspace").offsetTop - 60), behavior: "smooth" });
   }
 
   let slugInput;
 
   function setAllCollapsed(collapsed) {
-    for (const el of document.querySelectorAll("section.card")) {
+    for (const el of document.querySelectorAll(".group:not([hidden]) section.card")) {
       el.classList.toggle("collapsed", collapsed);
       $("h2", el).setAttribute("aria-expanded", String(!collapsed));
     }
@@ -838,7 +878,10 @@
     renderJsonView(data, errKeys);
     const badSections = new Set([...errKeys].map((k) => KEY_SECTION[k]));
     for (const el of document.querySelectorAll("section.card")) el.classList.toggle("has-error", badSections.has(el.id));
-    for (const a of document.querySelectorAll("#jump a")) a.classList.toggle("bad", badSections.has(a.getAttribute("href").slice(1)));
+    for (const b of document.querySelectorAll("#groupNav .gn")) {
+      const group = GROUPS.find((g) => g.id === b.dataset.group);
+      b.classList.toggle("bad", group.cards.some((id) => badSections.has(id)));
+    }
     syncRaw();
     renderPromptPreview();
     saveDraft();
