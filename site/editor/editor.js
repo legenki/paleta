@@ -345,8 +345,31 @@
   const sectionsEl = $("#sections");
   const counters = [];
 
+  // Minimal 24x24 stroke icons (Lucide-style paths), inherit currentColor.
+  const ICONS = {
+    "sec-basics": '<path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"/>',
+    "sec-env": '<path d="M8 3H7a2 2 0 0 0-2 2v5a2 2 0 0 1-2 2 2 2 0 0 1 2 2v5a2 2 0 0 0 2 2h1"/><path d="M16 21h1a2 2 0 0 0 2-2v-5a2 2 0 0 1 2-2 2 2 0 0 1-2-2V5a2 2 0 0 0-2-2h-1"/>',
+    "sec-anchors": '<circle cx="12" cy="5" r="3"/><path d="M12 22V8"/><path d="M5 12H2a10 10 0 0 0 20 0h-3"/>',
+    "sec-visual_deconstruction": '<path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/>',
+    "sec-treatment": '<path d="m9.06 11.9 8.07-8.06a2.85 2.85 0 1 1 4.03 4.03l-8.06 8.08"/><path d="M7.07 14.94c-1.66 0-3 1.35-3 3.02 0 1.33-2.5 1.52-2 2.02 1.08 1.1 2.49 2.02 4 2.02 2.2 0 4-1.8 4-4.04a3.01 3.01 0 0 0-3-3.02Z"/>',
+    "sec-composition": '<rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/>',
+    "sec-typography": '<path d="M4 7V4h16v3"/><path d="M9 20h6"/><path d="M12 4v16"/>',
+    "sec-color_palette": '<circle cx="13.5" cy="6.5" r=".6"/><circle cx="17.5" cy="10.5" r=".6"/><circle cx="8.5" cy="7.5" r=".6"/><circle cx="6.5" cy="12.5" r=".6"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.93 0 1.5-.67 1.5-1.5 0-.4-.15-.75-.4-1-.23-.27-.38-.63-.38-1 0-.83.67-1.5 1.5-1.5H16c3.31 0 6-2.69 6-6 0-4.96-4.49-9-10-9Z"/>',
+    "sec-rules": '<path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>',
+    "sec-prompt": '<path d="m4 17 6-6-6-6"/><path d="M12 19h8"/>',
+    "sec-examples": '<rect x="8" y="8" width="14" height="14" rx="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/>',
+  };
+
+  function icon(id) {
+    const path = ICONS[id];
+    if (!path) return null;
+    const span = h("span", { class: "h-icon", "aria-hidden": "true" });
+    span.innerHTML = `<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">${path}</svg>`;
+    return span;
+  }
+
   function card(id, title, desc, ...body) {
-    const head = h("h2", { tabindex: "0", role: "button", "aria-expanded": "true" }, title);
+    const head = h("h2", { tabindex: "0", role: "button", "aria-expanded": "true" }, icon(id), title);
     const el = h("section", { class: "card", id }, head, desc ? h("p", { class: "desc" }, desc) : null, ...body);
     const toggle = () => {
       const collapsed = el.classList.toggle("collapsed");
