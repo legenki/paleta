@@ -2,7 +2,6 @@ const data = window.COOKBOOK_STYLES || { styles: [], categories: [], styleCount:
 
 const RESERVED_HASHES = new Set(["", "curator", "featuredTitle", "galleryTitle", "howto"]);
 const REPO_URL = "https://github.com/legenki/paleta";
-const CJK = /[\u3400-\u9fff]/;
 
 function categoryFromUrl() {
   try {
@@ -89,19 +88,9 @@ function haystackFor(style) {
 }
 
 // Each query word becomes a group of alternatives; a style must match every group.
-// Chinese words are expanded through data.zhTerms (e.g. 海报 → poster).
 function queryGroups(query) {
   const groups = [];
-  for (const word of query.toLowerCase().split(/\s+/).filter(Boolean)) {
-    if (CJK.test(word)) {
-      const found = Object.entries(data.zhTerms || {}).filter(([zh]) => word.includes(zh));
-      if (found.length) {
-        for (const [, terms] of found) groups.push(terms);
-        continue;
-      }
-    }
-    groups.push([word]);
-  }
+  for (const word of query.toLowerCase().split(/\s+/).filter(Boolean)) groups.push([word]);
   return groups.map((terms) => terms.map((term) => termPattern(term)));
 }
 
@@ -373,9 +362,7 @@ function renderGrid() {
   if (featuredSection) featuredSection.hidden = filtering;
   if (galleryTitle) galleryTitle.textContent = filtering ? "Results" : "All Styles";
   emptyState.hidden = styles.length > 0;
-  emptyState.textContent = CJK.test(state.query)
-    ? "No matching styles. Try another word, or search in English (e.g. poster, manga, product)."
-    : "No matching styles. Try a broader word or clear a filter.";
+  emptyState.textContent = "No matching styles. Try a broader word or clear a filter.";
 }
 
 function choiceButtons(items, selected, attrName) {

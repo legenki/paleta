@@ -11,7 +11,7 @@ from pathlib import Path
 from typing import Any
 
 import seo_pages
-from search_terms import FAMILY_OVERRIDES, QUICK_TAGS, ZH_TERMS
+from search_terms import FAMILY_OVERRIDES, QUICK_TAGS
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -202,7 +202,6 @@ def build() -> None:
         "styleCount": len(styles),
         "categories": [category for category in GALLERY_CATEGORIES if category in used_categories],
         "quickTags": [label for label, _ in QUICK_TAGS if any(label in s["tags"] for s in styles)],
-        "zhTerms": ZH_TERMS,
         "families": families,
         "styles": styles,
     }
