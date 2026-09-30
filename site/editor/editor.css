@@ -304,3 +304,107 @@ dialog h2 { margin: 0 0 10px; font-size: 16px; }
   .kv .rm { grid-column: 2; grid-row: 2; }
   .topbar { padding: 8px 12px; }
 }
+
+/* --- collapsible cards + status --- */
+section.card > h2:first-child { cursor: pointer; user-select: none; }
+section.card > h2:first-child::before {
+  content: "▾";
+  color: var(--muted);
+  font-size: 12px;
+  width: 12px;
+  transition: transform 0.15s;
+}
+section.card.collapsed > h2:first-child::before { transform: rotate(-90deg); }
+section.card.collapsed > :not(h2:first-child) { display: none; }
+section.card.collapsed { padding-bottom: 12px; }
+section.card > h2:first-child::after {
+  content: "";
+  margin-left: auto;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--ok);
+}
+section.card.has-error > h2:first-child::after { background: var(--danger); }
+section.card.flash { animation: flash 1.2s ease-out; }
+@keyframes flash {
+  0% { box-shadow: 0 0 0 3px var(--accent-text); }
+  100% { box-shadow: 0 0 0 0 transparent; }
+}
+
+.jump { align-items: center; }
+.jump a::before { content: "●"; font-size: 8px; margin-right: 6px; color: var(--ok); vertical-align: 1px; }
+.jump a.bad::before { color: var(--danger); }
+.jump .spacer { flex: 1; }
+.jump button { font-size: 12px; padding: 2px 10px; background: transparent; border-radius: 999px; color: var(--muted); }
+
+/* --- json highlighting --- */
+.panel-body { position: relative; }
+.json-view { padding: 10px 0; font-size: 12px; line-height: 1.55; overflow-x: auto; }
+.jl { padding: 0 10px 0 12px; white-space: pre-wrap; word-break: break-word; border-left: 3px solid transparent; }
+.jl.top { cursor: pointer; }
+.jl.top:hover { background: var(--accent-soft); }
+.jl.focus { background: var(--accent-soft); border-left-color: var(--accent-text); }
+.jl.err { border-left-color: var(--danger); }
+.jl .k1 { color: var(--accent-text); font-weight: 700; }
+.jl .k2 { color: #6cb6ff; }
+:root[data-theme="light"] .jl .k2 { color: #0a5db8; }
+.jl .s { color: #e6b673; }
+:root[data-theme="light"] .jl .s { color: #8a5300; }
+.jl .n { color: #c792ea; }
+.jl .p { color: var(--muted); }
+.ph { color: var(--accent-text); background: var(--accent-soft); border-radius: 4px; }
+.ph.bad { color: var(--danger); background: rgba(255, 107, 94, 0.15); text-decoration: underline wavy var(--danger); }
+
+/* --- raw editor --- */
+textarea.raw { min-height: 380px; tab-size: 2; white-space: pre; overflow: auto; font-size: 12px; }
+.raw-status { margin: 6px 0; font-size: 13px; }
+.raw-status.ok { color: var(--ok); }
+.raw-status.bad { color: var(--danger); }
+
+/* --- prompt overlay editor --- */
+.hl-wrap {
+  position: relative;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+}
+.hl-wrap:focus-within { outline: 2px solid var(--accent-text); outline-offset: 1px; }
+.hl-back, .hl-wrap textarea {
+  margin: 0;
+  padding: 10px 12px;
+  font: 13px/1.6 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  white-space: pre-wrap;
+  word-break: break-word;
+  letter-spacing: 0;
+}
+.hl-back { position: absolute; inset: 0; overflow: hidden; pointer-events: none; color: var(--ink); }
+.hl-wrap textarea {
+  position: relative;
+  display: block;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: transparent;
+  caret-color: var(--ink);
+  resize: none;
+  min-height: 160px;
+}
+.hl-wrap textarea::selection { background: rgba(120, 160, 255, 0.35); color: transparent; }
+.suggest {
+  list-style: none;
+  margin: 4px 0 0;
+  padding: 4px;
+  background: var(--surface-strong);
+  border: 1px solid var(--accent-text);
+  border-radius: 8px;
+  max-height: 180px;
+  overflow: auto;
+}
+.suggest li { padding: 3px 8px; border-radius: 6px; font: 12px ui-monospace, Menlo, monospace; cursor: pointer; }
+.suggest li.on, .suggest li:hover { background: var(--accent-soft); color: var(--accent-text); }
+
+.checks li.link { cursor: pointer; }
+.checks li.link:hover { background: var(--accent-soft); }
+.list-tools { display: flex; gap: 6px; margin-top: 6px; align-items: center; }
+.list-tools button { font-size: 12px; padding: 2px 10px; background: transparent; }

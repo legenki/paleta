@@ -249,15 +249,33 @@
     return acc;
   }
 
+  const KEY_SECTION = {
+    style_name: "sec-basics", style_slug: "sec-basics", style_version: "sec-basics", style_summary: "sec-basics", category: "sec-basics",
+    environment_variables: "sec-env", style_fidelity_anchors: "sec-anchors", source_content_to_avoid: "sec-anchors",
+    visual_deconstruction: "sec-visual_deconstruction", image_treatment: "sec-treatment", photographic_direction: "sec-treatment",
+    composition: "sec-composition", typography: "sec-typography", color_palette: "sec-color_palette",
+    design_rules: "sec-rules", do: "sec-rules", avoid: "sec-rules",
+    prompt_template: "sec-prompt", negative_prompt: "sec-prompt", examples: "sec-examples",
+  };
+
+  function keyOf(msg) {
+    if (/^(variable|duplicate variable|ASPECT_RATIO)/.test(msg)) return "environment_variables";
+    if (/^(example|some example)/.test(msg)) return "examples";
+    if (/^variables not used/.test(msg)) return "prompt_template";
+    const m = /^[a-z_]+/.exec(msg);
+    return m && KEY_SECTION[m[0]] ? m[0] : "";
+  }
+
   function validate(data) {
     const errors = [];
     const warnings = [];
-    const err = (m) => errors.push(m);
+    const err = (m) => errors.push({ msg: m, key: keyOf(m) });
+    const warn = (m) => warnings.push({ msg: m, key: keyOf(m) });
 
     if (!data.style_name) err("style_name is empty");
     if (!data.style_slug) err("style_slug is empty");
     else if (!SLUG_RE.test(data.style_slug)) err("style_slug must be lowercase kebab-case (a-z, 0-9, dashes)");
-    else if (data.style_slug.length > 60) warnings.push("style_slug is longer than 60 characters");
+    else if (data.style_slug.length > 60) warn("style_slug is longer than 60 characters");
     if (data.style_name && data.style_name === data.style_slug) err("style_name must be human-readable, not a duplicate of style_slug");
     if (!data.style_version) err("style_version is empty");
     if (!data.style_summary) err("style_summary is empty");
@@ -286,9 +304,9 @@
       if (isEmptyValue(v)) err(`${key} is empty`);
       else if (typeof v === "object" && !Array.isArray(v)) {
         const need = def.key === "visual_deconstruction" ? 3 : 2;
-        if (Object.keys(v).length < need) warnings.push(`${key}: the schema asks for at least ${need} fields`);
-      } else if (Array.isArray(v) && v.length < 2) warnings.push(`${key}: the schema asks for at least 2 list items`);
-      else if (typeof v === "string") warnings.push(`${key} is plain text; named fields work better`);
+        if (Object.keys(v).length < need) warn(`${key}: the schema asks for at least ${need} fields`);
+      } else if (Array.isArray(v) && v.length < 2) warn(`${key}: the schema asks for at least 2 list items`);
+      else if (typeof v === "string") warn(`${key} is plain text; named fields work better`);
     }
 
     if (!data.prompt_template) err("prompt_template is empty");
@@ -297,7 +315,7 @@
       const undef = [...used].filter((k) => !envKeys.has(k));
       if (undef.length) err("prompt_template uses undefined placeholders: " + undef.map((k) => `{${k}}`).join(", "));
       const unused = Object.keys(env).filter((k) => !used.has(k));
-      if (unused.length) warnings.push("variables not used in prompt_template: " + unused.join(", "));
+      if (unused.length) warn("variables not used in prompt_template: " + unused.join(", "));
     }
     if (!data.negative_prompt) err("negative_prompt is empty");
 
@@ -312,7 +330,7 @@
       }
     });
     const names = data.examples.map((c) => c.case_name).filter(Boolean);
-    if (names.length !== new Set(names).size) warnings.push("some example case names are duplicated");
+    if (names.length !== new Set(names).size) warn("some example case names are duplicated");
 
     for (const [path, text] of allStrings(data, "")) {
       const low = text.toLowerCase();
@@ -328,7 +346,28 @@
   const counters = [];
 
   function card(id, title, desc, ...body) {
-    return h("section", { class: "card", id }, h("h2", {}, title), desc ? h("p", { class: "desc" }, desc) : null, ...body);
+    const head = h("h2", { tabindex: "0", role: "button", "aria-expanded": "true" }, title);
+    const el = h("section", { class: "card", id }, head, desc ? h("p", { class: "desc" }, desc) : null, ...body);
+    const toggle = () => {
+      const collapsed = el.classList.toggle("collapsed");
+      head.setAttribute("aria-expanded", String(!collapsed));
+    };
+    head.addEventListener("click", toggle);
+    head.addEventListener("keydown", (e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); toggle(); } });
+    return el;
+  }
+
+  function goTo(id) {
+    const el = document.getElementById(id);
+    if (!el) return;
+    el.classList.remove("collapsed");
+    $("h2", el).setAttribute("aria-expanded", "true");
+    el.scrollIntoView({ behavior: "smooth", block: "start" });
+    el.classList.remove("flash");
+    void el.offsetWidth;
+    el.classList.add("flash");
+    const field = $("input, textarea, select", el);
+    if (field) setTimeout(() => field.focus({ preventScroll: true }), 350);
   }
 
   function textField(label, value, onInput, opts = {}) {
@@ -355,10 +394,23 @@
       count.textContent = `${n}/${min}+`;
       count.className = "count " + (n >= min ? "ok" : "bad");
     };
-    ta.addEventListener("input", () => { state.lists[field] = ta.value; autosize(ta); refresh(); update(); });
+    const dupes = h("span", { class: "count bad", hidden: true });
+    const refreshDupes = () => {
+      const items = lines(ta.value);
+      const n = items.length - new Set(items).size;
+      dupes.hidden = n === 0;
+      dupes.textContent = `${n} duplicate${n === 1 ? "" : "s"}`;
+    };
+    ta.addEventListener("input", () => { state.lists[field] = ta.value; autosize(ta); refresh(); refreshDupes(); update(); });
     refresh();
+    refreshDupes();
     requestAnimationFrame(() => autosize(ta));
-    return h("div", { class: "field" }, h("h2", { style: "font-size:14px;margin:0 0 4px" }, title, count), desc ? h("p", { class: "desc", style: "margin:0 0 6px" }, desc) : null, ta);
+    const apply = (items) => { ta.value = items.join("\n"); ta.dispatchEvent(new Event("input")); };
+    const tools = h("div", { class: "list-tools" },
+      h("button", { type: "button", onclick: () => apply(lines(ta.value).sort((a, b) => a.localeCompare(b))) }, "Sort A→Z"),
+      h("button", { type: "button", onclick: () => apply([...new Set(lines(ta.value))]) }, "Remove duplicates"),
+      dupes);
+    return h("div", { class: "field" }, h("h2", { style: "font-size:14px;margin:0 0 4px" }, title, count), desc ? h("p", { class: "desc", style: "margin:0 0 6px" }, desc) : null, ta, tools);
   }
 
   function kvRows(rows, suggestions, onChange, { keyPlaceholder = "key", valuePlaceholder = "value", rerender }) {
@@ -452,6 +504,7 @@
   let promptChipsEl;
   function renderPromptChips() {
     if (!promptChipsEl) return;
+    if (typeof paintPromptBack === "function") paintPromptBack();
     const template = state.prompt_template;
     const used = new Set([...template.matchAll(PLACEHOLDER_RE)].map((m) => m[1]));
     promptChipsEl.replaceChildren(...state.env.map((r) => r.k.trim()).filter(Boolean).map((k) =>
@@ -469,19 +522,87 @@
     ta.setSelectionRange(start + token.length, start + token.length);
     state.prompt_template = ta.value;
     autosize(ta);
+    paintPromptBack();
     renderPromptChips();
     update();
   }
 
+  let promptBack, suggestEl, suggestItems = [], suggestIndex = 0;
+
+  function paintPromptBack() {
+    if (!promptBack) return;
+    const keys = new Set(state.env.map((r) => r.k.trim()).filter(Boolean));
+    const frag = document.createDocumentFragment();
+    for (const part of promptArea.value.split(/(\{[A-Za-z0-9_]+\})/)) {
+      const m = /^\{([A-Za-z0-9_]+)\}$/.exec(part);
+      if (m) frag.append(h("span", { class: "ph" + (keys.has(m[1]) ? "" : " bad") }, part));
+      else frag.append(document.createTextNode(part));
+    }
+    frag.append(document.createTextNode("\n "));
+    promptBack.replaceChildren(frag);
+  }
+
+  function closeSuggest() { suggestEl.hidden = true; suggestItems = []; }
+
+  function updateSuggest() {
+    const caret = promptArea.selectionStart;
+    const m = /\{([A-Z0-9_]*)$/.exec(promptArea.value.slice(0, caret));
+    if (!m) return closeSuggest();
+    const keys = state.env.map((r) => r.k.trim()).filter((k) => k && k.startsWith(m[1]));
+    if (!keys.length) return closeSuggest();
+    suggestItems = keys;
+    suggestIndex = 0;
+    suggestEl.hidden = false;
+    paintSuggest();
+  }
+
+  function paintSuggest() {
+    suggestEl.replaceChildren(...suggestItems.map((k, i) =>
+      h("li", { class: i === suggestIndex ? "on" : "", onmousedown: (e) => { e.preventDefault(); acceptSuggest(k); } }, `{${k}}`)));
+  }
+
+  function acceptSuggest(key) {
+    const caret = promptArea.selectionStart;
+    const before = promptArea.value.slice(0, caret).replace(/\{[A-Z0-9_]*$/, "");
+    const after = promptArea.value.slice(caret).replace(/^[A-Z0-9_]*\}?/, "");
+    promptArea.value = `${before}{${key}}${after}`;
+    const pos = before.length + key.length + 2;
+    promptArea.setSelectionRange(pos, pos);
+    closeSuggest();
+    promptArea.dispatchEvent(new Event("input"));
+  }
+
   function promptSection() {
-    promptArea = h("textarea", { class: "mono", rows: 10 });
+    promptArea = h("textarea", { class: "mono", rows: 10, spellcheck: "false", "aria-label": "Prompt template" });
     promptArea.value = state.prompt_template;
-    promptArea.addEventListener("input", () => { state.prompt_template = promptArea.value; autosize(promptArea); renderPromptChips(); update(); });
+    promptBack = h("pre", { class: "hl-back", "aria-hidden": "true" });
+    suggestEl = h("ul", { class: "suggest", role: "listbox", hidden: true });
+    promptArea.addEventListener("input", () => {
+      state.prompt_template = promptArea.value;
+      autosize(promptArea);
+      paintPromptBack();
+      renderPromptChips();
+      updateSuggest();
+      update();
+    });
+    promptArea.addEventListener("keydown", (e) => {
+      if (suggestEl.hidden) return;
+      if (e.key === "ArrowDown" || e.key === "ArrowUp") {
+        e.preventDefault();
+        suggestIndex = (suggestIndex + (e.key === "ArrowDown" ? 1 : -1) + suggestItems.length) % suggestItems.length;
+        paintSuggest();
+      } else if (e.key === "Enter" || e.key === "Tab") {
+        e.preventDefault();
+        acceptSuggest(suggestItems[suggestIndex]);
+      } else if (e.key === "Escape") closeSuggest();
+    });
+    promptArea.addEventListener("blur", () => setTimeout(closeSuggest, 120));
+    promptArea.addEventListener("click", updateSuggest);
     promptChipsEl = h("div", { class: "chips", style: "margin-bottom:10px" });
-    requestAnimationFrame(() => autosize(promptArea));
+    requestAnimationFrame(() => { autosize(promptArea); paintPromptBack(); });
     renderPromptChips();
-    return card("sec-prompt", "Prompt template", "Click a variable to insert it. Green = used in the template. Do not mention an aspect ratio here: it is set in the generator.",
-      promptChipsEl, promptArea,
+    return card("sec-prompt", "Prompt template", "Type { to autocomplete a variable, or click a chip. Green = defined, red wavy = undefined. Do not mention an aspect ratio here: it is set in the generator.",
+      promptChipsEl, h("div", { class: "hl-wrap" }, promptBack, promptArea), suggestEl,
       h("div", { style: "height:12px" }),
       areaField("Negative prompt", state.negative_prompt, (v) => { state.negative_prompt = v; update(); }, { rows: 2 }));
   }
@@ -563,15 +684,114 @@
     sectionsEl.append(basics, envSection(), anchors, ...sectionCards, rules, promptSection(), examplesSection());
 
     const jump = $("#jump");
-    jump.replaceChildren(...[["sec-basics", "Basics"], ["sec-env", "Variables"], ["sec-anchors", "Anchors"], ["sec-visual_deconstruction", "Visual"], ["sec-composition", "Composition"], ["sec-typography", "Typography"], ["sec-color_palette", "Color"], ["sec-rules", "Rules"], ["sec-prompt", "Prompt"], ["sec-examples", "Examples"]].map(([id, label]) => h("a", { href: "#" + id }, label)));
+    jump.replaceChildren(...[["sec-basics", "Basics"], ["sec-env", "Variables"], ["sec-anchors", "Anchors"], ["sec-visual_deconstruction", "Visual"], ["sec-composition", "Composition"], ["sec-typography", "Typography"], ["sec-color_palette", "Color"], ["sec-rules", "Rules"], ["sec-prompt", "Prompt"], ["sec-examples", "Examples"]].map(([id, label]) => h("a", { href: "#" + id, onclick: (e) => { e.preventDefault(); goTo(id); } }, label)),
+      h("span", { class: "spacer" }),
+      h("button", { type: "button", onclick: () => setAllCollapsed(true) }, "Collapse all"),
+      h("button", { type: "button", onclick: () => setAllCollapsed(false) }, "Expand all"));
     update();
   }
 
   let slugInput;
 
+  function setAllCollapsed(collapsed) {
+    for (const el of document.querySelectorAll("section.card")) {
+      el.classList.toggle("collapsed", collapsed);
+      $("h2", el).setAttribute("aria-expanded", String(!collapsed));
+    }
+  }
+
   /* ---------- panel ---------- */
 
   let lastData = null;
+  let focusedSection = "";
+
+  const TOKEN_RE = /("(?:[^"\\]|\\.)*")|(-?\d+(?:\.\d+)?)|(true|false|null)|([{}\[\],])/g;
+
+  function tokens(text, strClass) {
+    const out = [];
+    let last = 0;
+    for (const m of text.matchAll(TOKEN_RE)) {
+      if (m.index > last) out.push(text.slice(last, m.index));
+      if (m[1]) {
+        const parts = m[1].split(/(\{[A-Z0-9_]+\})/);
+        out.push(h("span", { class: strClass }, ...parts.map((part, i) => (i % 2 ? h("span", { class: "ph" }, part) : part))));
+      } else if (m[2] || m[3]) out.push(h("span", { class: "n" }, m[0]));
+      else out.push(h("span", { class: "p" }, m[0]));
+      last = m.index + m[0].length;
+    }
+    if (last < text.length) out.push(text.slice(last));
+    return out;
+  }
+
+  function renderJsonView(data, errKeys) {
+    const view = $("#tab-json");
+    const scroll = view.parentElement.scrollTop;
+    let topKey = "";
+    const rows = JSON.stringify(data, null, 2).split("\n").map((line) => {
+      const m = /^(\s*)("(?:[^"\\]|\\.)*")(: )?(.*)$/.exec(line);
+      const isTop = m && m[1].length === 2 && m[3];
+      if (isTop) topKey = JSON.parse(m[2]);
+      else if (line === "{" || line === "}") topKey = "";
+      const el = h("div", { class: "jl" + (isTop ? " top" : "") });
+      if (topKey) el.dataset.key = topKey;
+      if (topKey && errKeys.has(topKey)) el.classList.add("err");
+      if (m && m[3]) el.append(m[1], h("span", { class: isTop ? "k1" : "k2" }, m[2]), ": ", ...tokens(m[4], "s"));
+      else el.append(...tokens(line, "s"));
+      return el;
+    });
+    view.replaceChildren(...rows);
+    view.parentElement.scrollTop = scroll;
+    markFocused();
+  }
+
+  function markFocused() {
+    for (const el of document.querySelectorAll("#tab-json .jl")) {
+      el.classList.toggle("focus", !!focusedSection && KEY_SECTION[el.dataset.key] === focusedSection);
+    }
+  }
+
+  function scrollJsonToSection() {
+    const view = $("#tab-json");
+    if (!view.classList.contains("is-active")) return;
+    const first = view.querySelector(".jl.focus");
+    if (!first) return;
+    const body = view.parentElement;
+    body.scrollTop = first.offsetTop - view.offsetTop - 40;
+  }
+
+  /* ---------- raw editor ---------- */
+
+  let rawDirty = false;
+
+  function syncRaw() {
+    const raw = $("#rawText");
+    if (!raw || rawDirty || document.activeElement === raw) return;
+    raw.value = JSON.stringify(lastData, null, 2);
+    setRawStatus("");
+  }
+
+  function setRawStatus(text, ok) {
+    const el = $("#rawStatus");
+    el.textContent = text;
+    el.className = "raw-status" + (text ? (ok ? " ok" : " bad") : "");
+  }
+
+  function checkRaw() {
+    const text = $("#rawText").value;
+    try { JSON.parse(text); setRawStatus("✓ Valid JSON", true); return true; }
+    catch (e) {
+      let where = "";
+      const lc = /line (\d+) column (\d+)/.exec(e.message);
+      const pos = /position (\d+)/.exec(e.message);
+      if (lc) where = ` (line ${lc[1]}, column ${lc[2]})`;
+      else if (pos) {
+        const before = text.slice(0, Number(pos[1])).split("\n");
+        where = ` (line ${before.length}, column ${before[before.length - 1].length + 1})`;
+      }
+      setRawStatus("✕ " + e.message.replace(/ in JSON at position \d+.*$/, "").replace(/ \(line.*$/, "") + where, false);
+      return false;
+    }
+  }
 
   function update() {
     const data = buildJson();
@@ -581,15 +801,22 @@
     const checks = $("#tab-checks");
     checks.replaceChildren();
     if (!errors.length) checks.append(h("p", { class: "all-good" }, "✓ Passes all validator rules"));
-    const ul = h("ul", { class: "checks" },
-      errors.map((m) => h("li", {}, m)),
-      warnings.map((m) => h("li", { class: "warn" }, m)));
+    const item = (cls) => (m) => {
+      const target = KEY_SECTION[m.key];
+      return h("li", { class: cls + (target ? " link" : ""), title: target ? "Go to field" : null, onclick: target ? () => goTo(target) : null }, m.msg);
+    };
+    const ul = h("ul", { class: "checks" }, errors.map(item("")), warnings.map(item("warn")));
     checks.append(ul);
     const badge = $("#checkBadge");
     badge.textContent = errors.length ? String(errors.length) : "✓";
     badge.classList.toggle("ok", !errors.length);
 
-    $("#tab-json").textContent = JSON.stringify(data, null, 2);
+    const errKeys = new Set(errors.map((m) => m.key).filter(Boolean));
+    renderJsonView(data, errKeys);
+    const badSections = new Set([...errKeys].map((k) => KEY_SECTION[k]));
+    for (const el of document.querySelectorAll("section.card")) el.classList.toggle("has-error", badSections.has(el.id));
+    for (const a of document.querySelectorAll("#jump a")) a.classList.toggle("bad", badSections.has(a.getAttribute("href").slice(1)));
+    syncRaw();
     renderPromptPreview();
     saveDraft();
   }
@@ -655,6 +882,7 @@
 
   function loadState(next, message) {
     state = next;
+    rawDirty = false;
     activeCase = 0;
     renderForm();
     if (message) toast(message);
@@ -721,9 +949,60 @@
       tab.addEventListener("click", () => {
         document.querySelectorAll(".panel-tabs button").forEach((b) => b.classList.toggle("is-active", b === tab));
         document.querySelectorAll(".tab").forEach((t) => t.classList.toggle("is-active", t.id === "tab-" + tab.dataset.tab));
+        if (tab.dataset.tab === "raw") { syncRaw(); checkRaw(); }
+        if (tab.dataset.tab === "json") scrollJsonToSection();
       });
     }
     $("#promptCase").addEventListener("change", renderPromptPreview);
+
+    // raw JSON editor
+    const raw = $("#rawText");
+    raw.addEventListener("input", () => { rawDirty = true; checkRaw(); });
+    raw.addEventListener("keydown", (e) => {
+      if (e.key === "Tab") {
+        e.preventDefault();
+        raw.setRangeText("  ", raw.selectionStart, raw.selectionEnd, "end");
+        raw.dispatchEvent(new Event("input"));
+      }
+    });
+    $("#rawFormat").addEventListener("click", () => {
+      if (!checkRaw()) return;
+      raw.value = JSON.stringify(JSON.parse(raw.value), null, 2);
+      toast("Formatted");
+    });
+    $("#rawApply").addEventListener("click", () => {
+      if (!checkRaw()) return;
+      const err = importJson(raw.value);
+      if (err) setRawStatus("✕ " + err, false);
+      else { rawDirty = false; syncRaw(); setRawStatus("✓ Applied", true); }
+    });
+
+    // JSON view: click a top-level key to jump to its section
+    $("#tab-json").addEventListener("click", (e) => {
+      const line = e.target.closest(".jl.top");
+      if (line) goTo(KEY_SECTION[line.dataset.key]);
+    });
+
+    // form focus highlights the matching keys in the JSON view
+    sectionsEl.addEventListener("focusin", (e) => {
+      const sec = e.target.closest("section.card");
+      if (!sec || sec.id === focusedSection) return;
+      focusedSection = sec.id;
+      markFocused();
+      scrollJsonToSection();
+    });
+
+    $("#copyPromptBtn").addEventListener("click", async () => {
+      try { await navigator.clipboard.writeText($("#promptOut").textContent); toast("Copied prompt"); }
+      catch { toast("Copy failed: select the text manually"); }
+    });
+
+    document.addEventListener("keydown", (e) => {
+      if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === "s") {
+        e.preventDefault();
+        $("#downloadBtn").click();
+      }
+    });
 
     $("#copyBtn").addEventListener("click", async () => {
       const text = JSON.stringify(lastData, null, 2) + "\n";

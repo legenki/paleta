@@ -40,14 +40,25 @@
         <div class="panel-tabs" role="tablist">
           <button type="button" role="tab" data-tab="checks" class="is-active">Checks <span id="checkBadge" class="badge">0</span></button>
           <button type="button" role="tab" data-tab="json">JSON</button>
+          <button type="button" role="tab" data-tab="raw">Edit raw</button>
           <button type="button" role="tab" data-tab="prompt">Prompt preview</button>
         </div>
         <div class="panel-body">
           <div id="tab-checks" class="tab is-active"></div>
-          <pre id="tab-json" class="tab code"></pre>
+          <div id="tab-json" class="tab code json-view" tabindex="0" aria-label="JSON preview"></div>
+          <div id="tab-raw" class="tab">
+            <textarea id="rawText" class="mono raw" spellcheck="false" rows="22" aria-label="Raw style.json"></textarea>
+            <p id="rawStatus" class="raw-status"></p>
+            <div class="row-actions">
+              <button type="button" id="rawFormat">Format</button>
+              <button type="button" class="primary" id="rawApply">Apply to form</button>
+            </div>
+            <p class="hint small">Edit the JSON directly, then apply it to the form. Tab inserts two spaces.</p>
+          </div>
           <div id="tab-prompt" class="tab">
             <label class="inline">Example case <select id="promptCase"></select></label>
             <pre id="promptOut" class="code"></pre>
+            <div class="row-actions"><button type="button" id="copyPromptBtn">Copy prompt</button></div>
             <p class="hint">Aspect ratio is not stored anywhere: choose it in Google Flow (or any generator) when you paste the prompt.</p>
           </div>
         </div>
