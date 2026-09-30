@@ -29,11 +29,11 @@
 </p>
 
 <p align="center">
-  由 <a href="https://x.com/VigoCreativeAI">@VigoCreativeAI</a> 策劃整理，並在 OpenAI Codex 協助下結構化。Star 這個倉庫即可追蹤新的風格更新。
+  由 <a href="https://github.com/legenki">legenki</a> 策劃整理，並在 OpenAI Codex 協助下結構化。Star 這個倉庫即可追蹤新的風格更新。
 </p>
 
 <p align="center">
-  🖼️ <strong><a href="https://prompts.vigocreativeai.com/site/">線上畫廊</a></strong> · 或瀏覽下方 <a href="#all-styles">All Styles 畫廊</a> / <a href="docs/CATALOG.md">完整目錄</a>。
+  🖼️ <strong><a href="https://legenki.github.io/paleta/site/">線上畫廊</a></strong> · 或瀏覽下方 <a href="#all-styles">All Styles 畫廊</a> / <a href="docs/CATALOG.md">完整目錄</a>。
 </p>
 
 ## 快速入口

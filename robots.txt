@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://prompts.vigocreativeai.com/sitemap.xml
+Sitemap: https://legenki.github.io/paleta/sitemap.xml

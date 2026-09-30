@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://github.com/VigoZhao/AI-Visual-Prompt-Cookbook/schemas/style-v2.1.schema.json",
+  "$id": "https://github.com/legenki/paleta/schemas/style-v2.1.schema.json",
   "title": "AI Visual Prompt Cookbook style.json v2.1",
   "type": "object",
   "additionalProperties": false,

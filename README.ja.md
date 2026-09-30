@@ -29,11 +29,11 @@
 </p>
 
 <p align="center">
-  Curated by <a href="https://x.com/VigoCreativeAI">@VigoCreativeAI</a>, structured with assistance from OpenAI Codex. 新しいスタイルを追うには、このリポジトリを Star してください。
+  Curated by <a href="https://github.com/legenki">legenki</a>, structured with assistance from OpenAI Codex. 新しいスタイルを追うには、このリポジトリを Star してください。
 </p>
 
 <p align="center">
-  🖼️ <strong><a href="https://prompts.vigocreativeai.com/site/">オンラインギャラリー</a></strong> · または下の <a href="#all-styles">All Styles ギャラリー</a> / <a href="docs/CATALOG.md">完全なカタログ</a> をご覧ください。
+  🖼️ <strong><a href="https://legenki.github.io/paleta/site/">オンラインギャラリー</a></strong> · または下の <a href="#all-styles">All Styles ギャラリー</a> / <a href="docs/CATALOG.md">完全なカタログ</a> をご覧ください。
 </p>
 
 ## クイックリンク

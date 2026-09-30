@@ -1,7 +1,7 @@
 const data = window.COOKBOOK_STYLES || { styles: [], categories: [], styleCount: 0 };
 
 const RESERVED_HASHES = new Set(["", "curator", "featuredTitle", "galleryTitle", "howto"]);
-const REPO_URL = "https://github.com/VigoZhao/AI-Visual-Prompt-Cookbook";
+const REPO_URL = "https://github.com/legenki/paleta";
 const CJK = /[\u3400-\u9fff]/;
 
 function categoryFromUrl() {
@@ -40,7 +40,6 @@ const detailSheet = document.querySelector(".detail-sheet");
 const detailContent = document.querySelector("#detailContent");
 const toast = document.querySelector("#toast");
 const pullSwitch = document.querySelector("#themePullSwitch");
-let isPullAnimating = false;
 let ignoreUrlSync = false;
 
 function setTheme(theme) {
@@ -54,128 +53,18 @@ function setTheme(theme) {
   if (pullSwitch) {
     const targetTheme = nextTheme === "light" ? "dark" : "light";
     pullSwitch.setAttribute("aria-pressed", String(nextTheme === "light"));
-    pullSwitch.setAttribute("aria-label", `Pull to switch to ${targetTheme} theme`);
-    pullSwitch.title = `Pull to switch to ${targetTheme} theme`;
+    pullSwitch.setAttribute("aria-label", `Switch to ${targetTheme} theme`);
+    pullSwitch.title = `Switch to ${targetTheme} theme`;
   }
 }
 
-function toggleThemeWithPull() {
-  if (isPullAnimating) return;
-  isPullAnimating = true;
-  const currentTheme = document.documentElement.dataset.theme === "light" ? "light" : "dark";
-  const nextTheme = currentTheme === "light" ? "dark" : "light";
-  if (pullSwitch) {
-    pullSwitch.classList.add("lamp-pull--pulling");
-    window.setTimeout(() => {
-      setTheme(nextTheme);
-    }, 150);
-    window.setTimeout(() => {
-      pullSwitch.classList.remove("lamp-pull--pulling");
-      pullSwitch.style.removeProperty("--pull-scale");
-      pullSwitch.style.removeProperty("--bead-offset");
-      isPullAnimating = false;
-    }, 400);
-    return;
-  }
-  setTheme(nextTheme);
-  isPullAnimating = false;
+function toggleTheme() {
+  setTheme(document.documentElement.dataset.theme === "light" ? "dark" : "light");
 }
 
 function setupPullSwitch() {
   if (!pullSwitch) return;
-  let startY = 0;
-  let pullDistance = 0;
-  let isDragging = false;
-  let suppressClick = false;
-  let activePointerId = null;
-
-  function beginPull(clientY) {
-    if (isPullAnimating) return false;
-    isDragging = true;
-    suppressClick = false;
-    pullDistance = 0;
-    startY = clientY;
-    return true;
-  }
-
-  function updatePull(clientY) {
-    if (!isDragging) return;
-    pullDistance = Math.max(0, Math.min(42, clientY - startY));
-    if (pullDistance > 2) suppressClick = true;
-    pullSwitch.style.setProperty("--pull-scale", String(1 + pullDistance / 80));
-    pullSwitch.style.setProperty("--bead-offset", `${pullDistance}px`);
-  }
-
-  function finishPull() {
-    if (!isDragging) return;
-    isDragging = false;
-    activePointerId = null;
-    const shouldToggle = pullDistance >= 22;
-    pullSwitch.style.removeProperty("--pull-scale");
-    pullSwitch.style.removeProperty("--bead-offset");
-    if (shouldToggle) toggleThemeWithPull();
-  }
-
-  pullSwitch.addEventListener("pointerdown", (event) => {
-    if (!beginPull(event.clientY)) return;
-    activePointerId = event.pointerId;
-    pullSwitch.setPointerCapture(event.pointerId);
-  });
-
-  pullSwitch.addEventListener("pointermove", (event) => {
-    if (activePointerId !== event.pointerId) return;
-    updatePull(event.clientY);
-  });
-
-  pullSwitch.addEventListener("pointerup", finishPull);
-  pullSwitch.addEventListener("pointercancel", finishPull);
-
-  pullSwitch.addEventListener("mousedown", (event) => {
-    if (activePointerId !== null || event.button !== 0) return;
-    beginPull(event.clientY);
-  });
-
-  document.addEventListener("mousemove", (event) => {
-    if (activePointerId !== null) return;
-    updatePull(event.clientY);
-  });
-
-  document.addEventListener("mouseup", () => {
-    if (activePointerId !== null) return;
-    finishPull();
-  });
-
-  pullSwitch.addEventListener(
-    "touchstart",
-    (event) => {
-      if (activePointerId !== null || event.touches.length === 0) return;
-      beginPull(event.touches[0].clientY);
-    },
-    { passive: true },
-  );
-
-  pullSwitch.addEventListener(
-    "touchmove",
-    (event) => {
-      if (activePointerId !== null || event.touches.length === 0) return;
-      updatePull(event.touches[0].clientY);
-    },
-    { passive: true },
-  );
-
-  pullSwitch.addEventListener("touchend", () => {
-    if (activePointerId !== null) return;
-    finishPull();
-  });
-
-  pullSwitch.addEventListener("click", (event) => {
-    event.stopPropagation();
-    if (suppressClick) {
-      suppressClick = false;
-      return;
-    }
-    toggleThemeWithPull();
-  });
+  pullSwitch.addEventListener("click", toggleTheme);
 }
 
 function normalize(text) {
@@ -741,7 +630,7 @@ async function loadStarCount() {
   }
   if (!count) {
     try {
-      const response = await fetch("https://api.github.com/repos/VigoZhao/AI-Visual-Prompt-Cookbook");
+      const response = await fetch("https://api.github.com/repos/legenki/paleta");
       if (response.ok) count = String((await response.json()).stargazers_count ?? "");
       try {
         if (count) sessionStorage.setItem("cookbook-stars", count);

@@ -29,11 +29,11 @@
 </p>
 
 <p align="center">
-  Curated by <a href="https://x.com/VigoCreativeAI">@VigoCreativeAI</a>, structured with assistance from OpenAI Codex. Star this repo to follow new style drops.
+  Curated by <a href="https://github.com/legenki">legenki</a>, structured with assistance from OpenAI Codex. Star this repo to follow new style drops.
 </p>
 
 <p align="center">
-  🖼️ <strong><a href="https://prompts.vigocreativeai.com/site/">Browse the online gallery</a></strong> · or jump to the <a href="#all-styles">All Styles gallery</a> / <a href="docs/CATALOG.md">full catalog</a> below.
+  🖼️ <strong><a href="https://legenki.github.io/paleta/site/">Browse the online gallery</a></strong> · or jump to the <a href="#all-styles">All Styles gallery</a> / <a href="docs/CATALOG.md">full catalog</a> below.
 </p>
 
 ## Quick Links
@@ -1431,19 +1431,19 @@ New style submissions should follow the public package shape and validation rule
 
 ## Star History
 
-<a href="https://star-history.com/#VigoZhao/AI-Visual-Prompt-Cookbook&Date">
+<a href="https://star-history.com/#legenki/paleta&Date">
   <picture>
     <source
       media="(prefers-color-scheme: dark)"
-      srcset="https://api.star-history.com/svg?repos=VigoZhao/AI-Visual-Prompt-Cookbook&type=Date&theme=dark"
+      srcset="https://api.star-history.com/svg?repos=legenki/paleta&type=Date&theme=dark"
     >
     <source
       media="(prefers-color-scheme: light)"
-      srcset="https://api.star-history.com/svg?repos=VigoZhao/AI-Visual-Prompt-Cookbook&type=Date"
+      srcset="https://api.star-history.com/svg?repos=legenki/paleta&type=Date"
     >
     <img
       alt="Star History Chart"
-      src="https://api.star-history.com/svg?repos=VigoZhao/AI-Visual-Prompt-Cookbook&type=Date"
+      src="https://api.star-history.com/svg?repos=legenki/paleta&type=Date"
     >
   </picture>
 </a>

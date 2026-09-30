@@ -29,11 +29,11 @@
 </p>
 
 <p align="center">
-  Curated by <a href="https://x.com/VigoCreativeAI">@VigoCreativeAI</a>, structured with assistance from OpenAI Codex. Star repo ini untuk mengikuti rilis gaya baru.
+  Curated by <a href="https://github.com/legenki">legenki</a>, structured with assistance from OpenAI Codex. Star repo ini untuk mengikuti rilis gaya baru.
 </p>
 
 <p align="center">
-  🖼️ <strong><a href="https://prompts.vigocreativeai.com/site/">Jelajahi galeri online</a></strong> · atau lihat <a href="#all-styles">galeri All Styles</a> / <a href="docs/CATALOG.md">katalog lengkap</a> di bawah.
+  🖼️ <strong><a href="https://legenki.github.io/paleta/site/">Jelajahi galeri online</a></strong> · atau lihat <a href="#all-styles">galeri All Styles</a> / <a href="docs/CATALOG.md">katalog lengkap</a> di bawah.
 </p>
 
 ## Tautan Cepat
