@@ -160,7 +160,7 @@
             <li>Swap the variables for your own subject and generate.</li>
           </ol>
           <h2>Variables</h2>
-          <ul class="sp-vars"><li><code>SUBJECT</code> <span>subject</span></li><li><code>SUBJECT_ACTION</code> <span>subject action</span></li><li><code>PRODUCT_OR_PROP</code> <span>product or prop</span></li><li><code>LOCATION</code> <span>location</span></li><li><code>BACKGROUND_ELEMENTS</code> <span>background elements</span></li><li><code>MAIN_TEXT</code> <span>main text</span></li><li><code>SECONDARY_TEXT</code> <span>secondary text</span></li><li><code>ACCENT_SYMBOL</code> <span>accent symbol</span></li><li><code>WARDROBE_STYLE</code> <span>wardrobe style</span></li><li><code>STYLE_FIDELITY_ANCHORS</code> <span>style fidelity anchors</span></li><li><code>SOURCE_CONTENT_TO_AVOID</code> <span>source content to avoid</span></li><li><code>ASPECT_RATIO</code> <span>aspect ratio</span></li></ul>
+          <ul class="sp-vars"><li><code>SUBJECT</code> <span>subject</span></li><li><code>SUBJECT_ACTION</code> <span>subject action</span></li><li><code>PRODUCT_OR_PROP</code> <span>product or prop</span></li><li><code>LOCATION</code> <span>location</span></li><li><code>BACKGROUND_ELEMENTS</code> <span>background elements</span></li><li><code>MAIN_TEXT</code> <span>main text</span></li><li><code>SECONDARY_TEXT</code> <span>secondary text</span></li><li><code>ACCENT_SYMBOL</code> <span>accent symbol</span></li><li><code>WARDROBE_STYLE</code> <span>wardrobe style</span></li><li><code>STYLE_FIDELITY_ANCHORS</code> <span>style fidelity anchors</span></li><li><code>SOURCE_CONTENT_TO_AVOID</code> <span>source content to avoid</span></li></ul>
         </aside>
       </div>
 
@@ -186,8 +186,7 @@
     &quot;ACCENT_SYMBOL&quot;: &quot;separator or decorative symbol&quot;,
     &quot;WARDROBE_STYLE&quot;: &quot;styling direction&quot;,
     &quot;STYLE_FIDELITY_ANCHORS&quot;: &quot;observable style traits that must remain visible&quot;,
-    &quot;SOURCE_CONTENT_TO_AVOID&quot;: &quot;literal source content that generated samples must not recreate&quot;,
-    &quot;ASPECT_RATIO&quot;: &quot;9:16 or 16:9&quot;
+    &quot;SOURCE_CONTENT_TO_AVOID&quot;: &quot;literal source content that generated samples must not recreate&quot;
   },
   &quot;style_fidelity_anchors&quot;: [
     &quot;Full-bleed bright outdoor photographic base with clear blue sky or blue-toned open space occupying a major part of the frame.&quot;,
@@ -222,7 +221,7 @@
     &quot;texture_and_lighting&quot;: &quot;Crisp sunlight, hard shadows, realistic photographic grain, slight motion tension, and clean poster-print contrast.&quot;
   },
   &quot;composition&quot;: {
-    &quot;canvas&quot;: &quot;Use the requested {ASPECT_RATIO} frame as a full-bleed editorial poster, with no outer border or card.&quot;,
+    &quot;canvas&quot;: &quot;Use the requested frame as a full-bleed editorial poster, with no outer border or card.&quot;,
     &quot;type_layer&quot;: &quot;Place massive cropped cream block letters behind the subject, filling more than half the canvas and touching or exceeding the edges.&quot;,
     &quot;photo_layer&quot;: &quot;Use one realistic action photograph that overlaps the type and foreground, with the body or object forming a strong diagonal.&quot;,
     &quot;text_zones&quot;: &quot;Reserve small grid-locked areas for microcopy at the top or mid-left, a stacked bottom-left wordmark area, a bottom-center short line, and a bottom-right numeral or label cluster.&quot;,
@@ -289,7 +288,7 @@
     &quot;No tiny subject floating in empty space; the action must be oversized and physically close.&quot;,
     &quot;No exact source layout duplication where the same word size, body angle, and bottom text arrangement become recognizable.&quot;
   ],
-  &quot;prompt_template&quot;: &quot;Create a {ASPECT_RATIO} full-bleed editorial action poster in the Sunlit Kinetic Block Type Photo Poster style. Style fidelity anchors that must remain visible: {STYLE_FIDELITY_ANCHORS}. Source content to avoid: {SOURCE_CONTENT_TO_AVOID}. Use a realistic bright outdoor photograph as the base: {SUBJECT} {SUBJECT_ACTION} with {PRODUCT_OR_PROP} in {LOCATION}, with {BACKGROUND_ELEMENTS}. Camera and composition: low or close wide-angle perspective, oversized foreground scale, decisive frozen motion, one strong diagonal crossing the frame, the subject cropped by at least one edge. Typography: place immense warm-cream extra-condensed block sans display lettering reading {MAIN_TEXT} behind the subject, filling over half the canvas, cropped by the frame and partially obscured by the action. Add compact white microcopy reading {SECONDARY_TEXT} in tight editorial blocks, plus a small generic {ACCENT_SYMBOL} mark and bottom information clusters in cream. Wardrobe and styling: {WARDROBE_STYLE}. Color system: saturated sky-blue or cyan dominant field, warm cream typography, crisp white microcopy, deep shadows, and one vivid accent color concentrated on the hero prop or wardrobe. Lighting and finish: hard midday sunlight, crisp shadows, high contrast commercial photo realism, slight print-poster grain, no illustration or 3D rendering, no real logos or watermarks. Generate as a 4K ultra-high-resolution raster image.&quot;,
+  &quot;prompt_template&quot;: &quot;Create a full-bleed editorial action poster in the Sunlit Kinetic Block Type Photo Poster style. Style fidelity anchors that must remain visible: {STYLE_FIDELITY_ANCHORS}. Source content to avoid: {SOURCE_CONTENT_TO_AVOID}. Use a realistic bright outdoor photograph as the base: {SUBJECT} {SUBJECT_ACTION} with {PRODUCT_OR_PROP} in {LOCATION}, with {BACKGROUND_ELEMENTS}. Camera and composition: low or close wide-angle perspective, oversized foreground scale, decisive frozen motion, one strong diagonal crossing the frame, the subject cropped by at least one edge. Typography: place immense warm-cream extra-condensed block sans display lettering reading {MAIN_TEXT} behind the subject, filling over half the canvas, cropped by the frame and partially obscured by the action. Add compact white microcopy reading {SECONDARY_TEXT} in tight editorial blocks, plus a small generic {ACCENT_SYMBOL} mark and bottom information clusters in cream. Wardrobe and styling: {WARDROBE_STYLE}. Color system: saturated sky-blue or cyan dominant field, warm cream typography, crisp white microcopy, deep shadows, and one vivid accent color concentrated on the hero prop or wardrobe. Lighting and finish: hard midday sunlight, crisp shadows, high contrast commercial photo realism, slight print-poster grain, no illustration or 3D rendering, no real logos or watermarks. Generate as a 4K ultra-high-resolution raster image.&quot;,
   &quot;negative_prompt&quot;: &quot;real brand logos, Nike, swoosh, signature watermark, creator ID, QR code, copied RUN text, copied Right Now text, copied date range, copied Chinese slogan, runner starting crouch, running shoe hero ad, exact source pose, exact source road and sky arrangement, identifiable athlete likeness, cluttered collage, sticker pack, comic halftone, 3D render, vector-only poster, painterly illustration, low-resolution text, dark studio scene, muted beige palette, tiny distant subject&quot;,
   &quot;examples&quot;: [
     {

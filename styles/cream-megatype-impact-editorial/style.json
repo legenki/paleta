@@ -4,7 +4,6 @@
   "style_slug": "cream-megatype-impact-editorial",
   "style_summary": "Close wide-angle action photographs interlocked with enormous warm-cream condensed background type, cobalt environmental depth, tactile ground or water, and a compact rule-divided editorial information rail.",
   "environment_variables": {
-    "ASPECT_RATIO": "9:16 or 16:9",
     "STYLE_FIDELITY_ANCHORS": "Core and flexible visual relationships",
     "SOURCE_CONTENT_TO_AVOID": "Source identity/content exclusions",
     "SUBJECT": "Activity, connected equipment and environment",
@@ -72,7 +71,7 @@
     "Unreadable headline, invented brands, excessive copy or impossible equipment."
   ],
   "negative_prompt": "No logos, watermark, celebrity likeness, baseball uniform, bat, original slogan, neon lime, starburst, decorative stars, detached limbs, extra fingers, disconnected equipment, illegible words, old-paper tint, giant footer box.",
-  "prompt_template": "Create one full-bleed photographic editorial sports poster in {ASPECT_RATIO}. {STYLE_FIDELITY_ANCHORS} Scene: {SUBJECT}. Exact main words: \"{MAIN_TEXT}\". Exact side annotation: \"{SIDE_TEXT}\". Exact footer copy: \"{FOOTER_TEXT}\". Portrait art direction: {DIRECTION}. For landscape instead: {WIDE_DIRECTION}. Use short information copy only as specified, arranging footer items into compact rule-divided groups. Warm cream condensed type behind the large athlete and near equipment, cool blue environmental depth, physically plausible action and hard daylight. Fine restrained photographic grain and true surface detail; dust/spray only where naturally motivated. Exclude {SOURCE_CONTENT_TO_AVOID}.",
+  "prompt_template": "Create one full-bleed photographic editorial sports poster. {STYLE_FIDELITY_ANCHORS} Scene: {SUBJECT}. Exact main words: \"{MAIN_TEXT}\". Exact side annotation: \"{SIDE_TEXT}\". Exact footer copy: \"{FOOTER_TEXT}\". Portrait art direction: {DIRECTION}. For landscape instead: {WIDE_DIRECTION}. Use short information copy only as specified, arranging footer items into compact rule-divided groups. Warm cream condensed type behind the large athlete and near equipment, cool blue environmental depth, physically plausible action and hard daylight. Fine restrained photographic grain and true surface detail; dust/spray only where naturally motivated. Exclude {SOURCE_CONTENT_TO_AVOID}.",
   "examples": [
     {
       "case_name": "turf-drive",

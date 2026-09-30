@@ -13,8 +13,7 @@
     "MAIN_TEXT": "large poster headline",
     "SECONDARY_TEXT": "small bilingual caption, numbered benefit list, issue/date label, or editorial microcopy",
     "ACCENT_SYMBOL": "thin line, plus sign, bracketed number, crosshair star, dotted square, or small separator",
-    "WARDROBE_STYLE": "if people appear: quiet utilitarian studio clothing, lab coat, soft workwear, or minimal neutral layers",
-    "ASPECT_RATIO": "9:16 or 16:9"
+    "WARDROBE_STYLE": "if people appear: quiet utilitarian studio clothing, lab coat, soft workwear, or minimal neutral layers"
   },
   "style_fidelity_anchors": [
     "Preserve the core visual identity: A quiet analog-future editorial poster style using warm cream paper, oversized black neo-grotesk typography, strict grid rules, retro technology still life, pale-blue translucent interface panels, botanical foreground accents, and tiny bilingual information design.",
@@ -95,7 +94,7 @@
     "glossy cyberpunk",
     "neon gamer interface"
   ],
-  "prompt_template": "Create an image in soft-analog-future-editorial-poster-style.\n\nAspect ratio: {ASPECT_RATIO}.\n\nScene: {SUBJECT} is supported by a calm analog-future system that helps them {SUBJECT_ACTION}. The hero prop is {PRODUCT_OR_PROP} placed in {LOCATION}. Include {BACKGROUND_ELEMENTS} as restrained editorial details. If people are visible, wardrobe and styling should be {WARDROBE_STYLE}.\n\nTypography: set the main headline as very large black neo-grotesk type reading \"{MAIN_TEXT}\". Add \"{SECONDARY_TEXT}\" as tiny editorial microcopy, numbered list text, date/issue style labels, or bilingual captioning. Use {ACCENT_SYMBOL} as a sparse graphic mark.\n\nVisual treatment: warm cream paper background, strict grid layout, thin rules, soft daylight, tactile matte materials, gentle paper grain, pale-blue translucent interface panel, botanical foreground accents, and quiet negative space. Keep the design premium, readable, and editorial.\n\nAvoid: watermark, logo, creator ID, QR code, platform UI, copied brand mark, glossy cyberpunk, dark sci-fi, neon gamer interface, childish mascot, busy collage, unreadable text, and cluttered typography.",
+  "prompt_template": "Create an image in soft-analog-future-editorial-poster-style.\n\nScene: {SUBJECT} is supported by a calm analog-future system that helps them {SUBJECT_ACTION}. The hero prop is {PRODUCT_OR_PROP} placed in {LOCATION}. Include {BACKGROUND_ELEMENTS} as restrained editorial details. If people are visible, wardrobe and styling should be {WARDROBE_STYLE}.\n\nTypography: set the main headline as very large black neo-grotesk type reading \"{MAIN_TEXT}\". Add \"{SECONDARY_TEXT}\" as tiny editorial microcopy, numbered list text, date/issue style labels, or bilingual captioning. Use {ACCENT_SYMBOL} as a sparse graphic mark.\n\nVisual treatment: warm cream paper background, strict grid layout, thin rules, soft daylight, tactile matte materials, gentle paper grain, pale-blue translucent interface panel, botanical foreground accents, and quiet negative space. Keep the design premium, readable, and editorial.\n\nAvoid: watermark, logo, creator ID, QR code, platform UI, copied brand mark, glossy cyberpunk, dark sci-fi, neon gamer interface, childish mascot, busy collage, unreadable text, and cluttered typography.",
   "negative_prompt": "watermark, logo, creator ID, QR code, platform UI, copied brand mark, glossy cyberpunk, neon gamer interface, dark dystopian scene, childish mascot, crowded collage, heavy gradient background, decorative blobs, unreadable typography, over-rendered chrome, harsh spotlight, chaotic composition",
   "examples": [
     {

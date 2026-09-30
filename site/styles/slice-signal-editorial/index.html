@@ -160,7 +160,7 @@
             <li>Swap the variables for your own subject and generate.</li>
           </ol>
           <h2>Variables</h2>
-          <ul class="sp-vars"><li><code>ASPECT_RATIO</code> <span>aspect ratio</span></li><li><code>STYLE_FIDELITY_ANCHORS</code> <span>style fidelity anchors</span></li><li><code>SOURCE_CONTENT_TO_AVOID</code> <span>source content to avoid</span></li><li><code>SUBJECT</code> <span>subject</span></li><li><code>ACTION</code> <span>action</span></li><li><code>MAIN_TEXT</code> <span>main text</span></li><li><code>SECONDARY_TEXT</code> <span>secondary text</span></li><li><code>DESIGN_DIRECTION</code> <span>design direction</span></li><li><code>SUBJECT_ACTION</code> <span>subject action</span></li><li><code>PRODUCT_OR_PROP</code> <span>product or prop</span></li><li><code>LOCATION</code> <span>location</span></li><li><code>BACKGROUND_ELEMENTS</code> <span>background elements</span></li><li><code>ACCENT_SYMBOL</code> <span>accent symbol</span></li><li><code>WARDROBE_STYLE</code> <span>wardrobe style</span></li></ul>
+          <ul class="sp-vars"><li><code>STYLE_FIDELITY_ANCHORS</code> <span>style fidelity anchors</span></li><li><code>SOURCE_CONTENT_TO_AVOID</code> <span>source content to avoid</span></li><li><code>SUBJECT</code> <span>subject</span></li><li><code>ACTION</code> <span>action</span></li><li><code>MAIN_TEXT</code> <span>main text</span></li><li><code>SECONDARY_TEXT</code> <span>secondary text</span></li><li><code>DESIGN_DIRECTION</code> <span>design direction</span></li><li><code>SUBJECT_ACTION</code> <span>subject action</span></li><li><code>PRODUCT_OR_PROP</code> <span>product or prop</span></li><li><code>LOCATION</code> <span>location</span></li><li><code>BACKGROUND_ELEMENTS</code> <span>background elements</span></li><li><code>ACCENT_SYMBOL</code> <span>accent symbol</span></li><li><code>WARDROBE_STYLE</code> <span>wardrobe style</span></li></ul>
         </aside>
       </div>
 
@@ -175,7 +175,6 @@
   &quot;style_slug&quot;: &quot;slice-signal-editorial&quot;,
   &quot;style_summary&quot;: &quot;Restrained, sharp experimental editorial posters built from oversized condensed headlines, black-white-and-scarlet blocks, and photographic subjects interrupted by vertical slices.&quot;,
   &quot;environment_variables&quot;: {
-    &quot;ASPECT_RATIO&quot;: &quot;9:16 or 16:9&quot;,
     &quot;STYLE_FIDELITY_ANCHORS&quot;: &quot;Prioritized style anchors&quot;,
     &quot;SOURCE_CONTENT_TO_AVOID&quot;: &quot;Original content to replace&quot;,
     &quot;SUBJECT&quot;: &quot;The person, object, or scene that carries this case&quot;,
@@ -245,7 +244,7 @@
     &quot;Unreadable letterforms, accidental extra text, fake brand marks, or decorative logo-like symbols.&quot;,
     &quot;Random digital corruption, full-frame pixel noise, heavy distress, or slicing so dense that the subject disappears.&quot;
   ],
-  &quot;prompt_template&quot;: &quot;Create a finished experimental editorial poster in {ASPECT_RATIO}.\n{STYLE_FIDELITY_ANCHORS}\nSubject: {SUBJECT}. Visible action or state: {ACTION}.\nRender the exact main headline {MAIN_TEXT} once in oversized uppercase condensed grotesk lettering. Render the exact small supporting line {SECONDARY_TEXT} once. These are the only words in the image; preserve spelling and do not add punctuation or filler copy.\nCase design direction: {DESIGN_DIRECTION}\nDevelop a fresh composition from the case concept. Use selected vertical shutter-like image bands as an intentional graphic structure, not a uniform filter, and let their rhythm interact with the headline and signal-red accent. Preserve a recognizable subject, sharp type edges, strong near-black/cool-off-white contrast, clean hard-edged fields, and useful negative space. Recompose specifically for the requested ratio. Exclude: {SOURCE_CONTENT_TO_AVOID}.&quot;,
+  &quot;prompt_template&quot;: &quot;Create a finished experimental editorial poster.\n{STYLE_FIDELITY_ANCHORS}\nSubject: {SUBJECT}. Visible action or state: {ACTION}.\nRender the exact main headline {MAIN_TEXT} once in oversized uppercase condensed grotesk lettering. Render the exact small supporting line {SECONDARY_TEXT} once. These are the only words in the image; preserve spelling and do not add punctuation or filler copy.\nCase design direction: {DESIGN_DIRECTION}\nDevelop a fresh composition from the case concept. Use selected vertical shutter-like image bands as an intentional graphic structure, not a uniform filter, and let their rhythm interact with the headline and signal-red accent. Preserve a recognizable subject, sharp type edges, strong near-black/cool-off-white contrast, clean hard-edged fields, and useful negative space. Recompose specifically for the requested ratio. Exclude: {SOURCE_CONTENT_TO_AVOID}.&quot;,
   &quot;negative_prompt&quot;: &quot;No source wording, copied poster layout, source-person identity, gossip scene, logos, brand names, watermarks, extra text, misspelled headline, pseudo-lettering, QR codes, UI, random glitch blocks, full-frame pixel noise, heavy grunge, sepia aging, unreadable face, or dense slices that erase the subject.&quot;,
   &quot;examples&quot;: [
     {

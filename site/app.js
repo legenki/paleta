@@ -3,8 +3,6 @@ const data = window.COOKBOOK_STYLES || { styles: [], categories: [], styleCount:
 const RESERVED_HASHES = new Set(["", "curator", "featuredTitle", "galleryTitle", "howto"]);
 const REPO_URL = "https://github.com/VigoZhao/AI-Visual-Prompt-Cookbook";
 const CJK = /[\u3400-\u9fff]/;
-const PORTRAIT_RATIOS = new Set(["9:16", "4:5"]);
-const LANDSCAPE_RATIOS = new Set(["16:9", "5:4"]);
 
 function categoryFromUrl() {
   try {
@@ -25,7 +23,6 @@ const state = {
 const detailState = {
   slug: "",
   exampleIndex: 0,
-  ratio: "16:9",
 };
 
 const searchInput = document.querySelector("#searchInput");
@@ -338,24 +335,15 @@ function hydrate(style) {
   return style;
 }
 
-function defaultRatio(style) {
-  const ratios = style.aspectRatios || [];
-  for (const ratio of ["16:9", "9:16", "4:5", "5:4"]) {
-    if (ratios.includes(ratio)) return ratio;
-  }
-  return ratios[0] || "16:9";
-}
-
 function exampleAt(style, index) {
   hydrate(style);
   const examples = style.examples;
   return examples[Math.max(0, Math.min(index, examples.length - 1))];
 }
 
-function fillValues(style, example, ratio) {
+function fillValues(style, example) {
   hydrate(style);
   const values = { ...(example?.values || {}) };
-  values.ASPECT_RATIO = ratio;
   if (!values.STYLE_FIDELITY_ANCHORS && style.fidelityAnchors.length) {
     values.STYLE_FIDELITY_ANCHORS = style.fidelityAnchors.join(" ");
   }
@@ -368,11 +356,11 @@ function fillValues(style, example, ratio) {
   return values;
 }
 
-function filledPrompt(style, example, ratio) {
+function filledPrompt(style, example) {
   hydrate(style);
-  const values = fillValues(style, example, ratio);
+  const values = fillValues(style, example);
   const template = style.promptTemplate;
-  if (!template) return shortCopyPrompt(style, example, ratio);
+  if (!template) return shortCopyPrompt(style, example);
   return template.replace(/\{([A-Z][A-Z0-9_]*)\}/g, (match, key) => {
     if (!Object.prototype.hasOwnProperty.call(values, key)) return match;
     const value = values[key];
@@ -380,9 +368,9 @@ function filledPrompt(style, example, ratio) {
   });
 }
 
-function shortCopyPrompt(style, example, ratio) {
+function shortCopyPrompt(style, example) {
   hydrate(style);
-  const values = fillValues(style, example, ratio);
+  const values = fillValues(style, example);
   const skip = new Set(["STYLE_FIDELITY_ANCHORS", "SOURCE_CONTENT_TO_AVOID", "NEGATIVE_PROMPT"]);
   const keys = [];
   for (const key of style.variables || []) {
@@ -395,7 +383,7 @@ function shortCopyPrompt(style, example, ratio) {
   const lines = [
     `Use the "${style.name}" visual style as the locked visual system.`,
     "",
-    `Create a ${ratio} image.`,
+    "Create one finished image.",
     "",
   ];
   for (const key of keys) {
@@ -427,13 +415,11 @@ function selectionFor(slug) {
     return {
       style,
       example: exampleAt(style, detailState.exampleIndex),
-      ratio: detailState.ratio,
     };
   }
   return {
     style,
     example: exampleAt(style, 0),
-    ratio: defaultRatio(style),
   };
 }
 
@@ -547,13 +533,10 @@ function variableRows(style, values) {
 function detailTemplate(style) {
   hydrate(style);
   const example = exampleAt(style, detailState.exampleIndex);
-  const ratio = detailState.ratio;
-  const values = fillValues(style, example, ratio);
-  const landscapeOn = LANDSCAPE_RATIOS.has(ratio);
-  const portraitOn = PORTRAIT_RATIOS.has(ratio);
-  const landscapeCaption = ratio === "5:4" ? "16:9 preview · stand-in for 5:4" : "16:9";
-  const portraitCaption = ratio === "4:5" ? "9:16 preview · stand-in for 4:5" : "9:16";
-  const filled = filledPrompt(style, example, ratio);
+  const values = fillValues(style, example);
+  const landscapeCaption = "16:9";
+  const portraitCaption = "9:16";
+  const filled = filledPrompt(style, example);
   const family = familyOf(style);
   const familyBlock = family
     ? `<div class="family-block">
@@ -597,27 +580,21 @@ function detailTemplate(style) {
         <button class="action-button primary" type="button" data-copy-json="${escapeHtml(style.slug)}">Copy style.json</button>
         <button class="action-button" type="button" data-copy-filled="${escapeHtml(style.slug)}">Copy text prompt</button>
       </div>
-      <p class="copy-legend"><strong>style.json</strong> → paste into ChatGPT, Gemini or Claude. <strong>Text prompt</strong> → paste into Midjourney or any image tool; it uses the example case and ratio selected below.</p>
+      <p class="copy-legend"><strong>style.json</strong> → paste into ChatGPT, Gemini or Claude. <strong>Text prompt</strong> → paste into Midjourney or any image tool; it uses the example case selected below. Pick the aspect ratio in your generator.</p>
 
       <div class="detail-controls">
         <div class="control-block">
           <h3>Example case</h3>
           ${casePicker}
         </div>
-        <div class="control-block">
-          <h3>Aspect ratio</h3>
-          <div class="choice-strip" role="group" aria-label="Aspect ratio">
-            ${choiceButtons(style.aspectRatios, ratio, "aspect-ratio")}
-          </div>
-        </div>
       </div>
 
       <div class="detail-images">
-        <figure class="preview-frame${landscapeOn ? " is-emphasized" : ""}">
+        <figure class="preview-frame">
           <img src="${escapeHtml(img16)}" alt="${escapeHtml(style.name)} — ${escapeHtml(caseLabelText)}, 16:9">
           <figcaption>${escapeHtml(sample ? `${caseLabelText} · ${landscapeCaption}` : landscapeCaption)}</figcaption>
         </figure>
-        <figure class="preview-frame preview-frame--portrait${portraitOn ? " is-emphasized" : ""}">
+        <figure class="preview-frame preview-frame--portrait">
           <img src="${escapeHtml(img9)}" alt="${escapeHtml(style.name)} — ${escapeHtml(caseLabelText)}, 9:16">
           <figcaption>${escapeHtml(portraitCaption)}</figcaption>
         </figure>
@@ -711,10 +688,6 @@ function openDetail(slug, options = {}) {
   detailState.slug = slug;
   if (!sameStyle) {
     detailState.exampleIndex = 0;
-    detailState.ratio = defaultRatio(style);
-  }
-  if (style.aspectRatios.length && !style.aspectRatios.includes(detailState.ratio)) {
-    detailState.ratio = defaultRatio(style);
   }
   renderDetail();
   if (!sameStyle && detailSheet) detailSheet.scrollTop = 0;
@@ -836,8 +809,8 @@ async function copyFilled(slug) {
   const selection = selectionFor(slug);
   if (!selection) return;
   await copyText(
-    filledPrompt(selection.style, selection.example, selection.ratio),
-    `Copied ${selection.style.name} text prompt (${selection.ratio})`,
+    filledPrompt(selection.style, selection.example),
+    `Copied ${selection.style.name} text prompt`,
   );
 }
 
@@ -845,7 +818,7 @@ async function copyPrompt(slug) {
   const selection = selectionFor(slug);
   if (!selection) return;
   await copyText(
-    shortCopyPrompt(selection.style, selection.example, selection.ratio),
+    shortCopyPrompt(selection.style, selection.example),
     `Copied short brief for ${selection.style.name}`,
   );
 }
@@ -895,13 +868,6 @@ document.addEventListener("click", (event) => {
   const exampleButton = event.target.closest("[data-example-index]");
   if (exampleButton && detailState.slug) {
     detailState.exampleIndex = Number(exampleButton.dataset.exampleIndex);
-    renderDetail();
-    return;
-  }
-
-  const ratioButton = event.target.closest("[data-aspect-ratio]");
-  if (ratioButton && detailState.slug) {
-    detailState.ratio = ratioButton.dataset.aspectRatio;
     renderDetail();
     return;
   }

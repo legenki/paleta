@@ -15,8 +15,7 @@
     "ACCENT_SYMBOL": "separator or decorative symbol",
     "WARDROBE_STYLE": "styling direction",
     "STYLE_FIDELITY_ANCHORS": "observable style traits that must remain visible",
-    "SOURCE_CONTENT_TO_AVOID": "literal source content that generated samples must not recreate",
-    "ASPECT_RATIO": "9:16 or 16:9"
+    "SOURCE_CONTENT_TO_AVOID": "literal source content that generated samples must not recreate"
   },
   "style_fidelity_anchors": [
     "Charcoal black background with thin vertical mobile-scroll framing and high-density stacked sections.",
@@ -87,7 +86,7 @@
     "Avoid huge empty spaces, centered static layouts, smooth vector-only art, or luxury editorial restraint.",
     "Avoid making the horizontal version look unrelated to the long vertical style."
   ],
-  "prompt_template": "Create an {ASPECT_RATIO} raster poster in the Neon Outdoor Diary Longform Collage Style. Subject: {SUBJECT}. Action: {SUBJECT_ACTION}. Prop or product: {PRODUCT_OR_PROP}. Location: {LOCATION}. Background details: {BACKGROUND_ELEMENTS}. Wardrobe or styling: {WARDROBE_STYLE}. Main graphic text: {MAIN_TEXT}. Secondary microcopy texture: {SECONDARY_TEXT}. Accent symbol: {ACCENT_SYMBOL}. Preserve these style anchors: {STYLE_FIDELITY_ANCHORS}. Avoid this source content: {SOURCE_CONTENT_TO_AVOID}. Use a charcoal black mobile poster canvas, acid green and white slanted headline strips, orange hand-drawn arrows and route-line doodles, rough white cutout borders, torn notebook-paper panels, numbered diary sections, dense social-note annotations, sticker-like labels, gritty outdoor documentary photo collage, paper grain, scuffed texture, and energetic irregular alignment. If vertical, make it feel like an extra-tall continuous scrolling long poster close to the reference image length, with five or more stacked information chapters. If horizontal, compress the same layered diary system into a wide editorial collage without losing density.",
+  "prompt_template": "Create a raster poster in the Neon Outdoor Diary Longform Collage Style. Subject: {SUBJECT}. Action: {SUBJECT_ACTION}. Prop or product: {PRODUCT_OR_PROP}. Location: {LOCATION}. Background details: {BACKGROUND_ELEMENTS}. Wardrobe or styling: {WARDROBE_STYLE}. Main graphic text: {MAIN_TEXT}. Secondary microcopy texture: {SECONDARY_TEXT}. Accent symbol: {ACCENT_SYMBOL}. Preserve these style anchors: {STYLE_FIDELITY_ANCHORS}. Avoid this source content: {SOURCE_CONTENT_TO_AVOID}. Use a charcoal black mobile poster canvas, acid green and white slanted headline strips, orange hand-drawn arrows and route-line doodles, rough white cutout borders, torn notebook-paper panels, numbered diary sections, dense social-note annotations, sticker-like labels, gritty outdoor documentary photo collage, paper grain, scuffed texture, and energetic irregular alignment. If vertical, make it feel like an extra-tall continuous scrolling long poster close to the reference image length, with five or more stacked information chapters. If horizontal, compress the same layered diary system into a wide editorial collage without losing density.",
   "negative_prompt": "No trail running, no marathon race, no race bib, no hydration vest, no trekking poles, no copied Chinese source title, no real platform logo, no watermark, no username, no QR code, no exact source layout recreation, no clean corporate infographic, no minimal white background, no smooth vector-only poster, no luxury editorial layout, no duplicated real person, no brand marks.",
   "examples": [
     {

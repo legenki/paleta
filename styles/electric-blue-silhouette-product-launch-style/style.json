@@ -15,8 +15,7 @@
     "ACCENT_SYMBOL": "tiny status light, separator, or minimal decorative mark",
     "WARDROBE_STYLE": "styling direction for any visible human or tactile element",
     "STYLE_FIDELITY_ANCHORS": "observable style traits that must remain visible",
-    "SOURCE_CONTENT_TO_AVOID": "literal source content that generated samples must not recreate",
-    "ASPECT_RATIO": "9:16 or 16:9"
+    "SOURCE_CONTENT_TO_AVOID": "literal source content that generated samples must not recreate"
   },
   "style_fidelity_anchors": [
     "Nearly black upper field with large areas of empty space.",
@@ -118,7 +117,7 @@
     "Do not turn the style into a bright ecommerce product photo, flat vector poster, or comic illustration.",
     "Do not overexpose the product; the silhouette and blue rim light are the style."
   ],
-  "prompt_template": "Create a {ASPECT_RATIO} premium dark consumer-tech launch poster in an electric-blue silhouette style. Feature {SUBJECT} {SUBJECT_ACTION}, with {PRODUCT_OR_PROP} staged in {LOCATION}. Add {BACKGROUND_ELEMENTS}. Preserve these style anchors: {STYLE_FIDELITY_ANCHORS}. Avoid this source content: {SOURCE_CONTENT_TO_AVOID}. Composition: one centered brandless product silhouette, large black negative space, a glowing electric-blue horizontal platform, blue floor reflection beneath the object, giant cropped blue geometric sans-serif background typography reading \"{MAIN_TEXT}\" behind the product, clean white lower launch copy using \"{SECONDARY_TEXT}\", and a tiny minimal accent mark or status light \"{ACCENT_SYMBOL}\". Lighting: low-key black stage, cyan-blue rim light, glossy edge highlights, soft bloom, haze, deep shadows, no warm accents. Typography: sparse, premium, clean geometric sans-serif, no real logos. Wardrobe or human styling if present: {WARDROBE_STYLE}. Keep the layout minimal, symmetrical, cinematic, and teaser-like rather than dense or feature-heavy.",
+  "prompt_template": "Create a premium dark consumer-tech launch poster in an electric-blue silhouette style. Feature {SUBJECT} {SUBJECT_ACTION}, with {PRODUCT_OR_PROP} staged in {LOCATION}. Add {BACKGROUND_ELEMENTS}. Preserve these style anchors: {STYLE_FIDELITY_ANCHORS}. Avoid this source content: {SOURCE_CONTENT_TO_AVOID}. Composition: one centered brandless product silhouette, large black negative space, a glowing electric-blue horizontal platform, blue floor reflection beneath the object, giant cropped blue geometric sans-serif background typography reading \"{MAIN_TEXT}\" behind the product, clean white lower launch copy using \"{SECONDARY_TEXT}\", and a tiny minimal accent mark or status light \"{ACCENT_SYMBOL}\". Lighting: low-key black stage, cyan-blue rim light, glossy edge highlights, soft bloom, haze, deep shadows, no warm accents. Typography: sparse, premium, clean geometric sans-serif, no real logos. Wardrobe or human styling if present: {WARDROBE_STYLE}. Keep the layout minimal, symmetrical, cinematic, and teaser-like rather than dense or feature-heavy.",
   "negative_prompt": "No Redmi, no AirDots, no Pro wordmark, no wireless earbuds, no earbud charging case, no real brand logos, no copied product silhouette, no copied Chinese headline, no copied date or launch wording, no top-right brand mark, no platform UI, no carousel arrows, no page counter, no social app dots, no watermark, no QR code, no username, no price sticker, no feature cards, no warm badges, no orange or gold accent system, no bright catalog lighting, no lifestyle background, no flat vector art, no comic illustration, no dense multi-object scene, no cluttered HUD interface.",
   "examples": [
     {

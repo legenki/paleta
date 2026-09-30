@@ -4,7 +4,6 @@
   "style_slug": "slice-signal-editorial",
   "style_summary": "Restrained, sharp experimental editorial posters built from oversized condensed headlines, black-white-and-scarlet blocks, and photographic subjects interrupted by vertical slices.",
   "environment_variables": {
-    "ASPECT_RATIO": "9:16 or 16:9",
     "STYLE_FIDELITY_ANCHORS": "Prioritized style anchors",
     "SOURCE_CONTENT_TO_AVOID": "Original content to replace",
     "SUBJECT": "The person, object, or scene that carries this case",
@@ -74,7 +73,7 @@
     "Unreadable letterforms, accidental extra text, fake brand marks, or decorative logo-like symbols.",
     "Random digital corruption, full-frame pixel noise, heavy distress, or slicing so dense that the subject disappears."
   ],
-  "prompt_template": "Create a finished experimental editorial poster in {ASPECT_RATIO}.\n{STYLE_FIDELITY_ANCHORS}\nSubject: {SUBJECT}. Visible action or state: {ACTION}.\nRender the exact main headline {MAIN_TEXT} once in oversized uppercase condensed grotesk lettering. Render the exact small supporting line {SECONDARY_TEXT} once. These are the only words in the image; preserve spelling and do not add punctuation or filler copy.\nCase design direction: {DESIGN_DIRECTION}\nDevelop a fresh composition from the case concept. Use selected vertical shutter-like image bands as an intentional graphic structure, not a uniform filter, and let their rhythm interact with the headline and signal-red accent. Preserve a recognizable subject, sharp type edges, strong near-black/cool-off-white contrast, clean hard-edged fields, and useful negative space. Recompose specifically for the requested ratio. Exclude: {SOURCE_CONTENT_TO_AVOID}.",
+  "prompt_template": "Create a finished experimental editorial poster.\n{STYLE_FIDELITY_ANCHORS}\nSubject: {SUBJECT}. Visible action or state: {ACTION}.\nRender the exact main headline {MAIN_TEXT} once in oversized uppercase condensed grotesk lettering. Render the exact small supporting line {SECONDARY_TEXT} once. These are the only words in the image; preserve spelling and do not add punctuation or filler copy.\nCase design direction: {DESIGN_DIRECTION}\nDevelop a fresh composition from the case concept. Use selected vertical shutter-like image bands as an intentional graphic structure, not a uniform filter, and let their rhythm interact with the headline and signal-red accent. Preserve a recognizable subject, sharp type edges, strong near-black/cool-off-white contrast, clean hard-edged fields, and useful negative space. Recompose specifically for the requested ratio. Exclude: {SOURCE_CONTENT_TO_AVOID}.",
   "negative_prompt": "No source wording, copied poster layout, source-person identity, gossip scene, logos, brand names, watermarks, extra text, misspelled headline, pseudo-lettering, QR codes, UI, random glitch blocks, full-frame pixel noise, heavy grunge, sepia aging, unreadable face, or dense slices that erase the subject.",
   "examples": [
     {

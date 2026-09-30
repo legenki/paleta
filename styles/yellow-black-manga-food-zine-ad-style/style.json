@@ -15,8 +15,7 @@
     "ACCENT_SYMBOL": "separator or decorative symbol",
     "WARDROBE_STYLE": "styling direction",
     "STYLE_FIDELITY_ANCHORS": "observable style traits that must remain visible",
-    "SOURCE_CONTENT_TO_AVOID": "literal source content that generated samples must not recreate",
-    "ASPECT_RATIO": "9:16 or 16:9"
+    "SOURCE_CONTENT_TO_AVOID": "literal source content that generated samples must not recreate"
   },
   "style_fidelity_anchors": [
     "Dominant black, warm yellow, cream white, and small red-green accent palette with yellow occupying big advertising panels.",
@@ -115,7 +114,7 @@
     "Do not make the result photorealistic, 3D, smooth vector, minimalist, or corporate-clean.",
     "Do not use soft beige lifestyle design, low-density whitespace, or muted editorial layouts."
   ],
-  "prompt_template": "Create a {ASPECT_RATIO} raster image in the Yellow Black Manga Food Zine Ad Style. Subject: {SUBJECT}. Subject action: {SUBJECT_ACTION}. Hero product or prop: {PRODUCT_OR_PROP}. Location: {LOCATION}. Background and secondary elements: {BACKGROUND_ELEMENTS}. Main headline text in Chinese: {MAIN_TEXT}. Secondary Chinese copy or microcopy: {SECONDARY_TEXT}. Accent symbol: {ACCENT_SYMBOL}. Wardrobe or styling: {WARDROBE_STYLE}. Preserve these style fidelity anchors: {STYLE_FIDELITY_ANCHORS}. Avoid these source-content elements: {SOURCE_CONTENT_TO_AVOID}. Build a dense black, warm yellow, and cream manga advertorial page with diagonal panel cuts, thick hand-inked keylines, speed hatching, sweat-drop marks, sparkle symbols, one dramatic cropped manga reaction panel, an oversized glossy illustrated hero object in the foreground, boxed Chinese editorial copy, a vertical tag label, a strip of mini comic panels, halftone speckle, scanned paper grain, and imperfect print registration. Keep the style loud, humorous, appetizing or product-focused, high-contrast, and hand-drawn. Change all content from the reference image while keeping the visual language.",
+  "prompt_template": "Create a raster image in the Yellow Black Manga Food Zine Ad Style. Subject: {SUBJECT}. Subject action: {SUBJECT_ACTION}. Hero product or prop: {PRODUCT_OR_PROP}. Location: {LOCATION}. Background and secondary elements: {BACKGROUND_ELEMENTS}. Main headline text in Chinese: {MAIN_TEXT}. Secondary Chinese copy or microcopy: {SECONDARY_TEXT}. Accent symbol: {ACCENT_SYMBOL}. Wardrobe or styling: {WARDROBE_STYLE}. Preserve these style fidelity anchors: {STYLE_FIDELITY_ANCHORS}. Avoid these source-content elements: {SOURCE_CONTENT_TO_AVOID}. Build a dense black, warm yellow, and cream manga advertorial page with diagonal panel cuts, thick hand-inked keylines, speed hatching, sweat-drop marks, sparkle symbols, one dramatic cropped manga reaction panel, an oversized glossy illustrated hero object in the foreground, boxed Chinese editorial copy, a vertical tag label, a strip of mini comic panels, halftone speckle, scanned paper grain, and imperfect print registration. Keep the style loud, humorous, appetizing or product-focused, high-contrast, and hand-drawn. Change all content from the reference image while keeping the visual language.",
   "negative_prompt": "ramen, noodles, pork slices, egg, chopsticks, black ramen bowl, exact screaming eating face, star eyes copied from reference, same story premise, watermark, username, social platform logo, QR code, brand logo, identifiable manga character, photorealistic food photo, polished vector art, 3D render, cinematic realism, minimalist poster, corporate clean layout, soft beige lifestyle palette, smooth gradients, empty whitespace, exact source text",
   "examples": [
     {

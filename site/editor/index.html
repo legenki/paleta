@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>style.json Editor — AI Visual Prompt Cookbook</title>
+    <meta name="description" content="Visual editor for creating and validating style.json files for the AI Visual Prompt Cookbook. Aspect ratio is not part of the JSON: pick it in your generator.">
+    <meta name="robots" content="noindex, follow">
+    <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+    <script>
+      try {
+        document.documentElement.dataset.theme = localStorage.getItem("cookbook-theme") || "dark";
+      } catch {
+        document.documentElement.dataset.theme = "dark";
+      }
+    </script>
+    <link rel="stylesheet" href="editor.css?v=1">
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="back" href="../">← Gallery</a>
+      <h1>style.json Editor</h1>
+      <div class="topbar-actions">
+        <select id="loadExisting" aria-label="Load an existing style">
+          <option value="">Load existing style…</option>
+        </select>
+        <button type="button" id="importBtn">Import JSON</button>
+        <button type="button" id="newBtn">New</button>
+        <button type="button" id="themeBtn" aria-label="Toggle theme">◐</button>
+      </div>
+    </header>
+
+    <div class="layout">
+      <main class="form" id="form">
+        <nav class="jump" id="jump" aria-label="Sections"></nav>
+        <div id="sections"></div>
+      </main>
+
+      <aside class="panel" id="panel">
+        <div class="panel-tabs" role="tablist">
+          <button type="button" role="tab" data-tab="checks" class="is-active">Checks <span id="checkBadge" class="badge">0</span></button>
+          <button type="button" role="tab" data-tab="json">JSON</button>
+          <button type="button" role="tab" data-tab="prompt">Prompt preview</button>
+        </div>
+        <div class="panel-body">
+          <div id="tab-checks" class="tab is-active"></div>
+          <pre id="tab-json" class="tab code"></pre>
+          <div id="tab-prompt" class="tab">
+            <label class="inline">Example case <select id="promptCase"></select></label>
+            <pre id="promptOut" class="code"></pre>
+            <p class="hint">Aspect ratio is not stored anywhere: choose it in Google Flow (or any generator) when you paste the prompt.</p>
+          </div>
+        </div>
+        <div class="panel-actions">
+          <button type="button" class="primary" id="copyBtn">Copy JSON</button>
+          <button type="button" id="downloadBtn">Download style.json</button>
+        </div>
+        <p class="hint small">Save as <code>styles/&lt;slug&gt;/style.json</code> plus <code>preview-16x9.jpg</code> and <code>preview-9x16.jpg</code>, then run <code>python3 scripts/validate-style-json.py</code>.</p>
+      </aside>
+    </div>
+
+    <dialog id="importDialog">
+      <form method="dialog">
+        <h2>Import style.json</h2>
+        <textarea id="importText" rows="12" placeholder="Paste style.json here"></textarea>
+        <label class="inline">…or choose a file <input type="file" id="importFile" accept="application/json,.json"></label>
+        <p class="error" id="importError" hidden></p>
+        <div class="dialog-actions">
+          <button value="cancel">Cancel</button>
+          <button type="button" class="primary" id="importGo">Import</button>
+        </div>
+      </form>
+    </dialog>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+    <script src="../styles-data.js"></script>
+    <script src="editor.js?v=1"></script>
+  </body>
+</html>

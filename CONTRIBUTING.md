@@ -29,6 +29,10 @@ Each public style must include these fields:
 
 The template should preserve the reusable visual system while requiring new subject matter, text, and scene values.
 
+Do not add an `ASPECT_RATIO` variable or mention a fixed ratio in `prompt_template`: the aspect ratio is chosen in the generator, and the validator rejects `ASPECT_RATIO`.
+
+You can build and validate a `style.json` visually with the editor at `site/editor/index.html` (serve `site/` locally, e.g. `python3 -m http.server --directory site`, and open `/editor/`).
+
 ## Preview Image Requirements
 
 - Filenames must be exactly `preview-16x9.jpg` and `preview-9x16.jpg`.

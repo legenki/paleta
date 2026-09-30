@@ -21,8 +21,6 @@ SITE_DIR = ROOT / "site"
 OUTPUT = SITE_DIR / "styles-data.js"
 SAMPLES_DIR = ROOT / "assets" / "samples"
 
-SWITCHABLE_ASPECT_RATIOS = ("16:9", "9:16", "4:5", "5:4")
-RATIO_RE = re.compile(r"\b(\d+:\d+)\b")
 VARIANT_RE = re.compile(r"^(?P<base>.+)-(?:set|part)-\d+$")
 
 GALLERY_CATEGORIES = (
@@ -73,18 +71,6 @@ def first_text_list(items: Any, limit: int) -> list[str]:
         if len(result) == limit:
             break
     return result
-
-
-def aspect_ratios_for(data: dict[str, Any]) -> list[str]:
-    env = data.get("environment_variables")
-    text = ""
-    if isinstance(env, dict) and isinstance(env.get("ASPECT_RATIO"), str):
-        text = env["ASPECT_RATIO"]
-    found: list[str] = []
-    for ratio in RATIO_RE.findall(text):
-        if ratio in SWITCHABLE_ASPECT_RATIOS and ratio not in found:
-            found.append(ratio)
-    return found or ["16:9", "9:16"]
 
 
 def category_for(slug: str, data: dict[str, Any]) -> str:
@@ -205,7 +191,6 @@ def build() -> None:
                 "folder": f"../styles/{slug}/",
                 "anchors": first_text_list(data.get("style_fidelity_anchors"), 6),
                 "variables": variables,
-                "aspectRatios": aspect_ratios_for(data),
                 "jsonText": json_text,
             }
         )

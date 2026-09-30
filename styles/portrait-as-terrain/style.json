@@ -4,7 +4,6 @@
   "style_slug": "portrait-as-terrain",
   "style_summary": "Monochrome human fragments become monumental single-color landscapes inhabited by tiny figures.",
   "environment_variables": {
-    "ASPECT_RATIO": "9:16 or 16:9",
     "STYLE_FIDELITY_ANCHORS": "Prioritized visual anchors",
     "SOURCE_CONTENT_TO_AVOID": "Original identities and story content to replace",
     "SUBJECT": "Invented human portrait and carrier",
@@ -72,7 +71,7 @@
     "Dense credits, invented text or copied source identities."
   ],
   "negative_prompt": "No cowboy hats, horses, film credits, logos, watermarks, extra words, collage boxes, multiple spot colors, glossy 3D lettering, impossible fingers, disembodied extra limbs or generic double exposure.",
-  "prompt_template": "Create a finished art-film poster in {ASPECT_RATIO}. Visual language: monumental human landscape illusion, spare sophisticated editorial design.\n{STYLE_FIDELITY_ANCHORS}\nInvented subject: {SUBJECT}\nSingle continuous visual metaphor: {METAPHOR}\nSpot ink: {COLOR}\nTitle exactly: {MAIN_TEXT}\nSmall subtitle exactly: {SECONDARY_TEXT}\nDesign intention and format adaptation: {DESIGN_DIRECTION}\nTexture: fine dry print grain in color fields, coarse high-contrast black-white photographic human tones; moderate material-specific striations in transformed region, not dirty paper. Hard coherent directional light. Only the two requested text strings. Exclude source content: {SOURCE_CONTENT_TO_AVOID}. No separate picture windows, no transparent double exposure, no unrelated floating scenery, no credits, no logos.",
+  "prompt_template": "Create a finished art-film poster. Visual language: monumental human landscape illusion, spare sophisticated editorial design.\n{STYLE_FIDELITY_ANCHORS}\nInvented subject: {SUBJECT}\nSingle continuous visual metaphor: {METAPHOR}\nSpot ink: {COLOR}\nTitle exactly: {MAIN_TEXT}\nSmall subtitle exactly: {SECONDARY_TEXT}\nDesign intention and format adaptation: {DESIGN_DIRECTION}\nTexture: fine dry print grain in color fields, coarse high-contrast black-white photographic human tones; moderate material-specific striations in transformed region, not dirty paper. Hard coherent directional light. Only the two requested text strings. Exclude source content: {SOURCE_CONTENT_TO_AVOID}. No separate picture windows, no transparent double exposure, no unrelated floating scenery, no credits, no logos.",
   "examples": [
     {
       "case_name": "quiet-harbor",

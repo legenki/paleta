@@ -74,7 +74,6 @@ REQUIRED_ENVIRONMENT_VARIABLES = {
     "SECONDARY_TEXT",
     "ACCENT_SYMBOL",
     "WARDROBE_STYLE",
-    "ASPECT_RATIO",
 }
 
 FORBIDDEN_EXAMPLE_FIELDS = {
@@ -249,6 +248,8 @@ def validate_style_file(style_json: Path, errors: ErrorCollector) -> None:
         missing_env = sorted(REQUIRED_ENVIRONMENT_VARIABLES - env_keys)
         if missing_env:
             errors.add("missing environment_variables keys: " + ", ".join(missing_env))
+        if "ASPECT_RATIO" in env_keys:
+            errors.add("environment_variables must not include ASPECT_RATIO (chosen manually in the generator)")
         for key, value in env.items():
             if not isinstance(key, str) or not key:
                 errors.add("environment_variables keys must be non-empty strings")

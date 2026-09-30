@@ -13,8 +13,7 @@
     "MAIN_TEXT": "main headline or graphic text",
     "SECONDARY_TEXT": "small supporting text or microcopy",
     "ACCENT_SYMBOL": "separator, sticker, symbol, or decorative mark",
-    "WARDROBE_STYLE": "styling, clothing, character, or visual treatment",
-    "ASPECT_RATIO": "9:16 vertical poster or 16:9 horizontal poster"
+    "WARDROBE_STYLE": "styling, clothing, character, or visual treatment"
   },
   "style_fidelity_anchors": [
     "Preserve the core visual identity: A realistic city photograph with an oversized, high-saturation, flat 2D cartoon figure composited on top, plus hand-drawn stars, sparks, arrows, and comic marks.",
@@ -97,7 +96,7 @@
     "dark horror mood",
     "gritty dystopian scene"
   ],
-  "prompt_template": "Create a {ASPECT_RATIO} image in the \"Photo Illustration Overlay Poster\" style.\n\nSubject: {SUBJECT}.\nAction: {SUBJECT_ACTION}.\nProp/Product or interaction object: {PRODUCT_OR_PROP}.\nLocation/photo background: {LOCATION}.\nBackground details: {BACKGROUND_ELEMENTS}.\nMain text: \"{MAIN_TEXT}\".\nSecondary text/category: \"{SECONDARY_TEXT}\".\nAccent doodles and graphic effects: {ACCENT_SYMBOL}.\nCharacter treatment: {WARDROBE_STYLE}.\n\nUse a realistic city street photo as the base layer, then composite one oversized flat 2D cartoon character on top. The character should use high-saturation color blocking, rough hand-drawn linework, exaggerated scale, simple expressive eyes, playful body proportions, and graphic edges. Add small hand-drawn stars, sparks, arrows, motion lines, comic bursts, and doodle marks around the interaction point.\n\nKeep the background photographic and recognizable. Keep the illustrated character deliberately flat, graphic, and poster-like. Avoid copying any watermark, logo, or exact character from the reference image. Avoid plush 3D mascots, full-vector backgrounds, dark gritty mood, cyberpunk, and cluttered small text.",
+  "prompt_template": "Create an image in the \"Photo Illustration Overlay Poster\" style.\n\nSubject: {SUBJECT}.\nAction: {SUBJECT_ACTION}.\nProp/Product or interaction object: {PRODUCT_OR_PROP}.\nLocation/photo background: {LOCATION}.\nBackground details: {BACKGROUND_ELEMENTS}.\nMain text: \"{MAIN_TEXT}\".\nSecondary text/category: \"{SECONDARY_TEXT}\".\nAccent doodles and graphic effects: {ACCENT_SYMBOL}.\nCharacter treatment: {WARDROBE_STYLE}.\n\nUse a realistic city street photo as the base layer, then composite one oversized flat 2D cartoon character on top. The character should use high-saturation color blocking, rough hand-drawn linework, exaggerated scale, simple expressive eyes, playful body proportions, and graphic edges. Add small hand-drawn stars, sparks, arrows, motion lines, comic bursts, and doodle marks around the interaction point.\n\nKeep the background photographic and recognizable. Keep the illustrated character deliberately flat, graphic, and poster-like. Avoid copying any watermark, logo, or exact character from the reference image. Avoid plush 3D mascots, full-vector backgrounds, dark gritty mood, cyberpunk, and cluttered small text.",
   "negative_prompt": "Avoid watermark, copied logo, exact reference character, plush 3D mascot, realistic 3D cartoon rendering, full vector-only background, dark horror mood, gritty dystopian scene, cyberpunk neon city, cluttered small text, unreadable typography, and abstract background.",
   "examples": [
     {

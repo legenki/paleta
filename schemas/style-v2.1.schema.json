@@ -50,6 +50,7 @@
     "environment_variables": {
       "type": "object",
       "additionalProperties": { "type": "string", "minLength": 1 },
+      "propertyNames": { "not": { "const": "ASPECT_RATIO" } },
       "required": [
         "SUBJECT",
         "SUBJECT_ACTION",
@@ -59,8 +60,7 @@
         "MAIN_TEXT",
         "SECONDARY_TEXT",
         "ACCENT_SYMBOL",
-        "WARDROBE_STYLE",
-        "ASPECT_RATIO"
+        "WARDROBE_STYLE"
       ]
     },
     "style_fidelity_anchors": {

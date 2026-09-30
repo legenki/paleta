@@ -9,7 +9,7 @@ Curated by Vigo Zhao (https://x.com/VigoCreativeAI). Source: https://github.com/
 
 1. Pick a style below and open its page, or fetch its raw style.json.
 2. Paste the whole JSON into the chat or image workflow.
-3. Replace the values in `environment_variables` (subject, headline text, aspect ratio...) and generate.
+3. Replace the values in `environment_variables` (subject, headline text...) and generate.
 
 - [Online gallery](https://prompts.vigocreativeai.com/site/): searchable previews of every style
 - [Catalog](https://github.com/VigoZhao/AI-Visual-Prompt-Cookbook/blob/main/docs/CATALOG.md): full list with categories

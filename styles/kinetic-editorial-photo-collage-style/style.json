@@ -15,8 +15,7 @@
     "ACCENT_SYMBOL": "separator or decorative symbol",
     "WARDROBE_STYLE": "styling direction",
     "STYLE_FIDELITY_ANCHORS": "observable style traits that must remain visible",
-    "SOURCE_CONTENT_TO_AVOID": "literal source content that generated samples must not recreate",
-    "ASPECT_RATIO": "9:16 or 16:9"
+    "SOURCE_CONTENT_TO_AVOID": "literal source content that generated samples must not recreate"
   },
   "style_fidelity_anchors": [
     "White poster canvas remains visible around and between layered photographic panels rather than becoming a full-bleed single photo.",
@@ -54,7 +53,7 @@
     "mood": "Youthful, assertive, fast, urban, and campaign-like while staying unbranded."
   },
   "composition": {
-    "canvas": "Use the requested {ASPECT_RATIO} frame as a white poster surface, not a bordered card.",
+    "canvas": "Use the requested frame as a white poster surface, not a bordered card.",
     "photo_panels": "Build the scene from overlapping rectangular photo panels with staggered left and right edges, slight rotations, and visible white gaps.",
     "subject_layer": "Place one realistic action subject near center, crossing the photo-panel stack and partially overlapping drawn marks.",
     "motion_layer": "Add black brush-speed arcs, scratch strokes, and thin white slash lines that point through the movement path.",
@@ -123,7 +122,7 @@
     "No comic halftone, sticker pack, neon cyber trails, painterly illustration, vector-only substitute, or 3D render.",
     "No dense magazine page layout that removes the white negative space."
   ],
-  "prompt_template": "Create a {ASPECT_RATIO} poster image in the Kinetic Editorial Photo Collage visual style. Subject: {SUBJECT}. Action: {SUBJECT_ACTION}. Prop/Product: {PRODUCT_OR_PROP}. Location: {LOCATION}. Background: {BACKGROUND_ELEMENTS}. Main text: {MAIN_TEXT}. Secondary text: {SECONDARY_TEXT}. Accent symbol: {ACCENT_SYMBOL}. Wardrobe/styling: {WARDROBE_STYLE}. Style fidelity anchors: {STYLE_FIDELITY_ANCHORS}. Source content to avoid: {SOURCE_CONTENT_TO_AVOID}. Apply these style rules: use a clean white poster canvas with visible negative space; assemble the scene from staggered overlapping rectangular daylight photo panels with uneven collage edges; place one realistic action subject near the center, frozen in a decisive diagonal movement; add black hand-drawn dry-brush speed arcs, scratch marks, sweeping edge slashes, and thin white motion cuts over the panels; add faint monochrome line-art architecture, racks, rails, or skyline details behind the subject; set the headline in the upper-left corner using tall compressed black uppercase sans-serif type with tight leading; keep color restrained to white, black, daylight sky blue, concrete gray, muted environment tones, and one saturated accent on the prop or wardrobe; keep the finish clean, commercial, editorial, energetic, and unbranded. Avoid real logos, watermarks, platform marks, soccer balls, copied slogans, copied people, and any direct recreation of the source image. Important content rule: preserve the collage typography, ink-motion grammar, panel layering, and white-space density first, then change the subject, action, prop, scene, and text.",
+  "prompt_template": "Create a poster image in the Kinetic Editorial Photo Collage visual style. Subject: {SUBJECT}. Action: {SUBJECT_ACTION}. Prop/Product: {PRODUCT_OR_PROP}. Location: {LOCATION}. Background: {BACKGROUND_ELEMENTS}. Main text: {MAIN_TEXT}. Secondary text: {SECONDARY_TEXT}. Accent symbol: {ACCENT_SYMBOL}. Wardrobe/styling: {WARDROBE_STYLE}. Style fidelity anchors: {STYLE_FIDELITY_ANCHORS}. Source content to avoid: {SOURCE_CONTENT_TO_AVOID}. Apply these style rules: use a clean white poster canvas with visible negative space; assemble the scene from staggered overlapping rectangular daylight photo panels with uneven collage edges; place one realistic action subject near the center, frozen in a decisive diagonal movement; add black hand-drawn dry-brush speed arcs, scratch marks, sweeping edge slashes, and thin white motion cuts over the panels; add faint monochrome line-art architecture, racks, rails, or skyline details behind the subject; set the headline in the upper-left corner using tall compressed black uppercase sans-serif type with tight leading; keep color restrained to white, black, daylight sky blue, concrete gray, muted environment tones, and one saturated accent on the prop or wardrobe; keep the finish clean, commercial, editorial, energetic, and unbranded. Avoid real logos, watermarks, platform marks, soccer balls, copied slogans, copied people, and any direct recreation of the source image. Important content rule: preserve the collage typography, ink-motion grammar, panel layering, and white-space density first, then change the subject, action, prop, scene, and text.",
   "negative_prompt": "soccer player, soccer ball, football, ball trail, kicking a ball, Nike, swoosh, real sportswear logo, team crest, watermark, creator ID, QR code, PLAY LIKE YOU OWN IT, own it slogan, copied slogan, exact source athlete, red sleeveless soccer uniform, rooftop soccer field, turf foreground, copied skyline, three flying illustrated balls, full-bleed single photo, comic halftone, sticker pack, neon trail, 3D render, vector-only graphic, painterly illustration, dense magazine layout, low-resolution text",
   "examples": [
     {

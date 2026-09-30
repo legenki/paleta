@@ -309,7 +309,7 @@ def write_llms_txt(root: Path, styles: list[dict[str, Any]], categories: list[st
         "",
         "1. Pick a style below and open its page, or fetch its raw style.json.",
         "2. Paste the whole JSON into the chat or image workflow.",
-        "3. Replace the values in `environment_variables` (subject, headline text, aspect ratio...) and generate.",
+        "3. Replace the values in `environment_variables` (subject, headline text...) and generate.",
         "",
         f"- [Online gallery]({BASE_URL}/site/): searchable previews of every style",
         f"- [Catalog]({REPO_URL}/blob/main/docs/CATALOG.md): full list with categories",

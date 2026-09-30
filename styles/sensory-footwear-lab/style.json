@@ -4,7 +4,6 @@
   "style_slug": "sensory-footwear-lab",
   "style_summary": "Minimal future-sport product concepts pair tactile podded outsoles with quiet athletic gestures, modular editorial panels, ice-cool architecture and signal-coral accents.",
   "environment_variables": {
-    "ASPECT_RATIO": "9:16 or 16:9",
     "STYLE_FIDELITY_ANCHORS": "Prioritized visual system",
     "SOURCE_CONTENT_TO_AVOID": "Reference content to replace",
     "SUBJECT": "Athlete, gesture and tactile footwear",
@@ -73,7 +72,7 @@
     "A generic shoe catalog grid without a human or sensory idea."
   ],
   "negative_prompt": "No Nike, swoosh, Reebok, brand marks, legible tiny fake copy, watermark, copied source model or exact collage, oversized decorative typography, cluttered HUD, glowing sci-fi circuits, extreme neon, malformed feet or fingers, extra shoes, distorted pod geometry, low-resolution product textures.",
-  "prompt_template": "Create a premium future-sport footwear concept board in {ASPECT_RATIO}.\n{STYLE_FIDELITY_ANCHORS}\nAthlete and gesture: {SUBJECT}\nSetting, modules and palette: {SCENE}\nExact short title: {MAIN_TEXT}. Render only this title once in small clean uppercase grotesk; any secondary labeling must remain tiny and sparse.\nConcept direction: {DESIGN_DIRECTION}\nBuild a refined modular editorial composition from two to four clean image panels with consistent gutters: include one highly legible close product/outsole view and one human-scale athletic or quiet moment. Make the podded sole and body gesture tell one sensory story. Cool ice-blue and graphite architecture, signal-coral outsole details, realistic skin, rubber and knit, polished studio campaign photography. No branding or copied source layout. Exclude: {SOURCE_CONTENT_TO_AVOID}.",
+  "prompt_template": "Create a premium future-sport footwear concept board.\n{STYLE_FIDELITY_ANCHORS}\nAthlete and gesture: {SUBJECT}\nSetting, modules and palette: {SCENE}\nExact short title: {MAIN_TEXT}. Render only this title once in small clean uppercase grotesk; any secondary labeling must remain tiny and sparse.\nConcept direction: {DESIGN_DIRECTION}\nBuild a refined modular editorial composition from two to four clean image panels with consistent gutters: include one highly legible close product/outsole view and one human-scale athletic or quiet moment. Make the podded sole and body gesture tell one sensory story. Cool ice-blue and graphite architecture, signal-coral outsole details, realistic skin, rubber and knit, polished studio campaign photography. No branding or copied source layout. Exclude: {SOURCE_CONTENT_TO_AVOID}.",
   "examples": [
     {
       "case_name": "find-balance",

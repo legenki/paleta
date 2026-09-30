@@ -13,8 +13,7 @@
     "MAIN_TEXT": "large handwritten diary title or location note",
     "SECONDARY_TEXT": "small handwritten date, route, mood note, or short repeated annotation",
     "ACCENT_SYMBOL": "simple doodled underline, star, circle, arrow, spark, stamp, or route marker",
-    "WARDROBE_STYLE": "casual streetwear, backpacks, hoodies, caps, work jackets, sneakers, practical city clothes",
-    "ASPECT_RATIO": "9:16 or 16:9"
+    "WARDROBE_STYLE": "casual streetwear, backpacks, hoodies, caps, work jackets, sneakers, practical city clothes"
   },
   "style_fidelity_anchors": [
     "Preserve the core visual identity: A raw urban snapshot treated like a personal visual diary, combining real public-space photography with bold hand-drawn comic overlays, handwritten travel notes, saturated cartoon faces, and a large foreground gesture.",
@@ -97,7 +96,7 @@
     "clean vector poster",
     "fully animated scene"
   ],
-  "prompt_template": "Create a {ASPECT_RATIO} image in urban-transit-doodle-diary-style featuring {SUBJECT} {SUBJECT_ACTION}, with {PRODUCT_OR_PROP}, set in {LOCATION}. Include {BACKGROUND_ELEMENTS}, main text \"{MAIN_TEXT}\", secondary text \"{SECONDARY_TEXT}\", {ACCENT_SYMBOL}, and {WARDROBE_STYLE}.",
+  "prompt_template": "Create an image in urban-transit-doodle-diary-style featuring {SUBJECT} {SUBJECT_ACTION}, with {PRODUCT_OR_PROP}, set in {LOCATION}. Include {BACKGROUND_ELEMENTS}, main text \"{MAIN_TEXT}\", secondary text \"{SECONDARY_TEXT}\", {ACCENT_SYMBOL}, and {WARDROBE_STYLE}.",
   "negative_prompt": "watermark, username, creator ID, platform logo, QR code, app UI, clean vector poster, fully animated scene, polished ad layout, luxury fashion shoot, empty background, sterile studio, perfect typography, corporate brochure, glossy mascot illustration",
   "examples": [
     {
