@@ -13,8 +13,8 @@
     "MAIN_TEXT": "exact short phrase or name painted in large gothic fileteado lettering",
     "SECONDARY_TEXT": "exact small supporting line painted in a simple signwriter script",
     "ACCENT_SYMBOL": "small symbolic motif such as a heart, star, horseshoe or shield placed on the central axis",
-    "WARDROBE_STYLE": "surface finish and detailing: pearlescent or wood-grain contra-field, gold outline, pearl beads on the letters",
-    "FIELD_COLOR": "dominant dark contra-field color behind the ornament (for example deep red, black, dark brown or midnight blue)",
+    "WARDROBE_STYLE": "surface finish and detailing: gold outline, pearl beads on the letters, visible brush streaks, hand-painted enamel on wood, metal or glass",
+    "FIELD_COLOR": "dominant contra-field color behind the ornament: usually white or ivory, or dark navy blue (deep red or black are also possible)",
     "STYLE_FIDELITY_ANCHORS": "Runtime ordered CORE and FLEX style anchors",
     "SOURCE_CONTENT_TO_AVOID": "Runtime source identities and content to replace"
   },
@@ -23,9 +23,12 @@
     "[CORE] Near-obsessive symmetry: the left and right halves mirror each other around a central axis, or follow a strict asymmetric balance with the heavier mass on the left and the band completing the right.",
     "[CORE] A thick banda with visible volume runs along the border and, together with acanthus leaves, structures the entire layout; a much thinner firulete line accompanies the band at an even distance.",
     "[CORE] Acanthus leaves that end in volutes are the main ornament; each leaf differs slightly in shape or direction, ribs are marked with a brighter tone, and smaller dense spirals (filigree) fill gaps.",
-    "[CORE] Every motif has painted volume: a flat base color first, then a light tone on the side facing the light, a dark tone on the opposite side, and crisp pure-white highlight strokes along ribs and bevels.",
+    "[CORE] Every motif has painted volume: a flat base color first, then a light tone on the side facing the light, a dark tone on the opposite side, and short parallel repique brush strokes plus pure-white highlight strokes along ribs and bevels.",
     "[CORE] Light comes from above or the upper left; each motif casts a hard, flat shadow onto the contra-field on the lower right.",
-    "[CORE] Saturated enamel colors on a dark contra-field: luminous green, ochre or gold, pink, light blue and pure white, with high gloss and strong contrast.",
+    "[CORE] Saturated enamel colors on a white or ivory contra-field, or on a dark navy blue one: luminous green, ochre or gold, pink, light blue and pure white, with strong contrast.",
+    "[CORE] The work must look painted by a human hand with a brush: lines swell and taper with brush pressure, outlines vary slightly in width, small wobbles and tiny overlaps are visible, and color fills show faint bristle streaks and slightly uneven opacity.",
+    "[CORE] Real paint texture: raised enamel ridges at the edges of strokes, small paint pooling in corners, a few brush hairs or tiny pinholes, and a semi-gloss varnished sheen with soft uneven reflections, never a perfect digital gradient.",
+    "[CORE] Ribbons are two-tone: the outer face is light blue or white with blue shading, and the reverse side visible at the folds is pink to rose; folds are shaded and highlighted like folded paper.",
     "[CORE] Lettering uses gothic or highly ornamented fileteado capitals with fish-tail terminals, a projected body toward the lower left, a cast shadow to the right, a bevel highlight and optional pearl beads or an inner color band.",
     "[FLEX] Flat flowers are built from a circle divided into four or five equal concave petals with a small gap between them, an inner shadow and a convex center with white stamens; tulip and bell-shaped flowers may be added.",
     "[FLEX] Ribbons in folded perspective, small round dots (bolitas) and teardrops fill empty spaces and corners; the composition is rich and almost overfull, never sparse.",
@@ -46,34 +49,37 @@
     "ornament_system": "Acanthus leaves with volutas, flat flowers, ribbons, filigree spirals, dots and teardrops, with optional dragons, birds or a cornucopia.",
     "volume_logic": "Concave and convex reading on every form: convex parts lit on top, concave parts shaded on top and lit below, with bright repique strokes on ribs.",
     "lettering": "Gothic fileteado capitals with fish-tail ends, body projected left and down, cast shadow right, bevel highlight and pearls.",
-    "mood": "Warm, proud, festive and handmade: neighborhood craft with a lot of polish."
+    "mood": "Warm, proud, festive and handmade: neighborhood craft with a lot of polish.",
+    "hand_made_signs": "Visible brush pressure, tapered stroke ends, small irregularities in symmetry and line width, bristle streaks inside fills and ridges of enamel at edges."
   },
   "composition": {
     "layout": "One enclosed panel with a painted frame and an even margin; ornament mirrored around a central vertical axis, with lettering on a ribbon, cartouche or central band.",
     "hierarchy": "Central emblem and headline first, then the main acanthus and band structure, then flowers and ribbons, then filigree, dots and firulete.",
     "levels": "Draw the heavier outer level first, then a lighter inner level, keeping an equal gap between them; fill the gap with the thin firulete line.",
-    "density": "Rich and nearly full; leave only small dark pockets of contra-field so that the ornament reads as cut out and glossy.",
+    "density": "Rich and nearly full; leave only small pockets of contra-field so that the ornament reads as cut out and glossy.",
     "crop_behavior": "Keep the whole frame visible inside the image with a thin margin; never crop the panel unless it is shown on a real surface such as a bus side."
   },
   "typography": {
     "headline": "Large gothic or ornamented capital letters with fish-tail terminals, painted in one luminous color with a lighter inner band, a darker projected body, a bevel highlight and optional pearl beads.",
-    "secondary": "Small, clean, upright signwriter capitals in white or ochre with a thin dark outline, set on a ribbon or under the headline.",
+    "secondary": "Small, upright signwriter capitals painted by hand in navy, ochre or white with a thin outline, set on a ribbon or under the headline; slight irregularities in stroke are welcome.",
     "placement": "Center the headline on the axis, on a straight line or a gentle arch; the secondary line sits on a ribbon, a banner or the base of the panel.",
     "spacing": "Even letter spacing with generous word gaps; every letter has the same slant and proportions.",
-    "rule": "Exactly the supplied words, spelled correctly, with no extra letters, numbers or decorative pseudo-text."
+    "rule": "Exactly the supplied words, each string appearing once, spelled correctly, with no repeated lines, extra letters, numbers or decorative pseudo-text. Never a standard serif or sans-serif font: the letters must be painted fileteado capitals."
   },
   "color_palette": {
-    "contra_field": "A dark, saturated field behind everything: deep red, black, dark brown or midnight blue, chosen from FIELD_COLOR.",
+    "contra_field": "A saturated flat field behind everything, chosen from FIELD_COLOR: most often white or ivory, or dark navy blue; deep red or black are possible.",
     "main_colors": "Luminous green and ochre or gold for the two ornament levels, pink and light blue for flowers and ribbons.",
     "highlights": "Pure white for stamens, teeth, pearls, repique strokes and bevel highlights; use sparingly so they glitter.",
-    "shadows": "Darker, saturated versions of each color, plus a hard flat cast shadow in near-black on the field.",
-    "behavior": "High saturation and gloss with strong contrast; no pastels, gradients across the whole panel, neon glow or muted film tones."
+    "shadows": "Darker, saturated versions of each color, plus a hard flat cast shadow in navy or near-black on the field.",
+    "behavior": "High saturation and contrast with painted gloss; no pastels, gradients across the whole panel, neon glow or muted film tones.",
+    "ribbons": "Ribbon faces in light blue or white with blue shading; the reverse side seen at folds in pink to rose."
   },
   "image_treatment": {
-    "rendering_mode": "Hand-painted synthetic enamel look: crisp opaque outlines, smooth flat color areas and precise brush-stroke highlights.",
+    "rendering_mode": "Hand-painted synthetic enamel on a rigid surface, photographed or scanned: visible brushwork, opaque outlines of varying thickness and precise brush-stroke highlights.",
     "lighting": "Painted light only: top-left light side, shaded opposite side, white highlight strokes; no photographic lighting or ambient occlusion.",
-    "finish": "Glossy varnished surface with clean edges and tiny reflections; subtle wear is allowed only when the panel is shown on a real vehicle or sign.",
-    "texture": "Smooth gloss with faint brush direction visible in ribs; no paper grain, halftone or noise overlay."
+    "finish": "Semi-gloss varnish with soft uneven reflections, tiny paint ridges and small imperfections; subtle wear is allowed on real vehicles and signs.",
+    "texture": "Bristle streaks in color fills, tapered stroke ends, paint pooling in corners, fine pinholes and faint brush direction in ribs; no paper grain, halftone or noise overlay.",
+    "handmade_rule": "Never a smooth digital vector look: no perfectly uniform line weight, perfect circles or flawless gradients; keep human irregularity without becoming sloppy."
   },
   "design_rules": [
     "Always enclose the artwork in a painted frame with a visible margin, and keep ornament inside it.",
@@ -81,38 +87,41 @@
     "Give every motif a base color, a light side, a shade side and white highlight strokes, always from the same light direction.",
     "Make the acanthus leaves, volutes and band carry the structure; use flowers, dots, drops and filigree only to fill space.",
     "Paint the lettering as part of the ornament: same colors, same highlights and shadow logic, with a projected body and a cast shadow.",
-    "Keep the palette to luminous saturated enamel colors on a dark field, with pure white reserved for highlights."
+    "Keep the palette to luminous saturated enamel colors on a white, ivory or dark navy field, with pure white reserved for highlights and pink reserved for flowers and ribbon reverse sides.",
+    "Paint it, do not render it: show brush pressure, bristle streaks, enamel ridges and tiny imperfections across ornament, letters and outlines."
   ],
   "do": [
     "Check that the left and right sides mirror each other and that the gap between the band and the inner level is even.",
     "Vary leaf shapes and directions slightly so the ornament feels dynamic, not copy-pasted.",
     "Add repique strokes, bevel highlights and a hard cast shadow on both ornament and letters.",
     "Change the emblem, words, props and field color in every new case while keeping the system.",
-    "Place the exact supplied text on a ribbon, cartouche or central band, large enough to read at thumbnail size."
+    "Place the exact supplied text on a ribbon, cartouche or central band, large enough to read at thumbnail size.",
+    "Show visible hand-painted texture in the fills and at stroke edges, and make every ribbon two-tone with a pink reverse."
   ],
   "avoid": [
-    "Avoid photorealism, 3D render, cinematic lighting, soft airbrush gradients, glow and glitter effects.",
+    "Avoid photorealism, 3D render, cinematic lighting, airbrush, soft vector gradients, glow and glitter effects.",
     "Avoid minimalist layouts, wide empty space, pastel palettes and flat vector icons without painted volume.",
     "Avoid asymmetry that looks accidental, uneven margins, cropped frames and floating ornaments with no frame.",
     "Avoid invented words, extra text, brand marks, flags used literally, watermarks and creator handles.",
-    "Avoid grunge, xerox, halftone, paper grain and distressed print textures."
+    "Avoid grunge, xerox, halftone, paper grain and distressed print textures.",
+    "Avoid a clean digital-vector or sticker look, uniform line weight, serif or sans fonts, and repeating the same text twice."
   ],
-  "prompt_template": "Create one finished {FIELD_COLOR} enamel-painted fileteado porteño panel as a full-bleed raster image. The visual system is a closed, symmetrical panel of acanthus leaves, a thick modeled band, thin firulete lines, flat flowers and ribbons, painted with glossy hand-enamel volume. Prioritized visual anchors:\n{STYLE_FIDELITY_ANCHORS}\nCentral emblem: {SUBJECT}, presented as {SUBJECT_ACTION}. Ornamental props: {PRODUCT_OR_PROP}. Painted on: {LOCATION}. Fill the corners with {BACKGROUND_ELEMENTS}. Place this accent on the central axis: {ACCENT_SYMBOL}. Surface and detailing: {WARDROBE_STYLE}.\nLettering: paint exactly \"{MAIN_TEXT}\" in large gothic fileteado capitals with fish-tail terminals, a projected body, a cast shadow and white bevel highlights. Add exactly the small supporting line \"{SECONDARY_TEXT}\" in clean signwriter capitals. Do not add any other text.\nReplace and avoid this source content: {SOURCE_CONTENT_TO_AVOID}",
-  "negative_prompt": "photorealistic scene, 3D render, cinematic lighting, airbrush gradient, neon glow, pastel palette, minimalist layout, flat vector icon, halftone, paper grain, grunge texture, asymmetrical accidental layout, cropped frame, floating ornament without frame, extra text, misspelled text, invented words, logo, brand mark, literal national flag, watermark, QR code, poster mockup",
+  "prompt_template": "Create one finished {FIELD_COLOR} enamel-painted fileteado porteño panel as a full-bleed raster image. The visual system is a closed, symmetrical panel of acanthus leaves, a thick modeled band, thin firulete lines, flat flowers and ribbons, painted by hand with a brush in semi-gloss enamel, showing bristle streaks, tapered strokes and tiny imperfections. Prioritized visual anchors:\n{STYLE_FIDELITY_ANCHORS}\nCentral emblem: {SUBJECT}, presented as {SUBJECT_ACTION}. Ornamental props: {PRODUCT_OR_PROP}. Painted on: {LOCATION}. Fill the corners with {BACKGROUND_ELEMENTS}. Place this accent on the central axis: {ACCENT_SYMBOL}. Surface and detailing: {WARDROBE_STYLE}.\nLettering: paint exactly \"{MAIN_TEXT}\" in large gothic fileteado capitals with fish-tail terminals, a projected body, a cast shadow and white bevel highlights. Add exactly the small supporting line \"{SECONDARY_TEXT}\" in clean signwriter capitals. Each text string appears exactly once and nothing else is written. Make every ribbon two-tone with a pink reverse side.\nReplace and avoid this source content: {SOURCE_CONTENT_TO_AVOID}",
+  "negative_prompt": "photorealistic scene, 3D render, cinematic lighting, airbrush gradient, digital vector illustration, sticker look, uniform line weight, perfect circles, smooth satin background, serif font, sans-serif font, duplicated text,  neon glow, pastel palette, minimalist layout, flat vector icon, halftone, paper grain, grunge texture, asymmetrical accidental layout, cropped frame, floating ornament without frame, extra text, misspelled text, invented words, logo, brand mark, literal national flag, watermark, QR code, poster mockup",
   "examples": [
     {
       "case_name": "tango-bandoneon",
       "values": {
         "SUBJECT": "An antique bandoneon with pearl buttons and bellows folds, shown front-on as a glossy painted emblem.",
         "SUBJECT_ACTION": "floating on the central axis, held by two mirrored dragons whose tails turn into acanthus volutes",
-        "PRODUCT_OR_PROP": "five-petal pink flowers, two light-blue ribbons, small ochre dots and a horseshoe above the instrument",
+        "PRODUCT_OR_PROP": "five-petal pink flowers, two light-blue ribbons with pink reverse sides, small ochre dots and a horseshoe above the instrument",
         "LOCATION": "the glossy side panel of a vintage Buenos Aires bus",
         "BACKGROUND_ELEMENTS": "dense green filigree spirals, teardrops and tiny white dots in all four corners",
         "MAIN_TEXT": "Tango",
         "SECONDARY_TEXT": "Milonga de los viernes",
         "ACCENT_SYMBOL": "a small ochre heart with white highlight on the central axis under the instrument",
-        "WARDROBE_STYLE": "gold outline on the letters, pearl beads along the headline and a faint wood-grain look on the dark contra-field",
-        "FIELD_COLOR": "deep red"
+        "WARDROBE_STYLE": "gold outline on the letters, pearl beads along the headline and visible bristle streaks in the enamel",
+        "FIELD_COLOR": "dark navy blue"
       }
     },
     {
@@ -126,8 +135,8 @@
         "MAIN_TEXT": "Panadería",
         "SECONDARY_TEXT": "Desde 1952",
         "ACCENT_SYMBOL": "a small white wheat ear in a diamond on the central axis below the headline",
-        "WARDROBE_STYLE": "a thick modeled band in ochre with a thin white firulete, painted on glossy black enamel",
-        "FIELD_COLOR": "black"
+        "WARDROBE_STYLE": "a thick modeled band in ochre with a thin navy firulete, painted by hand on ivory-white enamel",
+        "FIELD_COLOR": "white"
       }
     },
     {
@@ -135,14 +144,14 @@
       "values": {
         "SUBJECT": "A calabash mate gourd with a silver bombilla straw, drawn as a clean convex emblem.",
         "SUBJECT_ACTION": "crowned by a symmetrical pair of acanthus leaves and framed by two curling volutes",
-        "PRODUCT_OR_PROP": "four-petal light-blue flowers, a ribbon wrapped around the base, leaf sprigs and small ochre drops",
+        "PRODUCT_OR_PROP": "four-petal light-blue flowers, a two-tone ribbon with a pink reverse wrapped around the base, leaf sprigs and small ochre drops",
         "LOCATION": "the front of a rectangular yerba mate package label",
         "BACKGROUND_ELEMENTS": "fine filigree spirals and small white pearls scattered around the emblem",
         "MAIN_TEXT": "Mate",
         "SECONDARY_TEXT": "Yerba compañera",
         "ACCENT_SYMBOL": "a small pink flower with white stamens centered above the headline",
-        "WARDROBE_STYLE": "a pearlescent dark green contra-field with a gold outline around the whole frame",
-        "FIELD_COLOR": "dark green"
+        "WARDROBE_STYLE": "a hand-painted navy contra-field with a gold outline around the whole frame and visible brush streaks",
+        "FIELD_COLOR": "dark navy blue"
       }
     },
     {
@@ -150,14 +159,14 @@
       "values": {
         "SUBJECT": "A porcelain coffee cup with steam curling into two mirrored volutes and a small spoon on the saucer.",
         "SUBJECT_ACTION": "resting at the center of a symmetrical wreath of acanthus leaves, flowers and a ribbon",
-        "PRODUCT_OR_PROP": "pink five-petal flowers, tulip flowers with two-tone petals, a light-blue ribbon and small round dots",
+        "PRODUCT_OR_PROP": "pink five-petal flowers, tulip flowers with two-tone petals, a light-blue ribbon with a pink reverse and small round dots",
         "LOCATION": "an enamel plaque hung on the corner of a historic Buenos Aires cafe",
         "BACKGROUND_ELEMENTS": "ochre filigree, teardrops and tiny white bolitas filling every corner",
         "MAIN_TEXT": "Café",
         "SECONDARY_TEXT": "Abierto cada día",
         "ACCENT_SYMBOL": "a small ochre star with a white highlight at the top of the central axis",
         "WARDROBE_STYLE": "a bevelled white highlight on the letters and a hard cast shadow to the lower right of every motif",
-        "FIELD_COLOR": "midnight blue"
+        "FIELD_COLOR": "white"
       }
     }
   ]
