@@ -21,8 +21,10 @@
   "style_fidelity_anchors": [
     "[CORE] The whole composition sits inside a clearly painted frame, with a deliberate margin (the talon) between frame and ornament, so it reads as a self-contained panel rather than a poster with free-floating decoration.",
     "[CORE] Near-obsessive symmetry: the left and right halves mirror each other around a central axis, or follow a strict asymmetric balance with the heavier mass on the left and the band completing the right.",
+    "[CORE] The panel is filled evenly from top to bottom: headline, emblem and supporting line are spaced across the full height, and no empty field larger than about one seventh of the panel height is left; extra filigree, flowers, a cartouche or a second ribbon fill any remaining gap.",
     "[CORE] A thick banda with visible volume runs along the border and, together with acanthus leaves, structures the entire layout; a much thinner firulete line accompanies the band at an even distance.",
     "[CORE] Acanthus leaves that end in volutes are the main ornament; each leaf differs slightly in shape or direction, ribs are marked with a brighter tone, and smaller dense spirals (filigree) fill gaps.",
+    "[CORE] The central emblem object is painted in the same style as the ornament, with flat base colors, a light side, a shade side and brush highlights, and a painted outline; it is never a photorealistic render, a 3D model or a stock photo.",
     "[CORE] Every motif has painted volume: a flat base color first, then a light tone on the side facing the light, a dark tone on the opposite side, and short parallel repique brush strokes plus pure-white highlight strokes along ribs and bevels.",
     "[CORE] Light comes from above or the upper left; each motif casts a hard, flat shadow onto the contra-field on the lower right.",
     "[CORE] Saturated enamel colors on a white or ivory contra-field, or on a dark navy blue one: luminous green, ochre or gold, pink, light blue and pure white, with strong contrast.",
@@ -56,12 +58,12 @@
     "layout": "One enclosed panel with a painted frame and an even margin; ornament mirrored around a central vertical axis, with lettering on a ribbon, cartouche or central band.",
     "hierarchy": "Central emblem and headline first, then the main acanthus and band structure, then flowers and ribbons, then filigree, dots and firulete.",
     "levels": "Draw the heavier outer level first, then a lighter inner level, keeping an equal gap between them; fill the gap with the thin firulete line.",
-    "density": "Rich and nearly full; leave only small pockets of contra-field so that the ornament reads as cut out and glossy.",
+    "density": "Rich and nearly full from top to bottom; spread headline, emblem and supporting line over the full height of the panel and fill any gap with ornament, leaving only small pockets of contra-field.",
     "crop_behavior": "Keep the whole frame visible inside the image with a thin margin; never crop the panel unless it is shown on a real surface such as a bus side."
   },
   "typography": {
-    "headline": "Large gothic or ornamented capital letters with fish-tail terminals, painted in one luminous color with a lighter inner band, a darker projected body, a bevel highlight and optional pearl beads.",
-    "secondary": "Small, upright signwriter capitals painted by hand in navy, ochre or white with a thin outline, set on a ribbon or under the headline; slight irregularities in stroke are welcome.",
+    "headline": "Large gothic or ornamented capital letters with fish-tail terminals, painted in a luminous color (ochre, gold, light blue or ivory), with a lighter inner band, a darker projected body toward the lower left, a hard navy cast shadow to the right, a bevel highlight and optional pearl beads.",
+    "secondary": "Small hand-painted signwriter capitals with slightly irregular strokes, tapered ends and a thin outline in ochre, ivory or navy, set on a ribbon or cartouche; never a modern geometric sans-serif or a default font.",
     "placement": "Center the headline on the axis, on a straight line or a gentle arch; the secondary line sits on a ribbon, a banner or the base of the panel.",
     "spacing": "Even letter spacing with generous word gaps; every letter has the same slant and proportions.",
     "rule": "Exactly the supplied words, each string appearing once, spelled correctly, with no repeated lines, extra letters, numbers or decorative pseudo-text. Never a standard serif or sans-serif font: the letters must be painted fileteado capitals."
@@ -88,7 +90,8 @@
     "Make the acanthus leaves, volutes and band carry the structure; use flowers, dots, drops and filigree only to fill space.",
     "Paint the lettering as part of the ornament: same colors, same highlights and shadow logic, with a projected body and a cast shadow.",
     "Keep the palette to luminous saturated enamel colors on a white, ivory or dark navy field, with pure white reserved for highlights and pink reserved for flowers and ribbon reverse sides.",
-    "Paint it, do not render it: show brush pressure, bristle streaks, enamel ridges and tiny imperfections across ornament, letters and outlines."
+    "Paint it, do not render it: show brush pressure, bristle streaks, enamel ridges and tiny imperfections across ornament, letters and outlines.",
+    "Draw the central object as a painted emblem, using the same flat color, light, shade and highlight logic as the ornament, instead of rendering it realistically."
   ],
   "do": [
     "Check that the left and right sides mirror each other and that the gap between the band and the inner level is even.",
@@ -104,10 +107,11 @@
     "Avoid asymmetry that looks accidental, uneven margins, cropped frames and floating ornaments with no frame.",
     "Avoid invented words, extra text, brand marks, flags used literally, watermarks and creator handles.",
     "Avoid grunge, xerox, halftone, paper grain and distressed print textures.",
-    "Avoid a clean digital-vector or sticker look, uniform line weight, serif or sans fonts, and repeating the same text twice."
+    "Avoid a clean digital-vector or sticker look, uniform line weight, serif or sans fonts, and repeating the same text twice.",
+    "Avoid large empty areas inside the panel, photorealistic or 3D rendered emblems, and modern sans-serif supporting text."
   ],
-  "prompt_template": "Create one finished {FIELD_COLOR} enamel-painted fileteado porteño panel as a full-bleed raster image. The visual system is a closed, symmetrical panel of acanthus leaves, a thick modeled band, thin firulete lines, flat flowers and ribbons, painted by hand with a brush in semi-gloss enamel, showing bristle streaks, tapered strokes and tiny imperfections. Prioritized visual anchors:\n{STYLE_FIDELITY_ANCHORS}\nCentral emblem: {SUBJECT}, presented as {SUBJECT_ACTION}. Ornamental props: {PRODUCT_OR_PROP}. Painted on: {LOCATION}. Fill the corners with {BACKGROUND_ELEMENTS}. Place this accent on the central axis: {ACCENT_SYMBOL}. Surface and detailing: {WARDROBE_STYLE}.\nLettering: paint exactly \"{MAIN_TEXT}\" in large gothic fileteado capitals with fish-tail terminals, a projected body, a cast shadow and white bevel highlights. Add exactly the small supporting line \"{SECONDARY_TEXT}\" in clean signwriter capitals. Each text string appears exactly once and nothing else is written. Make every ribbon two-tone with a pink reverse side.\nReplace and avoid this source content: {SOURCE_CONTENT_TO_AVOID}",
-  "negative_prompt": "photorealistic scene, 3D render, cinematic lighting, airbrush gradient, digital vector illustration, sticker look, uniform line weight, perfect circles, smooth satin background, serif font, sans-serif font, duplicated text,  neon glow, pastel palette, minimalist layout, flat vector icon, halftone, paper grain, grunge texture, asymmetrical accidental layout, cropped frame, floating ornament without frame, extra text, misspelled text, invented words, logo, brand mark, literal national flag, watermark, QR code, poster mockup",
+  "prompt_template": "Create one finished {FIELD_COLOR} enamel-painted fileteado porteño panel as a full-bleed raster image. The visual system is a closed, symmetrical panel of acanthus leaves, a thick modeled band, thin firulete lines, flat flowers and ribbons, painted by hand with a brush in semi-gloss enamel, showing bristle streaks, tapered strokes and tiny imperfections. Prioritized visual anchors:\n{STYLE_FIDELITY_ANCHORS}\nSpread headline, emblem and supporting line over the full height of the panel. Central emblem, painted in the same flat-and-shaded enamel style as the ornament and not photoreal: {SUBJECT}, presented as {SUBJECT_ACTION}. Ornamental props: {PRODUCT_OR_PROP}. Painted on: {LOCATION}. Fill the corners with {BACKGROUND_ELEMENTS}. Place this accent on the central axis: {ACCENT_SYMBOL}. Surface and detailing: {WARDROBE_STYLE}.\nLettering: paint exactly \"{MAIN_TEXT}\" in large gothic fileteado capitals with fish-tail terminals, a projected body, a cast shadow and white bevel highlights. Add exactly the small supporting line \"{SECONDARY_TEXT}\" in hand-painted signwriter capitals with tapered strokes. Each text string appears exactly once and nothing else is written. Make every ribbon two-tone with a pink reverse side.\nReplace and avoid this source content: {SOURCE_CONTENT_TO_AVOID}",
+  "negative_prompt": "photorealistic scene, 3D render, cinematic lighting, airbrush gradient, digital vector illustration, sticker look, uniform line weight, perfect circles, smooth satin background, serif font, sans-serif font, duplicated text,  neon glow, pastel palette, minimalist layout, flat vector icon, halftone, paper grain, grunge texture, asymmetrical accidental layout, cropped frame, floating ornament without frame, extra text, misspelled text, invented words, logo, brand mark, literal national flag, watermark, QR code, poster mockup, photorealistic emblem, 3D rendered object, stock photo object, large empty area inside the panel, modern geometric sans-serif text",
   "examples": [
     {
       "case_name": "tango-bandoneon",
