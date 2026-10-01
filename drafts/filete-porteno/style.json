@@ -172,6 +172,36 @@
         "WARDROBE_STYLE": "a bevelled white highlight on the letters and a hard cast shadow to the lower right of every motif",
         "FIELD_COLOR": "white"
       }
+    },
+    {
+      "case_name": "milonga-gramofono",
+      "values": {
+        "SUBJECT": "A brass-horn gramophone on a small wooden box with a spinning record, painted as a flat-and-shaded emblem.",
+        "SUBJECT_ACTION": "flanked by two mirrored hummingbirds drinking from ribbon ends, resting on a curling scroll cartouche",
+        "PRODUCT_OR_PROP": "purple grapes, pink flowers, a horseshoe, a shield cartouche at the top and two light-blue and white ribbons with pink reverse sides",
+        "LOCATION": "a wide rectangular enamel sign with a thick gold band frame",
+        "BACKGROUND_ELEMENTS": "large green acanthus leaves with volutes in all four corners and fine gold filigree spirals between them",
+        "MAIN_TEXT": "Milonga",
+        "SECONDARY_TEXT": "Tradición porteña",
+        "ACCENT_SYMBOL": "a small gold horseshoe on the central axis under the gramophone",
+        "WARDROBE_STYLE": "light-blue and ivory headline letters with a gold outline, a navy projected body and visible bristle streaks in the enamel",
+        "FIELD_COLOR": "dark navy blue"
+      }
+    },
+    {
+      "case_name": "fileteado-porteno-titulo",
+      "values": {
+        "SUBJECT": "A bandoneon with inlaid wooden sides and black bellows, painted with convex volume.",
+        "SUBJECT_ACTION": "resting on a light-blue ribbon with a pink reverse, flanked by two mirrored winged dragons that grow out of the leaf scrolls",
+        "PRODUCT_OR_PROP": "pink five-petal flowers, coral tulips, a gold horseshoe at the top, blue teardrops and gold dots",
+        "LOCATION": "a tall rectangular painted panel with a thin green line frame",
+        "BACKGROUND_ELEMENTS": "fine green filigree spirals and small dots filling every corner and the space between the leaf scrolls",
+        "MAIN_TEXT": "Fileteado Porteño",
+        "SECONDARY_TEXT": "Buenos Aires Tradición",
+        "ACCENT_SYMBOL": "a small red winged heart centered above the supporting ribbon",
+        "WARDROBE_STYLE": "gold and ochre headline letters with pearl beads, a navy cast shadow and a bevel highlight",
+        "FIELD_COLOR": "dark navy blue"
+      }
     }
   ]
 }
