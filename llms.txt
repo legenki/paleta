@@ -1,6 +1,6 @@
 # AI Visual Prompt Cookbook
 
-> 158 plug-and-play visual style packs for AI image generation (Nano Banana Pro, GPT Image, Midjourney, ChatGPT, Gemini, Claude).
+> 159 plug-and-play visual style packs for AI image generation (Nano Banana Pro, GPT Image, Midjourney, ChatGPT, Gemini, Claude).
 > Each style is one structured style.json: paste it into an LLM image workflow, replace the variables, keep the look.
 
 Curated by Legenki (https://github.com/legenki). Source: https://github.com/legenki/paleta
@@ -61,6 +61,7 @@ Curated by Legenki (https://github.com/legenki). Source: https://github.com/lege
 
 ## Type Posters
 
+- [Filete Porteño](https://legenki.github.io/paleta/site/styles/filete-porteno/): Buenos Aires fileteado panels: symmetrical acanthus scrolls, glossy hand-painted enamel and gothic fish-tail lettering on navy, white or red. Raw JSON: https://legenki.github.io/paleta/styles/filete-porteno/style.json
 - [Velocity Type Sport](https://legenki.github.io/paleta/site/styles/velocity-type-sport/): Extreme-perspective sports photos woven through giant white oblique type, with a bright color haze in a dark field. Raw JSON: https://legenki.github.io/paleta/styles/velocity-type-sport/style.json
 - [Velocity Type Sport — Part 2](https://legenki.github.io/paleta/site/styles/velocity-type-sport-part-02/): Part 2: basketball, snowboarding, kayaking and boxing in giant white oblique type and single-color haze. Raw JSON: https://legenki.github.io/paleta/styles/velocity-type-sport-part-02/style.json
 - [Velocity Type Sport — Part 3](https://legenki.github.io/paleta/site/styles/velocity-type-sport-part-03/): Part 3: tennis, still rings, speed skating and archery, framed as net, ring, blade and bowstring force structures. Raw JSON: https://legenki.github.io/paleta/styles/velocity-type-sport-part-03/style.json

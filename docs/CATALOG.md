@@ -1,8 +1,18 @@
 # Style Catalog — Full Details
 
-Complete descriptions and all file links for each of the 158 styles. For a visual gallery, see the [main README](../README.md#all-styles).
+Complete descriptions and all file links for each of the 159 styles. For a visual gallery, see the [main README](../README.md#all-styles).
 
 [← Back to README](../README.md)
+
+### Filete Porteño
+
+<a href="../styles/filete-porteno"><img src="../assets/thumbs/filete-porteno-16x9.jpg" width="720" alt="Filete Porteño preview"></a>
+
+Buenos Aires fileteado porteño translated into poster, sign and label systems: a symmetrical, fully framed panel of glossy hand-painted enamel ornament built from acanthus leaves with volutes, a modeled band, flat flowers, two-tone ribbons and filigree, with gothic fish-tail lettering that carries a projected body, cast shadow and white highlight strokes. Backgrounds are usually white or dark navy blue.
+
+Files: [style.json](../styles/filete-porteno/style.json) · [Copy Prompt](copy-prompts/filete-porteno.md) · [16:9 preview](../styles/filete-porteno/preview-16x9.jpg) · [9:16 preview](../styles/filete-porteno/preview-9x16.jpg)
+
+---
 
 ### Velocity Type Sport
 

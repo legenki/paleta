@@ -202,6 +202,21 @@
         "WARDROBE_STYLE": "gold and ochre headline letters with pearl beads, a navy cast shadow and a bevel highlight",
         "FIELD_COLOR": "dark navy blue (#0B1B3A)"
       }
+    },
+    {
+      "case_name": "pulperia-el-sol",
+      "values": {
+        "SUBJECT": "A steaming plate of beef and vegetable stew with corn, potato and squash, painted as a flat-and-shaded emblem.",
+        "SUBJECT_ACTION": "resting between two large cornucopias that spill apples, pears and oranges, under two crossed wheat stalks",
+        "PRODUCT_OR_PROP": "pink five-petal flowers, two horseshoes, a rising sun at the top and light-blue and white ribbons with pink reverse sides",
+        "LOCATION": "a tall painted sign for a country general store",
+        "BACKGROUND_ELEMENTS": "mirrored green acanthus scrolls and fine gold filigree filling the lower half and all four corners",
+        "MAIN_TEXT": "Pulpería El Sol",
+        "SECONDARY_TEXT": "Ramos generales",
+        "ACCENT_SYMBOL": "a small golden sun with rays at the top of the central axis",
+        "WARDROBE_STYLE": "pale blue and ivory headline letters with a gold outline, pearl beads and a darker projected body",
+        "FIELD_COLOR": "deep red (#7A1620)"
+      }
     }
   ]
 }
