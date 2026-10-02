@@ -309,6 +309,7 @@
       else if (typeof v === "string") warn(`${key} is plain text; named fields work better`);
     }
 
+    if (!Colors.hexRe().test(JSON.stringify(data.color_palette))) warn("color_palette has no hex colors; add #RRGGBB codes so the generator can match them");
     if (!data.prompt_template) err("prompt_template is empty");
     else {
       const used = new Set([...data.prompt_template.matchAll(PLACEHOLDER_RE)].map((m) => m[1]));
@@ -776,8 +777,7 @@
     for (const m of text.matchAll(TOKEN_RE)) {
       if (m.index > last) out.push(text.slice(last, m.index));
       if (m[1]) {
-        const parts = m[1].split(/(\{[A-Z0-9_]+\})/);
-        out.push(h("span", { class: strClass }, ...parts.map((part, i) => (i % 2 ? h("span", { class: "ph" }, part) : part))));
+        out.push(h("span", { class: strClass }, ...Colors.richNodes(m[1])));
       } else if (m[2] || m[3]) out.push(h("span", { class: "n" }, m[0]));
       else out.push(h("span", { class: "p" }, m[0]));
       last = m.index + m[0].length;
@@ -898,7 +898,7 @@
     if (!values.STYLE_FIDELITY_ANCHORS && lastData.style_fidelity_anchors.length) values.STYLE_FIDELITY_ANCHORS = lastData.style_fidelity_anchors.join(" ");
     if (!values.SOURCE_CONTENT_TO_AVOID && lastData.source_content_to_avoid.length) values.SOURCE_CONTENT_TO_AVOID = lastData.source_content_to_avoid.join("; ");
     if (!values.NEGATIVE_PROMPT && lastData.negative_prompt) values.NEGATIVE_PROMPT = lastData.negative_prompt;
-    $("#promptOut").textContent = lastData.prompt_template.replace(/\{([A-Z][A-Z0-9_]*)\}/g, (m, k) => (values[k] ? values[k] : m));
+    $("#promptOut").replaceChildren(...Colors.richNodes(lastData.prompt_template.replace(/\{([A-Z][A-Z0-9_]*)\}/g, (m, k) => (values[k] ? values[k] : m))));
   }
 
   /* ---------- import / draft ---------- */
@@ -1100,5 +1100,6 @@
   setupChrome();
   const restored = restoreDraft();
   renderForm();
+  Colors.observe(sectionsEl);
   if (restored) toast("Draft restored");
 })();
