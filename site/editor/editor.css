@@ -620,7 +620,8 @@ textarea.raw { min-height: 380px; tab-size: 2; white-space: pre; overflow: auto;
   padding: 10px;
 }
 .combo-pop[hidden] { display: none; }
-.combo-body { display: grid; grid-template-columns: minmax(0, 1fr) 260px; gap: 10px; margin-top: 8px; }
+.combo-body { display: grid; grid-template-columns: 260px minmax(0, 1fr); grid-template-areas: "preview list"; gap: 10px; margin-top: 8px; }
+#comboList { grid-area: list; }
 #comboList { list-style: none; margin: 0; padding: 0; max-height: 320px; overflow: auto; }
 #comboList li {
   display: flex;
@@ -634,7 +635,7 @@ textarea.raw { min-height: 380px; tab-size: 2; white-space: pre; overflow: auto;
 #comboList li.on { background: var(--accent-soft); color: var(--accent-text); }
 #comboList li .n { font-weight: 500; }
 #comboList li small { color: var(--muted); font-size: 11px; white-space: nowrap; }
-.combo-preview { margin: 0; align-self: start; position: sticky; top: 0; }
+.combo-preview { grid-area: preview; margin: 0; align-self: start; position: sticky; top: 0; }
 .combo-preview img {
   width: 100%;
   height: auto;
@@ -650,7 +651,7 @@ textarea.raw { min-height: 380px; tab-size: 2; white-space: pre; overflow: auto;
 .combo-empty { margin: 12px 4px 4px; color: var(--muted); font-size: 13px; }
 @media (max-width: 640px) {
   .combo-pop { position: fixed; left: 8px; right: 8px; top: 56px; width: auto; }
-  .combo-body { grid-template-columns: 1fr; }
+  .combo-body { grid-template-columns: 1fr; grid-template-areas: "list"; }
   .combo-preview { display: none; }
 }
 .combo-pop input[type="search"] {
