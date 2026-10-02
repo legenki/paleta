@@ -69,7 +69,8 @@
     "secondary": "Warm golden yellow.",
     "neutral": "Clean white and deep black for type and contrast.",
     "accents": "Small controlled green, silver, cream, or product-specific accent colors.",
-    "proportions": "About 55 percent red, 25 percent yellow, 15 percent product color, and 5 percent white or black accents."
+    "proportions": "About 55 percent red, 25 percent yellow, 15 percent product color, and 5 percent white or black accents.",
+    "dominant_hex": "Approximate dominant colors sampled from the style preview, most to least common: #C00505, #F7F2ED, #F7C00B, #2D1C14, #B87C74."
   },
   "image_treatment": {
     "rendering_mode": "Polished advertising collage using crisp raster product cutouts and flat poster graphics.",

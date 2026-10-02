@@ -47,7 +47,8 @@
     "information": "Small condensed uppercase in compact groups, thin cream separators and one stronger issue number; short accurate copy."
   },
   "color_palette": {
-    "system": "Cobalt/cyan environment, warm pale cream typography, white/navy sports materials, modest rust-orange or amber physical accents; no lime graphics."
+    "system": "Cobalt/cyan environment, warm pale cream typography, white/navy sports materials, modest rust-orange or amber physical accents; no lime graphics.",
+    "dominant_hex": "Approximate dominant colors sampled from the style preview, most to least common: #2C5692, #F5EDD9, #5F82B0, #393C4A, #646C7D."
   },
   "image_treatment": {
     "texture": "Fine photographic grain, true textile/metal/ground detail and localized dust or spray from action. Faint cream ink patina allowed; no yellowed paper wash, heavy distress, oversharpening or fake grit over faces.",

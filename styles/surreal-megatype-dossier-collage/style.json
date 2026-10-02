@@ -74,7 +74,8 @@
     "secondary": "Warm off-white for display type, rules, symbols, and dossier panels.",
     "hero_colors": "Rust orange, burnt sienna, and desaturated cyan or oxidized teal concentrated inside the central collage.",
     "accents": "Small signal-yellow labels and restrained crimson fragments.",
-    "proportions": "Approximately 55 percent black, 25 percent off-white, 12 percent rust orange, 6 percent cyan, and 2 percent yellow or red accents."
+    "proportions": "Approximately 55 percent black, 25 percent off-white, 12 percent rust orange, 6 percent cyan, and 2 percent yellow or red accents.",
+    "dominant_hex": "Approximate dominant colors sampled from the style preview, most to least common: #131210, #47413B, #5F5C56, #DDD5C7, #7F7B73."
   },
   "image_treatment": {
     "rendering_mode": "Raster photo-collage combining photographic object cutouts with flat editorial typography and technical graphic overlays.",

@@ -82,7 +82,8 @@
       "neon lime",
       "bright magenta"
     ],
-    "palette_rule": "Keep blue and cream as the poster's main read, then concentrate saturated accents on the hero prop or wardrobe rather than scattering color everywhere."
+    "palette_rule": "Keep blue and cream as the poster's main read, then concentrate saturated accents on the hero prop or wardrobe rather than scattering color everywhere.",
+    "dominant_hex": "Approximate dominant colors sampled from the style preview, most to least common: #EAE0CA, #0E0F0F, #34393A, #09629C, #635C52."
   },
   "photographic_direction": {
     "rendering_mode": "Realistic commercial action photography combined with flat graphic poster typography.",

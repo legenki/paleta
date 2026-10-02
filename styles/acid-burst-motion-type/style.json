@@ -48,7 +48,8 @@
     "secondary": "One small clean sans line in accent ink, subordinate."
   },
   "color_palette": {
-    "system": "Saturated blues and natural photo colors contrasted with one flat acid ink used by both burst and title."
+    "system": "Saturated blues and natural photo colors contrasted with one flat acid ink used by both burst and title.",
+    "dominant_hex": "Approximate dominant colors sampled from the style preview, most to least common: #356BA4, #5F8DB9, #618484, #9E5238, #97C467."
   },
   "image_treatment": {
     "texture": "Fine subtle photographic grain and mild optical softness; clean flat graphic edges. Do not emulate compression blocks, heavy distress or old paper.",

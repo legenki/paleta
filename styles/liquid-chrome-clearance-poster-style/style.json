@@ -89,7 +89,8 @@
       "hot pink sticker accent",
       "tiny cyan reflections"
     ],
-    "proportion_rule": "Use roughly 55 percent lime or mint gradient, 25 percent central photo subject, 15 percent black UI typography, and 5 percent chrome highlight or neon accent."
+    "proportion_rule": "Use roughly 55 percent lime or mint gradient, 25 percent central photo subject, 15 percent black UI typography, and 5 percent chrome highlight or neon accent.",
+    "dominant_hex": "Approximate dominant colors sampled from the style preview, most to least common: #C8E03C, #151617, #A6CFBB, #474944, #7C817C."
   },
   "image_treatment": {
     "rendering": "Photoreal commercial subject with an overlaid liquid-chrome typographic object, surrounded by flat graphic design UI.",

@@ -48,7 +48,8 @@
   },
   "color_palette": {
     "frame": "Warm bone, pearl gray, obsidian and brushed titanium; restrained glacial-cyan accent limited to subtle arrows or state-change cues.",
-    "photo": "Natural skin and neutral wardrobe, soft stone or graphite surfaces, precise metal highlights and deep clean shadows. No bright red or loud gradients."
+    "photo": "Natural skin and neutral wardrobe, soft stone or graphite surfaces, precise metal highlights and deep clean shadows. No bright red or loud gradients.",
+    "dominant_hex": "Approximate dominant colors sampled from the style preview, most to least common: #A8998D, #433E3B, #736963, #C9C4C0, #F7F7F7."
   },
   "photographic_direction": {
     "camera": "Use consistent product angles across sequential frames, plus precise construction macros and only occasional partial-body context; show cause and effect clearly.",

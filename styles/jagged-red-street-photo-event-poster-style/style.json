@@ -81,7 +81,8 @@
       "small white knockout spaces"
     ],
     "palette_proportions": "Approximately 45 percent grayscale photography, 30 percent white paper and gutters, 20 percent red display type, and 5 percent black secondary type or badge marks.",
-    "avoid": "Avoid full-color photography, gradients, pastel palettes, beige vintage paper, glossy neon, rainbow accents, and realistic colored skin tones."
+    "avoid": "Avoid full-color photography, gradients, pastel palettes, beige vintage paper, glossy neon, rainbow accents, and realistic colored skin tones.",
+    "dominant_hex": "Approximate dominant colors sampled from the style preview, most to least common: #141314, #D30712, #414040, #F9F3F2, #6E6D6E."
   },
   "photographic_direction": {
     "rendering": "Use a high-contrast black-and-white documentary photograph as the central scene, with realistic street or venue perspective.",

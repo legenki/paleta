@@ -71,7 +71,8 @@
       "white accent"
     ],
     "behavior": "Use high-saturation color blocks in playful imbalance, with gradients appearing inside only one or two shapes.",
-    "contrast": "Black linework and shoes or small details create crisp contrast against soft pastel blocks."
+    "contrast": "Black linework and shoes or small details create crisp contrast against soft pastel blocks.",
+    "dominant_hex": "Approximate dominant colors sampled from the style preview, most to least common: #FCECCE, #DFBABD, #90B99C, #EF6C28, #F5AD2B."
   },
   "image_treatment": {
     "rendering_mode": "Flat digital illustration with handmade cut-paper, risograph, and doodle qualities.",

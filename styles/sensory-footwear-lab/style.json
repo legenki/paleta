@@ -47,7 +47,8 @@
   },
   "color_palette": {
     "frame": "Ice white, cool pale blue-gray and deep graphite or navy, with signal coral outsole and occasional warm peach pod tips.",
-    "photo": "Natural skin and restrained wardrobe colors; smooth studio gradient transitions rather than loud multicolor effects."
+    "photo": "Natural skin and restrained wardrobe colors; smooth studio gradient transitions rather than loud multicolor effects.",
+    "dominant_hex": "Approximate dominant colors sampled from the style preview, most to least common: #2B313A, #464E5A, #7A8495, #959FB0, #626876."
   },
   "photographic_direction": {
     "camera": "Alternating extreme outsole macro, low wide-angle athletic action and calm side-profile or seated portrait; realistic proportions and refined campaign lighting.",

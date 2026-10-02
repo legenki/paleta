@@ -81,7 +81,8 @@
       "grass or ground green"
     ],
     "proportions": "Let purple and acid lime dominate the typography and jersey or gear accents; use orange-red as diagonal shard energy; use turquoise as small accent flashes.",
-    "behavior": "Prefer hard neon color blocks and crisp graphic contrast, with natural sky and arena tones only as support."
+    "behavior": "Prefer hard neon color blocks and crisp graphic contrast, with natural sky and arena tones only as support.",
+    "dominant_hex": "Approximate dominant colors sampled from the style preview, most to least common: #273037, #4715C4, #545455, #8F9BB1, #627A88."
   },
   "photographic_direction": {
     "rendering_mode": "Polished 3D animated key-art treatment, not flat vector art and not documentary photography.",

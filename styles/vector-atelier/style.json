@@ -49,7 +49,8 @@
   },
   "color_palette": {
     "frame": "Saturated electric blue, cobalt, violet, vermilion, coral, magenta, lime and cyan gradients chosen per case.",
-    "photo": "Natural object materials and skin tones remain credible inside the color field; white type and sharp highlights provide the high-contrast anchor."
+    "photo": "Natural object materials and skin tones remain credible inside the color field; white type and sharp highlights provide the high-contrast anchor.",
+    "dominant_hex": "Approximate dominant colors sampled from the style preview, most to least common: #F8F6FC, #142262, #A591D9, #CBC0EA, #776CBA."
   },
   "photographic_direction": {
     "camera": "Low, close, wide-angle campaign photography with decisive foreshortening; the frozen anchor stays at the highest micro-detail while the environment stretches behind it.",

@@ -71,7 +71,8 @@
     "ink": "deep black with dry-brush gray breakup",
     "produce_color": "one saturated subject color such as leafy green, citrus yellow, eggplant purple, peach pink, carrot orange, or blueberry blue",
     "secondary_accents": "natural leaf green and tiny neutral gray micro text",
-    "palette_behavior": "Limit the composition to one dominant produce hue plus black and ivory; avoid rainbow grocery abundance."
+    "palette_behavior": "Limit the composition to one dominant produce hue plus black and ivory; avoid rainbow grocery abundance.",
+    "dominant_hex": "Approximate dominant colors sampled from the style preview, most to least common: #F7E8D2, #131411, #2F4219, #DFD4B8, #C4BC94."
   },
   "image_treatment": {
     "rendering": "Photoreal glossy produce isolated like a product still life, softened by poster print grain and slight airbrush-like highlight bloom.",

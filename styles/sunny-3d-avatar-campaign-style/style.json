@@ -74,7 +74,8 @@
       "sunny yellow",
       "soft cream"
     ],
-    "behavior": "Use a high-key commercial palette with blue and green as large fields, white as the typography anchor, and one warm avatar or product accent to control the focal point."
+    "behavior": "Use a high-key commercial palette with blue and green as large fields, white as the typography anchor, and one warm avatar or product accent to control the focal point.",
+    "dominant_hex": "Approximate dominant colors sampled from the style preview, most to least common: #EEEFF1, #D8B299, #D58B3F, #B45527, #0659CA."
   },
   "image_treatment": {
     "rendering_mode": "Polished stylized 3D character campaign art with smooth toy-like avatars and tactile props.",

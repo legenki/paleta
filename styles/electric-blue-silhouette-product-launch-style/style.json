@@ -84,7 +84,8 @@
       "tiny white status LED",
       "pale blue-white text"
     ],
-    "proportions": "70 percent black, 25 percent electric-blue glow and background type, 5 percent white typography and highlight"
+    "proportions": "70 percent black, 25 percent electric-blue glow and background type, 5 percent white typography and highlight",
+    "dominant_hex": "Approximate dominant colors sampled from the style preview, most to least common: #000106, #021030, #022662, #044095, #0963C5."
   },
   "image_treatment": {
     "rendering_mode": "cinematic product-render look with premium consumer-electronics materials",

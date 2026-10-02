@@ -94,7 +94,8 @@
       "golden snack",
       "rust red",
       "warm ochre"
-    ]
+    ],
+    "dominant_hex": "Approximate dominant colors sampled from the style preview, most to least common: #9D6746, #DFAD75, #F5C88B, #643727, #D17020."
   },
   "design_rules": [
     "Make the image read as an animation development frame rather than a finished clean cartoon.",

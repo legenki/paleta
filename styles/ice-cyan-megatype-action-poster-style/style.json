@@ -66,7 +66,8 @@
     "accent": "Neon chartreuse for motion blurs, radial bursts, wavy underlines, and speed marks.",
     "warm_detail": "Small burnt orange or rust-orange accent for date, issue number, sock, tape, or tiny label.",
     "contrast": "High contrast between crisp dark cyan typography and the bright field, with translucent gray layers kept quiet.",
-    "proportions": "About 70 percent white and pale gray, 20 percent deep cyan, 7 percent chartreuse, and 3 percent warm orange."
+    "proportions": "About 70 percent white and pale gray, 20 percent deep cyan, 7 percent chartreuse, and 3 percent warm orange.",
+    "dominant_hex": "Approximate dominant colors sampled from the style preview, most to least common: #EBEBEB, #0C4867, #C2C6CB, #98999A, #58696B."
   },
   "photographic_direction": {
     "rendering": "Use realistic high-resolution action photography treated as a clean cutout collage element.",

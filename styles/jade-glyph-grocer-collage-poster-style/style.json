@@ -72,7 +72,8 @@
     "backing_shapes": "pale mint green with low contrast against the paper",
     "micro_type": "near-black ink for tiny labels and caption blocks",
     "product_color": "natural product color, preferably close to the green or fresh-market family with restrained secondary hue",
-    "palette_behavior": "Keep the image mostly cream and green, with black only for micro type and tiny marks."
+    "palette_behavior": "Keep the image mostly cream and green, with black only for micro type and tiny marks.",
+    "dominant_hex": "Approximate dominant colors sampled from the style preview, most to least common: #F6EEDA, #D5D9BD, #1A8D4D, #BEC631, #A6C19F."
   },
   "image_treatment": {
     "rendering": "Flat printed poster plus one realistic glossy product cutout; the product is photographic, the glyphs and silhouettes are flat ink shapes.",

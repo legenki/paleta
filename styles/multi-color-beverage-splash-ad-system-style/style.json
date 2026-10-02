@@ -87,7 +87,8 @@
       "silver",
       "tiny amber accent"
     ],
-    "palette_behavior": "Use the case's primary and secondary colors as the dominant field and shadows, while keeping white 3D type and transparent liquid effects consistent."
+    "palette_behavior": "Use the case's primary and secondary colors as the dominant field and shadows, while keeping white 3D type and transparent liquid effects consistent.",
+    "dominant_hex": "Approximate dominant colors sampled from the style preview, most to least common: #ED5609, #E9E4E4, #1B2D6A, #DB803F, #D8A685."
   },
   "image_treatment": {
     "rendering_mode": "Photoreal commercial beverage packaging and studio retouching combined with graphic 3D typography.",

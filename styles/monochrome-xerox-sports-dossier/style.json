@@ -63,7 +63,8 @@
     "base": "warm off-white paper and pale gray scanned background",
     "ink": "deep black, charcoal gray, dirty mid-gray, and blown paper white",
     "contrast": "crushed blacks with rough halftone midtones and clipped highlights",
-    "accent_policy": "default output is strictly monochrome with no colored accent"
+    "accent_policy": "default output is strictly monochrome with no colored accent",
+    "dominant_hex": "Approximate dominant colors sampled from the style preview, most to least common: #E8E5E2, #202021, #494949, #7A7878, #949292."
   },
   "image_treatment": {
     "photo_style": "photoreal editorial photography degraded through xerox, halftone, scanner noise, paper grain, and ink wear",

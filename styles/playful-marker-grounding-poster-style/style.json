@@ -66,7 +66,8 @@
     "linework": "black and dark chocolate brown",
     "subject_fill": "white or very pale fill for the main character or prop",
     "accents": "tiny pastel pink, peach, yellow, or grass-green marks",
-    "proportions": "cream 20 percent, cyan 35 percent, lime 30 percent, dark line and type 10 percent, accents 5 percent"
+    "proportions": "cream 20 percent, cyan 35 percent, lime 30 percent, dark line and type 10 percent, accents 5 percent",
+    "dominant_hex": "Approximate dominant colors sampled from the style preview, most to least common: #CFE02F, #F4EED2, #47BCE0, #4C3220, #DBE460."
   },
   "image_treatment": {
     "rendering": "flat raster illustration that appears hand-drawn with marker and brush pen",

@@ -49,7 +49,8 @@
     "body": "Compact readable dark sans; not tiny microtext."
   },
   "color_palette": {
-    "system": "One vivid highlighter accent echoed selectively in product, dark text, pale cool sky, natural earth and skin."
+    "system": "One vivid highlighter accent echoed selectively in product, dark text, pale cool sky, natural earth and skin.",
+    "dominant_hex": "Approximate dominant colors sampled from the style preview, most to least common: #ABB1BB, #C7CCD2, #AFBB7A, #555251, #83848A."
   },
   "image_treatment": {
     "texture": "Fine visible print grain, moderate softness and restrained microcontrast on photographic areas. Type and highlight edges remain precise. No scratched or aged paper.",

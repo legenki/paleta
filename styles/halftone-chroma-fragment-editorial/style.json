@@ -51,7 +51,8 @@
   },
   "color_palette": {
     "base": "Opaque neutral white and dense black dominate. Paper remains visually clean; texture is chiefly photographic halftone.",
-    "accents": "Theme-specific crisp color photos with natural skin tones; restrained matched annotation accents."
+    "accents": "Theme-specific crisp color photos with natural skin tones; restrained matched annotation accents.",
+    "dominant_hex": "Approximate dominant colors sampled from the style preview, most to least common: #FAFAFA, #100F10, #292929, #424041, #7B7979."
   },
   "image_treatment": {
     "halftone": "Coarse high-contrast visible dot/threshold texture only on the dominant photographic image; retain recognizable face/body/objects and intentionally soft photographic edges.",

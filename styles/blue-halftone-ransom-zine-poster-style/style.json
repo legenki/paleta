@@ -73,7 +73,8 @@
     "paper": "off-white torn paper with gray wrinkles and toner smudges",
     "ink": "deep black marker strokes and black photocopy toner",
     "halftone": "gray-to-black coarse dot screens with high contrast",
-    "accent_behavior": "Avoid additional color families; if an accent is needed, keep it as black marker symbols or gray paper shadow."
+    "accent_behavior": "Avoid additional color families; if an accent is needed, keep it as black marker symbols or gray paper shadow.",
+    "dominant_hex": "Approximate dominant colors sampled from the style preview, most to least common: #03277C, #D6D5D8, #B9B9BE, #9699A6, #1B1A1B."
   },
   "image_treatment": {
     "rendering": "Raster paper collage, like a scanned handmade poster assembled from photocopied cutouts and torn notes.",

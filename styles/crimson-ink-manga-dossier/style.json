@@ -74,7 +74,8 @@
     "secondary": "Carbon black and charcoal grayscale, approximately 32 percent.",
     "accent": "Deep blood-crimson red, approximately 18 percent and never replaced by a rainbow palette.",
     "behavior": "Use crimson for the giant headline, selected hair or costume zones, diagrams, skyline blocks, rules, and splatter; keep all other content grayscale.",
-    "contrast": "Hard poster contrast with large solid blacks, exposed paper whites, and sparse middle grays."
+    "contrast": "Hard poster contrast with large solid blacks, exposed paper whites, and sparse middle grays.",
+    "dominant_hex": "Approximate dominant colors sampled from the style preview, most to least common: #625C55, #413E39, #A39488, #BEAFA0, #837A70."
   },
   "image_treatment": {
     "rendering_mode": "Original hand-drawn manga illustration integrated with raster newsprint collage, not a screenshot or vector mockup.",

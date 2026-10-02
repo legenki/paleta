@@ -86,7 +86,8 @@
       "electric teal",
       "acid yellow"
     ],
-    "palette_rule": "Keep the poster mostly white, black, and natural daylight photo colors; concentrate one saturated accent in the wardrobe or prop."
+    "palette_rule": "Keep the poster mostly white, black, and natural daylight photo colors; concentrate one saturated accent in the wardrobe or prop.",
+    "dominant_hex": "Approximate dominant colors sampled from the style preview, most to least common: #FAFAFA, #C7D5E1, #BFBDBC, #A2A1A1, #8CB4D8."
   },
   "photographic_direction": {
     "rendering_mode": "Realistic daylight action photography combined with flat drawn ink graphics and crisp editorial typography.",

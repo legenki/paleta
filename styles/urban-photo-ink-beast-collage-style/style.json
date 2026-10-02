@@ -74,7 +74,8 @@
     "primary_accents": "Cobalt blue and vermilion red for face masks, hands, shoes, or small props.",
     "signature_accent": "One broad lemon-yellow ribbon, plume, scarf, parasol, or wing form that sweeps through the composition.",
     "minor_accent": "Blush pink used only for a few motion strokes, textile marks, or facial details.",
-    "proportions": "About 55 percent photographic neutral color, 30 percent black, 8 percent white, 4 percent yellow, and 3 percent combined cobalt, vermilion, and blush."
+    "proportions": "About 55 percent photographic neutral color, 30 percent black, 8 percent white, 4 percent yellow, and 3 percent combined cobalt, vermilion, and blush.",
+    "dominant_hex": "Approximate dominant colors sampled from the style preview, most to least common: #090D0F, #D7D6D4, #5E5953, #B6B9BB, #969391."
   },
   "image_treatment": {
     "mixed_media_split": "The background must read as a genuine photographed architectural scene; creatures, people, props, and airborne symbols must read as opaque flat hand-drawn paper layers.",

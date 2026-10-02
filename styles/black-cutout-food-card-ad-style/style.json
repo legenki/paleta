@@ -66,7 +66,8 @@
     "ink": "dark brown, red-brown, black-brown",
     "accent": "ochre orange, mustard yellow, seal red, deep callout red",
     "food": "natural glossy food colors kept richer than the flat paper palette",
-    "proportion": "about 55 percent cream card, 25 percent black negative space, 12 percent dark ink, 8 percent red/yellow accents"
+    "proportion": "about 55 percent cream card, 25 percent black negative space, 12 percent dark ink, 8 percent red/yellow accents",
+    "dominant_hex": "Approximate dominant colors sampled from the style preview, most to least common: #E7CFAA, #040202, #D2B188, #431F0E, #BC732A."
   },
   "image_treatment": {
     "food_rendering": "Use realistic clipped food photography with glossy sauce, steam, toppings, and utensil highlights, pasted onto the flat card like a printed ad collage.",

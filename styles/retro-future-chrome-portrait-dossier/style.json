@@ -72,7 +72,8 @@
     "electric_accents": "Hot magenta and saturated cobalt blue, approximately 20 percent.",
     "warm_accents": "Coral orange and salmon pink, approximately 8 percent.",
     "micro_highlights": "Small cyan and near-white glints, approximately 2 percent.",
-    "behavior": "Use hard neighboring color blocks and overprinted halftone transitions rather than smooth photographic gradients."
+    "behavior": "Use hard neighboring color blocks and overprinted halftone transitions rather than smooth photographic gradients.",
+    "dominant_hex": "Approximate dominant colors sampled from the style preview, most to least common: #131B3C, #2F3356, #E4AB81, #B48B7D, #655F79."
   },
   "image_treatment": {
     "rendering_mode": "Finished raster editorial illustration with posterized portrait planes, ink contours, selective airbrush shading, and highly reflective chrome collage elements.",

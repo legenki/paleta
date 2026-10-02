@@ -71,7 +71,8 @@
     ],
     "proportions": "Blue should dominate the center plane, black should dominate the side walls, and white/gray Chinese typography should cover most visible surfaces.",
     "contrast": "High contrast only. Avoid mid-color palettes and decorative gradients.",
-    "accents": "No extra accent colors unless the case absolutely requires one, and then only as a tiny mark."
+    "accents": "No extra accent colors unless the case absolutely requires one, and then only as a tiny mark.",
+    "dominant_hex": "Approximate dominant colors sampled from the style preview, most to least common: #06080A, #28292D, #0A29B3, #4E4E50, #A6AFD8."
   },
   "image_treatment": {
     "rendering_mode": "Crisp flat 3D typographic poster render, vector-like planes, hard edges, subtle tonal shading on white Chinese letters.",

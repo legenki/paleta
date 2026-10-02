@@ -49,7 +49,8 @@
   },
   "color_palette": {
     "frame": "Near-black and cool off-white form the primary high-contrast fields.",
-    "accent": "Signal red appears as one decisive block, bar, or narrow interruption, with freedom to shift its area and position."
+    "accent": "Signal red appears as one decisive block, bar, or narrow interruption, with freedom to shift its area and position.",
+    "dominant_hex": "Approximate dominant colors sampled from the style preview, most to least common: #111010, #E1DBD2, #433C38, #837972, #615852."
   },
   "image_treatment": {
     "type": "Editorial photography with a deliberate vertical shutter-slice treatment, integrated into hard-edged poster fields.",

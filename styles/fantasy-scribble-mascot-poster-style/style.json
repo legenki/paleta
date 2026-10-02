@@ -77,7 +77,8 @@
       "pale mint",
       "sky blue"
     ],
-    "behavior": "Use high-saturation marker fills in large uneven patches, with color scribbles crossing inside outlines and small accents scattered like stickers."
+    "behavior": "Use high-saturation marker fills in large uneven patches, with color scribbles crossing inside outlines and small accents scattered like stickers.",
+    "dominant_hex": "Approximate dominant colors sampled from the style preview, most to least common: #EAEBEB, #C5CAD0, #A5AAA9, #5C4F44, #837F7D."
   },
   "image_treatment": [
     "Flat hand-drawn marker and ink look on white paper.",

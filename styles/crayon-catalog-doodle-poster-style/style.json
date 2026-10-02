@@ -72,7 +72,8 @@
     "headline": "saturated crayon red with broken wax texture",
     "main_colors": "leaf green, warm brown, soft orange, muted yellow, small navy or cobalt marks",
     "label_text": "solid black printed catalog type",
-    "palette_behavior": "Use a few blunt crayon colors in large simple areas; avoid gradients, many hues, or polished color blending."
+    "palette_behavior": "Use a few blunt crayon colors in large simple areas; avoid gradients, many hues, or polished color blending.",
+    "dominant_hex": "Approximate dominant colors sampled from the style preview, most to least common: #F1EFEE, #D8D1CE, #E12826, #9EA9A5, #697F64."
   },
   "image_treatment": {
     "rendering": "Handmade crayon drawing photographed on white paper, with paper creases and analog texture visible.",

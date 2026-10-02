@@ -84,7 +84,8 @@
       "red chili gloss",
       "coconut white"
     ],
-    "palette_rule": "Keep the background cool and coastal, the tabletop warm and tactile, the typography white, and the sale-proof elements metallic gold."
+    "palette_rule": "Keep the background cool and coastal, the tabletop warm and tactile, the typography white, and the sale-proof elements metallic gold.",
+    "dominant_hex": "Approximate dominant colors sampled from the style preview, most to least common: #BAA884, #CBC9BC, #9D8C60, #836C3B, #EDEEEC."
   },
   "photographic_direction": {
     "rendering_mode": "Photoreal commercial product photography combined with dense advertising typography and badge overlays.",

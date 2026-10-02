@@ -84,7 +84,8 @@
       "soft skin tones",
       "glass reflection green"
     ],
-    "behavior": "Most of the image remains urban neutral. The clothing supplies the main color event, usually one saturated or bright material. Keep accents controlled and avoid turning the whole image into a single-color wash."
+    "behavior": "Most of the image remains urban neutral. The clothing supplies the main color event, usually one saturated or bright material. Keep accents controlled and avoid turning the whole image into a single-color wash.",
+    "dominant_hex": "Approximate dominant colors sampled from the style preview, most to least common: #837C76, #5F5954, #0A0909, #2A2622, #4B4139."
   },
   "photographic_direction": {
     "rendering_mode": "Realistic high-fashion street editorial cover photography.",

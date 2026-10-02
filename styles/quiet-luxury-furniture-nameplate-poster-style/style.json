@@ -93,7 +93,8 @@
       "soft brown",
       "low-contrast contact shadow"
     ],
-    "palette_rule": "Keep ivory and forest green dominant; allow only the furniture material colors to add warmth and richness."
+    "palette_rule": "Keep ivory and forest green dominant; allow only the furniture material colors to add warmth and richness.",
+    "dominant_hex": "Approximate dominant colors sampled from the style preview, most to least common: #E6DBD0, #294235, #B5AA99, #9C907D, #686454."
   },
   "photographic_direction": {
     "rendering": "High-end realistic product photography composited into a refined editorial poster layout.",

@@ -87,7 +87,8 @@
       "small orange seal",
       "soft silver chrome"
     ],
-    "behavior": "Use pale gray and off-white as the spatial field, black as the typographic anchor, acid lime as the primary pop color, and only tiny high-chroma stickers for secondary accents."
+    "behavior": "Use pale gray and off-white as the spatial field, black as the typographic anchor, acid lime as the primary pop color, and only tiny high-chroma stickers for secondary accents.",
+    "dominant_hex": "Approximate dominant colors sampled from the style preview, most to least common: #101213, #E0DFE0, #3B3D33, #676562, #C2C1B3."
   },
   "image_treatment": {
     "rendering_mode": "Polished C4D 3D illustration blended with graphic poster typography and sticker design.",

@@ -93,7 +93,8 @@
       "single gold or amber badge",
       "tiny orange button or LED"
     ],
-    "proportions": "80 percent blue and black, 15 percent white or icy typography, 5 percent warm accent"
+    "proportions": "80 percent blue and black, 15 percent white or icy typography, 5 percent warm accent",
+    "dominant_hex": "Approximate dominant colors sampled from the style preview, most to least common: #040C19, #0E203A, #163969, #2A5B95, #F2F3F6."
   },
   "design_rules": [
     "Keep the product macro, tactile, and physically framed by ribbed glove forms.",

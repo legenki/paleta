@@ -88,7 +88,8 @@
       "hot pink",
       "electric green"
     ],
-    "palette_rule": "Keep the poster mostly red and blue; use cream for type and one accent color on the subject or prop."
+    "palette_rule": "Keep the poster mostly red and blue; use cream for type and one accent color on the subject or prop.",
+    "dominant_hex": "Approximate dominant colors sampled from the style preview, most to least common: #C7070D, #064A94, #F5CE9E, #D56751, #341216."
   },
   "photographic_direction": {
     "rendering_mode": "Realistic high-energy action photography combined with flat graphic poster layout.",

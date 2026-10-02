@@ -63,7 +63,8 @@
     "primary_type": "Pure black headline and metadata.",
     "overlay": "White spray-marker handwriting with slight glow and soft overspray.",
     "photo": "Naturalistic documentary color inside the central photo rectangle only.",
-    "palette_rule": "Do not introduce gradients, pastel systems, multicolor backgrounds, or decorative color blocks."
+    "palette_rule": "Do not introduce gradients, pastel systems, multicolor backgrounds, or decorative color blocks.",
+    "dominant_hex": "Approximate dominant colors sampled from the style preview, most to least common: #040504, #72E030, #292E20, #52533F, #4C9524."
   },
   "photographic_direction": {
     "photo_style": "Realistic candid event photography with a central subject, environmental bystanders, hard daylight or flash contrast, slight grain, and social-post compression.",
@@ -94,8 +95,7 @@
     "No tiny safe headline; the black type must be oversized and cropped."
   ],
   "prompt_template": "Create an image in the Neon Type Photo Scribble Poster visual style.\n\nSubject: {SUBJECT}\nAction: {SUBJECT_ACTION}\nProp/Product: {PRODUCT_OR_PROP}\nLocation: {LOCATION}\nBackground: {BACKGROUND_ELEMENTS}\nMain text: {MAIN_TEXT}\nSecondary text: {SECONDARY_TEXT}\nAccent symbol: {ACCENT_SYMBOL}\nWardrobe/styling: {WARDROBE_STYLE}\nStyle fidelity anchors: {STYLE_FIDELITY_ANCHORS}\nSource content to avoid: {SOURCE_CONTENT_TO_AVOID}\n\nApply these style rules:\n- Composition: edge-to-edge toxic neon green poster field, huge black ultra-condensed all-caps words cropped by the canvas edges, one centered rectangular documentary photo block pasted over the type, one large white aerosol handwriting layer crossing the lower middle of the photo and headline.\n- Typography: blunt event-flyer typography, black heavy condensed grotesk headline, tight all-caps metadata along the top and bottom margins, handwritten overlay made from thick white spray-marker strokes with soft overspray and small drips.\n- Color: neon green is the dominant field, black is used for all large type, white is used only for the handwritten gesture, and realistic photo color appears only inside the central photo rectangle.\n- Photography: central photo should look like candid live-event photography, eye-level or slightly low, gritty daylight or flash contrast, visible bystanders or environmental clutter, subject cropped large and immediate.\n- Graphic elements: keep a flat poster base, hard rectangular photo edges, no decorative frame, no gradients, no UI, no logo marks, no platform marks.\n\nImportant content rule: preserve the visual style first, then change the source content. Use the new subject, action, prop, location, background details, and text supplied above. Do not recreate the source content listed above.",
-  "negative_prompt": "basketball player, basketball court, dribbling, sports award poster, exact source text, NY vs NY, Nike mark, sponsor logo, watermark, username, QR code, platform UI, glossy 3D render, anime, comic illustration, vector-only graphic, collage grid, gradient background, beige editorial design, ornate serif, clean corporate presentation, tiny headline, realistic logo typography copied from a brand"
-,
+  "negative_prompt": "basketball player, basketball court, dribbling, sports award poster, exact source text, NY vs NY, Nike mark, sponsor logo, watermark, username, QR code, platform UI, glossy 3D render, anime, comic illustration, vector-only graphic, collage grid, gradient background, beige editorial design, ornate serif, clean corporate presentation, tiny headline, realistic logo typography copied from a brand",
   "examples": [
     {
       "case_name": "night-courier-run",

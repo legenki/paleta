@@ -70,7 +70,8 @@
     "Character tones should be warm cream, tan, peach, brown ink, and muted clothing colors that stand apart from the cool photo base.",
     "Electric yellow is the dominant accent and should appear mainly in the top graffiti headline and small spray flecks.",
     "White appears in small captions and pavement tags, with rough painted edges rather than polished UI crispness.",
-    "Avoid broad rainbow palettes, neon gradients, heavy purple-blue glow, sepia vintage filters, or one-color monochrome treatment."
+    "Avoid broad rainbow palettes, neon gradients, heavy purple-blue glow, sepia vintage filters, or one-color monochrome treatment.",
+    "Approximate dominant colors sampled from the style preview, most to least common: #2A3135, #424D56, #F1CB17, #685126, #6C6B68."
   ],
   "photographic_direction": [
     "Build the background as a realistic fisheye street photograph with wide-angle distortion and visible pavement texture.",

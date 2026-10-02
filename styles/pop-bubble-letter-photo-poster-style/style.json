@@ -67,7 +67,8 @@
   "color_palette": {
     "palette_behavior": "Use the dominant colors, contrast rhythm, and accent-color logic implied by the style summary.",
     "background": "Keep the background color family consistent with the reference style.",
-    "accents": "Use ACCENT_SYMBOL and graphic marks to carry small high-contrast color moments."
+    "accents": "Use ACCENT_SYMBOL and graphic marks to carry small high-contrast color moments.",
+    "dominant_hex": "Approximate dominant colors sampled from the style preview, most to least common: #E52673, #F4BB0E, #102613, #3F914C, #6F8FC7."
   },
   "design_rules": [
     "Use WARDROBE_STYLE for clothing, styling, surface treatment, and character details.",

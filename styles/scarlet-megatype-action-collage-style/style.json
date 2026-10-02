@@ -80,7 +80,8 @@
       "Let red dominate the field and white carry the typography or ground.",
       "Use black as a decisive graphic accent, never as a soft gradient theme.",
       "Avoid rainbow palettes, pastel tones, neon effects, glossy 3D colors, and atmospheric blue cinematic grading."
-    ]
+    ],
+    "dominant_hex": "Approximate dominant colors sampled from the style preview, most to least common: #D2080E, #EFDDCF, #E2C0B1, #281411, #4F3B33."
   },
   "photographic_direction": {
     "rendering_mode": "photo-collage poster with realistic cutout subjects embedded into flat graphic fields",

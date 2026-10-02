@@ -93,7 +93,8 @@
       "small cobalt badge",
       "single high-contrast stamp color"
     ],
-    "proportions": "black and off-white carry most of the image; cyan, mint, lemon, or teal form the major graphic masses; red or a related accent stays small and decisive"
+    "proportions": "black and off-white carry most of the image; cyan, mint, lemon, or teal form the major graphic masses; red or a related accent stays small and decisive",
+    "dominant_hex": "Approximate dominant colors sampled from the style preview, most to least common: #110F0E, #F6C61B, #F1E8D4, #C9BFAF, #A39385."
   },
   "design_rules": [
     "Keep the image poster-flat and graphic; do not add realistic depth, cast shadows, or natural camera lighting.",

@@ -79,7 +79,8 @@
       "muted metal",
       "shadowed storefront tones"
     ],
-    "palette_behavior": "High saturation on clothing, type, and props over neutral urban photographic texture."
+    "palette_behavior": "High saturation on clothing, type, and props over neutral urban photographic texture.",
+    "dominant_hex": "Approximate dominant colors sampled from the style preview, most to least common: #4A402E, #201A14, #686357, #838380, #CB232A."
   },
   "photographic_direction": {
     "base": "Photoreal urban street photography.",

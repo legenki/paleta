@@ -69,7 +69,8 @@
     "accent_red": "newspaper red sidebar, small seal red, limited callout red",
     "secondary_accent": "occasional cyan or teal price note used sparingly",
     "product": "natural commercial-photo colors richer than the page palette",
-    "proportion": "about 60 percent off-white paper, 20 percent black ink, 10 percent product color, 6 percent antique gold, 3 percent red, 1 percent cyan or teal"
+    "proportion": "about 60 percent off-white paper, 20 percent black ink, 10 percent product color, 6 percent antique gold, 3 percent red, 1 percent cyan or teal",
+    "dominant_hex": "Approximate dominant colors sampled from the style preview, most to least common: #D0C6BC, #E6DFD6, #BAAB9C, #A69072, #3D2E12."
   },
   "image_treatment": {
     "rendering_mode": "hybrid photorealistic product cutout over flat printed newspaper graphics",

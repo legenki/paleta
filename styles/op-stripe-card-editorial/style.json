@@ -51,7 +51,8 @@
   },
   "color_palette": {
     "base": "Dense matte black and pale neutral stone/off-white paper, subtle natural paper warmth rather than aged yellow.",
-    "accent": "Single coherent wardrobe/prop color family per case, natural skin and photographic highlights."
+    "accent": "Single coherent wardrobe/prop color family per case, natural skin and photographic highlights.",
+    "dominant_hex": "Approximate dominant colors sampled from the style preview, most to least common: #E8E2D6, #1B1B1B, #C7C2B9, #7F7A73, #A19C94."
   },
   "image_treatment": {
     "photograph": "Sharp studio editorial cutout, realistic skin, garment folds and hands, soft plausible contact shadow only where needed; no rectangular photo panel.",

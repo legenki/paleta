@@ -56,7 +56,8 @@
   "color_palette": {
     "principle": "Case-specific hue relationships selected for the theme, not the source colors.",
     "contrast": "Separate the lettering from clothing and background through hue or luminance.",
-    "restriction": "Do not default every case to orange letters, blue clothes and green ground."
+    "restriction": "Do not default every case to orange letters, blue clothes and green ground.",
+    "dominant_hex": "Approximate dominant colors sampled from the style preview, most to least common: #7D5A79, #9F879F, #D09110, #E0B39A, #B47F65."
   },
   "image_treatment": {
     "texture": "Material-specific small-scale surface detail described by ART_DIRECTION; never transfer foam pores to every material.",

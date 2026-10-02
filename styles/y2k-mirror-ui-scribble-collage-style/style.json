@@ -60,7 +60,8 @@
     "base": "Grainy grayscale, off-white, black, cool silver, and neutral photographic tones dominate.",
     "accent": "Saturated electric blue or cobalt blue is the signature accent, used for thick marker outlines, action buttons, selected states, and small objects.",
     "secondary": "Small warm skin, fabric, or object tones may appear but should remain subordinate to the gray-white-blue system.",
-    "contrast": "Use high contrast, blown highlights, gritty darks, and blue accents that feel digitally punched up."
+    "contrast": "Use high contrast, blown highlights, gritty darks, and blue accents that feel digitally punched up.",
+    "dominant_hex": "Approximate dominant colors sampled from the style preview, most to least common: #121416, #333433, #565551, #767472, #D2D1D5."
   },
   "photographic_direction": {
     "rendering": "Photographic collage, not illustration. Use real-looking flash snapshots with intentionally rough digital treatment.",

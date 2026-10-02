@@ -67,7 +67,8 @@
   "color_palette": {
     "palette_behavior": "Use the dominant colors, contrast rhythm, and accent-color logic implied by the style summary.",
     "background": "Keep the background color family consistent with the reference style.",
-    "accents": "Use ACCENT_SYMBOL and graphic marks to carry small high-contrast color moments."
+    "accents": "Use ACCENT_SYMBOL and graphic marks to carry small high-contrast color moments.",
+    "dominant_hex": "Approximate dominant colors sampled from the style preview, most to least common: #1D1813, #473C31, #766A5A, #A89789, #DEB122."
   },
   "design_rules": [
     "Use PRODUCT_OR_PROP as the prop, product cue, or foreground object.",

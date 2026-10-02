@@ -73,7 +73,8 @@
     "linework": "deep black-brown marker with rough dry edges",
     "main_body": "saturated green, teal, blue, red, purple, or orange as a broad rough fill",
     "accents": "yellow-orange, warm yellow, white, small pale blue or pink spots",
-    "palette_behavior": "Use one dominant bright body color, one warm accent family, black linework, and white eye or mouth shapes; avoid gradients and many blended hues."
+    "palette_behavior": "Use one dominant bright body color, one warm accent family, black linework, and white eye or mouth shapes; avoid gradients and many blended hues.",
+    "dominant_hex": "Approximate dominant colors sampled from the style preview, most to least common: #F7E4B7, #D21F13, #18140F, #A2957A, #82714F."
   },
   "image_treatment": {
     "rendering": "High-resolution raster poster that looks scanned from a hand drawing on cream paper.",

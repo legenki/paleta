@@ -67,7 +67,8 @@
   "color_palette": {
     "palette_behavior": "Use the dominant colors, contrast rhythm, and accent-color logic implied by the style summary.",
     "background": "Keep the background color family consistent with the reference style.",
-    "accents": "Use ACCENT_SYMBOL and graphic marks to carry small high-contrast color moments."
+    "accents": "Use ACCENT_SYMBOL and graphic marks to carry small high-contrast color moments.",
+    "dominant_hex": "Approximate dominant colors sampled from the style preview, most to least common: #181A18, #393832, #DDC412, #5F5A55, #847F7B."
   },
   "design_rules": [
     "Place the subject as a large central photo cutout with an irregular white sticker-like outline.",

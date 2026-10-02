@@ -76,7 +76,8 @@
       "soft shadow gray",
       "subtle skin or material tones"
     ],
-    "behavior": "White carries the layout, red defines spatial rhythm, black anchors fashion or product mass, and emerald or teal appears as a controlled luxury accent."
+    "behavior": "White carries the layout, red defines spatial rhythm, black anchors fashion or product mass, and emerald or teal appears as a controlled luxury accent.",
+    "dominant_hex": "Approximate dominant colors sampled from the style preview, most to least common: #FBFBFB, #0B0A0B, #39312F, #0E6B69, #DBD5D6."
   },
   "photographic_direction": {
     "rendering_mode": "Polished luxury fashion and product editorial photography integrated with bold poster graphics.",

@@ -84,7 +84,8 @@
       "soft grain",
       "phone-camera compression",
       "clean editorial contrast"
-    ]
+    ],
+    "dominant_hex": "Approximate dominant colors sampled from the style preview, most to least common: #41352A, #615245, #796C5F, #C3C4C3, #1C160F."
   },
   "design_rules": [
     "Use PRODUCT_OR_PROP as the foreground object, product cue, or story-driving prop.",

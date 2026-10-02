@@ -65,7 +65,8 @@
     "accent": "Saturated tangerine orange used mainly for the script word and one small subject detail.",
     "landscape": "Natural grass green, sage, sand, rust, or muted earth colors depending on the scene.",
     "shadows": "Deep forest green, soft charcoal, and subdued blue-black rather than pure black.",
-    "proportion": "Approximately 55 percent cyan/aqua, 25 percent natural ground tones, 15 percent ivory type, and 5 percent orange accent."
+    "proportion": "Approximately 55 percent cyan/aqua, 25 percent natural ground tones, 15 percent ivory type, and 5 percent orange accent.",
+    "dominant_hex": "Approximate dominant colors sampled from the style preview, most to least common: #E2D7BA, #B2BFB3, #57767C, #889A97, #878172."
   },
   "photographic_direction": {
     "rendering": "Use believable analog location photography with a slightly softened 1970s editorial color print character, never illustration or 3D rendering.",

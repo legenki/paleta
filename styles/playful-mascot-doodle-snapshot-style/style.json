@@ -88,7 +88,8 @@
       "burgundy marker",
       "white gel-pen doodle",
       "pale yellow outline"
-    ]
+    ],
+    "dominant_hex": "Approximate dominant colors sampled from the style preview, most to least common: #603D29, #8B5637, #311C0F, #A57653, #EAC18C."
   },
   "design_rules": [
     "Use PRODUCT_OR_PROP as the foreground object, product cue, or story-driving prop.",

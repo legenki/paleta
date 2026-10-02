@@ -52,7 +52,8 @@
   },
   "color_palette": {
     "frame": "Obsidian and charcoal shadows balanced with warm bone-white light; deep vermilion or ember red appears only in a functional component or a precise motion cue.",
-    "photo": "Natural skin and neutral athletic fabric, muted graphite environments, tactile highlights on rubber, knit and carbon. Avoid candy-colored plastics and broad saturated gradients."
+    "photo": "Natural skin and neutral athletic fabric, muted graphite environments, tactile highlights on rubber, knit and carbon. Avoid candy-colored plastics and broad saturated gradients.",
+    "dominant_hex": "Approximate dominant colors sampled from the style preview, most to least common: #1E1716, #483C37, #645751, #86776E, #AB9B91."
   },
   "photographic_direction": {
     "camera": "Editorial sports photography with forceful low angles, close cropping and controlled motion blur; pair it with clean, high-detail product macro imagery and readable process states.",

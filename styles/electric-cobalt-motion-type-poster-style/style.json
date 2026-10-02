@@ -87,7 +87,8 @@
     "kinetic_accent": [
       "signal orange-red"
     ],
-    "palette_rule": "Let cobalt-blue photography dominate roughly three quarters of the image, use green for large type, reserve white for the center lockup and microcopy, and confine orange-red to one small rough emblem or word fragment."
+    "palette_rule": "Let cobalt-blue photography dominate roughly three quarters of the image, use green for large type, reserve white for the center lockup and microcopy, and confine orange-red to one small rough emblem or word fragment.",
+    "dominant_hex": "Approximate dominant colors sampled from the style preview, most to least common: #0523AE, #8CEF19, #081E6C, #091225, #5BB113."
   },
   "photographic_direction": {
     "rendering_mode": "Realistic action or movement photography integrated with flat editorial typography; no illustration, CGI, or vector-only subject rendering.",

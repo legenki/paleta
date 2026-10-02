@@ -81,7 +81,8 @@
       "tiny cyan highlight",
       "dark charcoal"
     ],
-    "palette_rules": "Keep black/yellow/cream as the dominant read. Use red and green mostly on the hero product or small accent symbols. Avoid full rainbow palettes and soft pastel gradients."
+    "palette_rules": "Keep black/yellow/cream as the dominant read. Use red and green mostly on the hero product or small accent symbols. Avoid full rainbow palettes and soft pastel gradients.",
+    "dominant_hex": "Approximate dominant colors sampled from the style preview, most to least common: #CDAF7D, #46341C, #19120A, #A3895F, #E8CDA1."
   },
   "image_treatment": {
     "rendering_mode": "raster manga illustration mixed with food-ad poster painting and zine page layout",

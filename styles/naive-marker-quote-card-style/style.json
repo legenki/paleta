@@ -64,7 +64,8 @@
     "linework": "Black or very dark brown marker outlines.",
     "text": "Bright cyan-blue or sky-blue marker lettering as the dominant accent.",
     "object_colors": "Muted tan, beige, soft green, yellow, dusty red, and simple flat fills.",
-    "behavior": "Use few colors, large flat fills, and small speckle marks; avoid gradients, airbrush lighting, metallic effects, and saturated rainbow palettes."
+    "behavior": "Use few colors, large flat fills, and small speckle marks; avoid gradients, airbrush lighting, metallic effects, and saturated rainbow palettes.",
+    "dominant_hex": "Approximate dominant colors sampled from the style preview, most to least common: #F9D9BD, #C8C3BB, #F9F7ED, #ADA294, #837C6F."
   },
   "image_treatment": {
     "rendering": "Flat hand-drawn marker illustration on scanned paper.",

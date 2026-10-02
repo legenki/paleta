@@ -84,7 +84,8 @@
       "soft gold",
       "pale silver",
       "warm skin highlights"
-    ]
+    ],
+    "dominant_hex": "Approximate dominant colors sampled from the style preview, most to least common: #1B160C, #7A5A3E, #57472C, #9C7152, #AE8E72."
   },
   "photographic_direction": {
     "rendering_mode": "Photographic analog fashion editorial, not illustration, vector, CGI, or UI mockup.",
