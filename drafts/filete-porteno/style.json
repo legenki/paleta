@@ -14,7 +14,7 @@
     "SECONDARY_TEXT": "exact small supporting line painted in a simple signwriter script",
     "ACCENT_SYMBOL": "small symbolic motif such as a heart, star, horseshoe or shield placed on the central axis",
     "WARDROBE_STYLE": "surface finish and detailing: gold outline, pearl beads on the letters, visible brush streaks, hand-painted enamel on wood, metal or glass",
-    "FIELD_COLOR": "dominant contra-field color behind the ornament: usually white or ivory, or dark navy blue (deep red or black are also possible)",
+    "FIELD_COLOR": "dominant contra-field color behind the ornament as a name plus hex code: usually white or ivory (#F6F1E4) or dark navy blue (#0B1B3A); deep red (#7A1620) or black (#0A0A0A) are also possible",
     "STYLE_FIDELITY_ANCHORS": "Runtime ordered CORE and FLEX style anchors",
     "SOURCE_CONTENT_TO_AVOID": "Runtime source identities and content to replace"
   },
@@ -27,7 +27,7 @@
     "[CORE] The central emblem object is painted in the same style as the ornament, with flat base colors, a light side, a shade side and brush highlights, and a painted outline; it is never a photorealistic render, a 3D model or a stock photo.",
     "[CORE] Every motif has painted volume: a flat base color first, then a light tone on the side facing the light, a dark tone on the opposite side, and short parallel repique brush strokes plus pure-white highlight strokes along ribs and bevels.",
     "[CORE] Light comes from above or the upper left; each motif casts a hard, flat shadow onto the contra-field on the lower right.",
-    "[CORE] Saturated enamel colors on a white or ivory contra-field, or on a dark navy blue one: luminous green, ochre or gold, pink, light blue and pure white, with strong contrast.",
+    "[CORE] Saturated enamel colors on a white or ivory (#F6F1E4) contra-field, or on a dark navy blue (#0B1B3A) one: luminous green (#6CC24A), ochre or gold (#D9A441), pink (#F2A6C1), light blue (#A9D6F5) and pure white (#FFFFFF), with strong contrast.",
     "[CORE] The work must look painted by a human hand with a brush: lines swell and taper with brush pressure, outlines vary slightly in width, small wobbles and tiny overlaps are visible, and color fills show faint bristle streaks and slightly uneven opacity.",
     "[CORE] Real paint texture: raised enamel ridges at the edges of strokes, small paint pooling in corners, a few brush hairs or tiny pinholes, and a semi-gloss varnished sheen with soft uneven reflections, never a perfect digital gradient.",
     "[CORE] Ribbons are two-tone: the outer face is light blue or white with blue shading, and the reverse side visible at the folds is pink to rose; folds are shaded and highlighted like folded paper.",
@@ -69,12 +69,12 @@
     "rule": "Exactly the supplied words, each string appearing once, spelled correctly, with no repeated lines, extra letters, numbers or decorative pseudo-text. Never a standard serif or sans-serif font: the letters must be painted fileteado capitals."
   },
   "color_palette": {
-    "contra_field": "A saturated flat field behind everything, chosen from FIELD_COLOR: most often white or ivory, or dark navy blue; deep red or black are possible.",
-    "main_colors": "Luminous green and ochre or gold for the two ornament levels, pink and light blue for flowers and ribbons.",
-    "highlights": "Pure white for stamens, teeth, pearls, repique strokes and bevel highlights; use sparingly so they glitter.",
-    "shadows": "Darker, saturated versions of each color, plus a hard flat cast shadow in navy or near-black on the field.",
-    "behavior": "High saturation and contrast with painted gloss; no pastels, gradients across the whole panel, neon glow or muted film tones.",
-    "ribbons": "Ribbon faces in light blue or white with blue shading; the reverse side seen at folds in pink to rose."
+    "contra_field": "A saturated flat field behind everything, chosen from FIELD_COLOR: most often dark navy blue, approximately #0B1B3A, or white and ivory, approximately #F6F1E4; deep red, approximately #7A1620, or black, approximately #0A0A0A, are possible.",
+    "main_colors": "Luminous green, approximately #6CC24A, with darker leaf shading, approximately #2E7D32, and ochre or gold, approximately #D9A441, for the two ornament levels.",
+    "flowers_and_ribbons": "Pink flowers, approximately #F2A6C1, rose shading, approximately #E8739B, coral tulips, approximately #E9665A, and ribbon faces in light blue, approximately #A9D6F5, whose reverse side at the folds is pink to rose.",
+    "highlights": "Pure white, #FFFFFF, for stamens, teeth, pearls, repique strokes and bevel highlights; use sparingly so they glitter.",
+    "shadows": "Darker, saturated versions of each color, plus a hard flat cast shadow in deep navy, approximately #07122B, on the field.",
+    "behavior": "High saturation and contrast with painted gloss; no pastels, gradients across the whole panel, neon glow or muted film tones."
   },
   "image_treatment": {
     "rendering_mode": "Hand-painted synthetic enamel on a rigid surface, photographed or scanned: visible brushwork, opaque outlines of varying thickness and precise brush-stroke highlights.",
@@ -125,7 +125,7 @@
         "SECONDARY_TEXT": "Milonga de los viernes",
         "ACCENT_SYMBOL": "a small ochre heart with white highlight on the central axis under the instrument",
         "WARDROBE_STYLE": "gold outline on the letters, pearl beads along the headline and visible bristle streaks in the enamel",
-        "FIELD_COLOR": "dark navy blue"
+        "FIELD_COLOR": "dark navy blue (#0B1B3A)"
       }
     },
     {
@@ -140,7 +140,7 @@
         "SECONDARY_TEXT": "Desde 1952",
         "ACCENT_SYMBOL": "a small white wheat ear in a diamond on the central axis below the headline",
         "WARDROBE_STYLE": "a thick modeled band in ochre with a thin navy firulete, painted by hand on ivory-white enamel",
-        "FIELD_COLOR": "white"
+        "FIELD_COLOR": "white (#F6F1E4)"
       }
     },
     {
@@ -155,7 +155,7 @@
         "SECONDARY_TEXT": "Yerba compañera",
         "ACCENT_SYMBOL": "a small pink flower with white stamens centered above the headline",
         "WARDROBE_STYLE": "a hand-painted navy contra-field with a gold outline around the whole frame and visible brush streaks",
-        "FIELD_COLOR": "dark navy blue"
+        "FIELD_COLOR": "dark navy blue (#0B1B3A)"
       }
     },
     {
@@ -170,7 +170,7 @@
         "SECONDARY_TEXT": "Abierto cada día",
         "ACCENT_SYMBOL": "a small ochre star with a white highlight at the top of the central axis",
         "WARDROBE_STYLE": "a bevelled white highlight on the letters and a hard cast shadow to the lower right of every motif",
-        "FIELD_COLOR": "white"
+        "FIELD_COLOR": "white (#F6F1E4)"
       }
     },
     {
@@ -185,7 +185,7 @@
         "SECONDARY_TEXT": "Tradición porteña",
         "ACCENT_SYMBOL": "a small gold horseshoe on the central axis under the gramophone",
         "WARDROBE_STYLE": "light-blue and ivory headline letters with a gold outline, a navy projected body and visible bristle streaks in the enamel",
-        "FIELD_COLOR": "dark navy blue"
+        "FIELD_COLOR": "dark navy blue (#0B1B3A)"
       }
     },
     {
@@ -200,7 +200,7 @@
         "SECONDARY_TEXT": "Buenos Aires Tradición",
         "ACCENT_SYMBOL": "a small red winged heart centered above the supporting ribbon",
         "WARDROBE_STYLE": "gold and ochre headline letters with pearl beads, a navy cast shadow and a bevel highlight",
-        "FIELD_COLOR": "dark navy blue"
+        "FIELD_COLOR": "dark navy blue (#0B1B3A)"
       }
     }
   ]
