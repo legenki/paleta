@@ -977,18 +977,108 @@
 
   /* ---------- wiring ---------- */
 
-  function setupChrome() {
-    const styles = (window.COOKBOOK_STYLES && window.COOKBOOK_STYLES.styles) || [];
-    const sel = $("#loadExisting");
-    for (const st of styles) sel.append(h("option", { value: st.slug }, st.name));
-    sel.addEventListener("change", () => {
-      const st = styles.find((x) => x.slug === sel.value);
-      sel.value = "";
+  function setupStyleCombo(styles) {
+    const btn = $("#comboBtn");
+    const pop = $("#comboPop");
+    const search = $("#comboSearch");
+    const list = $("#comboList");
+    const preview = $("#comboPreview");
+    const previewImg = $("img", preview);
+    const empty = $("#comboEmpty");
+    btn.textContent = "Load existing style…";
+    let shown = [];
+    let active = -1;
+
+    const haystack = (st) => [st.name, st.slug.replace(/-/g, " "), st.category, (st.tags || []).join(" ")].join(" ").toLowerCase();
+    const index = styles.map((st) => ({ st, text: haystack(st) }));
+
+    function showPreview(st) {
+      if (!st) { preview.hidden = true; return; }
+      const src = "../" + (st.thumb16 || "");
+      if (previewImg.getAttribute("src") !== src) {
+        previewImg.removeAttribute("src");
+        previewImg.src = src;
+      }
+      previewImg.alt = st.name + " preview";
+      $("b", preview).textContent = st.name;
+      $("span", preview).textContent = st.category;
+      preview.hidden = false;
+    }
+
+    function setActive(i, scroll) {
+      active = i;
+      [...list.children].forEach((li, n) => {
+        li.classList.toggle("on", n === i);
+        li.setAttribute("aria-selected", String(n === i));
+      });
+      const li = list.children[i];
+      if (li) {
+        search.setAttribute("aria-activedescendant", li.id);
+        if (scroll) li.scrollIntoView({ block: "nearest" });
+      }
+      showPreview(shown[i]);
+    }
+
+    function render() {
+      const words = search.value.toLowerCase().split(/\s+/).filter(Boolean);
+      shown = index.filter((e) => words.every((w) => e.text.includes(w))).map((e) => e.st);
+      list.replaceChildren(...shown.map((st, i) => h("li", {
+        id: "combo-opt-" + i, role: "option", "aria-selected": "false",
+        onmouseenter: () => setActive(i, false),
+        onclick: () => choose(st),
+      }, h("span", { class: "n" }, st.name), h("small", {}, st.category))));
+      empty.hidden = shown.length > 0;
+      list.hidden = shown.length === 0;
+      if (!shown.length) preview.hidden = true;
+      else setActive(0, false);
+    }
+
+    function open() {
+      pop.hidden = false;
+      btn.setAttribute("aria-expanded", "true");
+      search.value = "";
+      render();
+      search.focus();
+    }
+
+    function close() {
+      if (pop.hidden) return;
+      pop.hidden = true;
+      btn.setAttribute("aria-expanded", "false");
+      btn.focus({ preventScroll: true });
+    }
+
+    function choose(st) {
       if (!st || !st.jsonText) return;
+      close();
       if (!confirm("Replace the current draft with “" + st.name + "”?")) return;
       const err = importJson(st.jsonText);
       if (err) toast(err);
+    }
+
+    btn.addEventListener("click", () => (pop.hidden ? open() : close()));
+    search.addEventListener("input", render);
+    search.addEventListener("keydown", (e) => {
+      if (e.key === "ArrowDown" || e.key === "ArrowUp") {
+        e.preventDefault();
+        if (!shown.length) return;
+        setActive((active + (e.key === "ArrowDown" ? 1 : -1) + shown.length) % shown.length, true);
+      } else if (e.key === "Enter") {
+        e.preventDefault();
+        choose(shown[active]);
+      } else if (e.key === "Escape") {
+        e.preventDefault();
+        close();
+      }
     });
+    document.addEventListener("pointerdown", (e) => {
+      if (!pop.hidden && !$("#styleCombo").contains(e.target)) close();
+    });
+  }
+
+  function setupChrome() {
+    const styles = (window.COOKBOOK_STYLES && window.COOKBOOK_STYLES.styles) || [];
+    setupStyleCombo(styles);
 
     $("#newBtn").addEventListener("click", () => {
       if (confirm("Discard the current draft and start a new style?")) loadState(newState(), "New style");

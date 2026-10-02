@@ -14,16 +14,27 @@
         document.documentElement.dataset.theme = "dark";
       }
     </script>
-    <link rel="stylesheet" href="editor.css?v=5">
+    <link rel="stylesheet" href="editor.css?v=6">
   </head>
   <body>
     <header class="topbar">
       <a class="back" href="../">← Gallery</a>
       <h1>style.json Editor</h1>
       <div class="topbar-actions">
-        <select id="loadExisting" aria-label="Load an existing style">
-          <option value="">Load existing style…</option>
-        </select>
+        <div class="combo" id="styleCombo">
+          <button type="button" id="comboBtn" aria-haspopup="listbox" aria-expanded="false" aria-controls="comboPop">Load existing style…</button>
+          <div class="combo-pop" id="comboPop" hidden>
+            <input type="search" id="comboSearch" role="combobox" aria-expanded="true" aria-controls="comboList" aria-autocomplete="list" placeholder="Search styles…" autocomplete="off" spellcheck="false">
+            <div class="combo-body">
+              <ul id="comboList" role="listbox" aria-label="Styles"></ul>
+              <figure class="combo-preview" id="comboPreview" hidden>
+                <img alt="" width="320" height="180">
+                <figcaption><b></b><span></span></figcaption>
+              </figure>
+            </div>
+            <p class="combo-empty" id="comboEmpty" hidden>No styles match.</p>
+          </div>
+        </div>
         <button type="button" id="importBtn">Import JSON</button>
         <button type="button" id="newBtn">New</button>
         <button type="button" id="themeBtn" aria-label="Toggle theme">◐</button>
@@ -89,6 +100,6 @@
 
     <script src="../styles-data.js"></script>
     <script src="colors.js?v=1"></script>
-    <script src="editor.js?v=1"></script>
+    <script src="editor.js?v=2"></script>
   </body>
 </html>
